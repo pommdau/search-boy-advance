@@ -19,6 +19,7 @@
 		DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61128B764DF00E468F8 /* URL+queryItem.swift */; };
 		DA13B61428B7AB3C00E468F8 /* QiitaOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */; };
 		DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
+		DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		DA13B61128B764DF00E468F8 /* URL+queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryItem.swift"; sourceTree = "<group>"; };
 		DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QiitaOption+sampleData.swift"; sourceTree = "<group>"; };
 		DA13B61728B7AF2500E468F8 /* DetailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellView.swift; sourceTree = "<group>"; };
+		DA13B61928B7C23100E468F8 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				DA13B60828B752A500E468F8 /* SearchesView.swift */,
 				DA13B60C28B753C900E468F8 /* DetailView.swift */,
 				DA13B61728B7AF2500E468F8 /* DetailCellView.swift */,
+				DA13B61928B7C23100E468F8 /* DetailEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
 				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
+				DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */,
 				DA13B60F28B7544F00E468F8 /* QiitaOption.swift in Sources */,
 				DA13B60D28B753C900E468F8 /* DetailView.swift in Sources */,
 				DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */,

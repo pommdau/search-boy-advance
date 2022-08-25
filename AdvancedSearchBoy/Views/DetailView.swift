@@ -16,9 +16,14 @@ struct DetailView: View {
                                     
             Section("Contents") {
                 if !option.words.isEmpty || !option.excludingWords.isEmpty {
-                    DetailCellView(name: "Word",
-                                   includingText: option.words.joined(separator: "\n"),
-                                   excludingText: option.excludingWords.joined(separator: "\n"))
+                    NavigationLink {
+                        DetailEditView(includings: $option.words,
+                                       excludings: $option.excludingWords)
+                    } label: {
+                        DetailCellView(name: "Word",
+                                       includingText: option.words.joined(separator: "\n"),
+                                       excludingText: option.excludingWords.joined(separator: "\n"))
+                    }
                 }
                                 
                 if !option.titles.isEmpty || !option.excludingTitles.isEmpty {

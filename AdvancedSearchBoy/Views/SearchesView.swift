@@ -9,21 +9,26 @@ import SwiftUI
 
 struct SearchesView: View {
     
-    let qiita = QiitaOption.sampleData[0]
+    @State var option = QiitaOption.sampleData[0]
     
     var body: some View {
         List {
-            HStack {
-                Text("\(qiita.name)")
-                Spacer()
-                Button {
-                    guard let url = qiita.url else { return }
-                    UIApplication.shared.open(url)
-                } label: {
-                    Text("Open")
-                        .foregroundColor(.blue)
+            NavigationLink {
+                DetailView(option: $option)
+            } label: {
+                HStack {
+                    Text("\(option.name)")
+                    Spacer()
+                    Button {
+                        guard let url = option.url else { return }
+                        UIApplication.shared.open(url)
+                    } label: {
+                        Text("Open")
+                            .foregroundColor(.blue)
+                    }
                 }
             }
+
             Text("Qiita02")
         }
         .buttonStyle(.plain)
