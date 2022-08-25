@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */; };
-		DA13B5E128B7521E00E468F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5E028B7521E00E468F8 /* ContentView.swift */; };
 		DA13B5E328B7521F00E468F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E228B7521F00E468F8 /* Assets.xcassets */; };
 		DA13B5E628B7521F00E468F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E528B7521F00E468F8 /* Preview Assets.xcassets */; };
 		DA13B5F028B7521F00E468F8 /* AdvancedSearchBoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5EF28B7521F00E468F8 /* AdvancedSearchBoyTests.swift */; };
 		DA13B5FA28B7521F00E468F8 /* AdvancedSearchBoyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5F928B7521F00E468F8 /* AdvancedSearchBoyUITests.swift */; };
 		DA13B5FC28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5FB28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift */; };
+		DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60828B752A500E468F8 /* SearchesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		DA13B5DB28B7521E00E468F8 /* AdvancedSearchBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedSearchBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyApp.swift; sourceTree = "<group>"; };
-		DA13B5E028B7521E00E468F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA13B5E228B7521F00E468F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA13B5E528B7521F00E468F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA13B5EB28B7521F00E468F8 /* AdvancedSearchBoyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedSearchBoyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		DA13B5F528B7521F00E468F8 /* AdvancedSearchBoyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedSearchBoyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA13B5F928B7521F00E468F8 /* AdvancedSearchBoyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyUITests.swift; sourceTree = "<group>"; };
 		DA13B5FB28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DA13B60828B752A500E468F8 /* SearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */,
-				DA13B5E028B7521E00E468F8 /* ContentView.swift */,
+				DA13B60828B752A500E468F8 /* SearchesView.swift */,
 				DA13B5E228B7521F00E468F8 /* Assets.xcassets */,
 				DA13B5E428B7521F00E468F8 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA13B5E128B7521E00E468F8 /* ContentView.swift in Sources */,
+				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
 				DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

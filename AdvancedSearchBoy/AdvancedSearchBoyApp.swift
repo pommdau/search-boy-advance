@@ -11,7 +11,9 @@ import SwiftUI
 struct AdvancedSearchBoyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                SearchesView()
+            }
         }
     }
 }
