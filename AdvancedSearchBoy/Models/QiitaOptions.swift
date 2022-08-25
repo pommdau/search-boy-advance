@@ -12,7 +12,7 @@ struct QiitaOptions: Identifiable, Codable {
     
     // MARK: - Definition
     
-    enum Sort: Codable {
+    enum Sort: String, Codable {
         case created  // 新着順
         case rel  // 関連順
         case stock  // ストック数
@@ -37,6 +37,9 @@ struct QiitaOptions: Identifiable, Codable {
     // MARK: Private Properties
         
     let id: UUID
+    let name: String
+    
+    // MARK: Qiita Format
     
     var titles: [String]
     var excludingTitles: [String]
@@ -67,26 +70,20 @@ struct QiitaOptions: Identifiable, Codable {
     // MARK: Computed Properties
     
     var queryItems: [URLQueryItem] {
-        
-//        let titleQueryString = titles.reduce("", { (first, second) -> String in
-//            "\(first)+\(second)"
-//        })
-//        let titlesQuery = URLQueryItem(name: "q", value: titleQueryString)
-//
-//        return [titlesQuery]
-        
-        return [URLQueryItem(name: "q", value: titles.createQueryValue(prefix: "title"))]
+        let searchingQuery = URLQueryItem(name: "q", value: titles.createQueryValue(prefix: "title"))
+        let sortQuery = URLQueryItem(name: "sort", value: sort.rawValue)
+        return [searchingQuery, sortQuery]
     }
         
     var url: URL? {
         let url = URL(string: "https://qiita.com/search")!  // baseURL
-        print(url.queryItemsAdded(queryItems)?.standardizedFileURL)
         return url.queryItemsAdded(queryItems)
     }
     
     // MARK: - LifeCycle
     
     init(id: UUID = UUID(),
+         name: String,
          titles: [String] = [],
          excludingTitles: [String] = [],
          bodies: [String] = [],
@@ -103,9 +100,10 @@ struct QiitaOptions: Identifiable, Codable {
          updatedAt: Date? = nil,
          words: [String] = [],
          includingWords: [String] = [],
-         sort: Sort = .like
+         sort: Sort = .rel
     ) {
         self.id = id
+        self.name = name
         self.titles = titles
         self.excludingTitles = excludingTitles
         self.bodies = bodies

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct SearchesView: View {
     
-    let qiita = QiitaOptions(titles: ["macOS", "Unix"])
+    let qiita = QiitaOptions(name: "SampleName", titles: ["macOS", "Unix"])
     
     var body: some View {
         List {
             HStack {
-                Text("\(qiita.url!.absoluteString)")
+                Text("\(qiita.name)")
                 Spacer()
                 Button {
                     guard let url = qiita.url else { return }
