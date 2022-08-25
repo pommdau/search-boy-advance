@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */; };
-		DA13B5E128B7521E00E468F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5E028B7521E00E468F8 /* ContentView.swift */; };
 		DA13B5E328B7521F00E468F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E228B7521F00E468F8 /* Assets.xcassets */; };
 		DA13B5E628B7521F00E468F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E528B7521F00E468F8 /* Preview Assets.xcassets */; };
 		DA13B5F028B7521F00E468F8 /* AdvancedSearchBoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5EF28B7521F00E468F8 /* AdvancedSearchBoyTests.swift */; };
 		DA13B5FA28B7521F00E468F8 /* AdvancedSearchBoyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5F928B7521F00E468F8 /* AdvancedSearchBoyUITests.swift */; };
 		DA13B5FC28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5FB28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift */; };
+		DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60828B752A500E468F8 /* SearchesView.swift */; };
+		DA13B60D28B753C900E468F8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60C28B753C900E468F8 /* DetailView.swift */; };
+		DA13B60F28B7544F00E468F8 /* QiitaOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60E28B7544F00E468F8 /* QiitaOption.swift */; };
+		DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61128B764DF00E468F8 /* URL+queryItem.swift */; };
+		DA13B61428B7AB3C00E468F8 /* QiitaOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */; };
+		DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
+		DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
+		DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,6 @@
 /* Begin PBXFileReference section */
 		DA13B5DB28B7521E00E468F8 /* AdvancedSearchBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedSearchBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyApp.swift; sourceTree = "<group>"; };
-		DA13B5E028B7521E00E468F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA13B5E228B7521F00E468F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA13B5E528B7521F00E468F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA13B5EB28B7521F00E468F8 /* AdvancedSearchBoyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedSearchBoyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,14 @@
 		DA13B5F528B7521F00E468F8 /* AdvancedSearchBoyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdvancedSearchBoyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA13B5F928B7521F00E468F8 /* AdvancedSearchBoyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyUITests.swift; sourceTree = "<group>"; };
 		DA13B5FB28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DA13B60828B752A500E468F8 /* SearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchesView.swift; sourceTree = "<group>"; };
+		DA13B60C28B753C900E468F8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DA13B60E28B7544F00E468F8 /* QiitaOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaOption.swift; sourceTree = "<group>"; };
+		DA13B61128B764DF00E468F8 /* URL+queryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+queryItem.swift"; sourceTree = "<group>"; };
+		DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QiitaOption+sampleData.swift"; sourceTree = "<group>"; };
+		DA13B61728B7AF2500E468F8 /* DetailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellView.swift; sourceTree = "<group>"; };
+		DA13B61928B7C23100E468F8 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
+		DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QiitaOption+Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */,
-				DA13B5E028B7521E00E468F8 /* ContentView.swift */,
+				DA13B61028B764C600E468F8 /* Extensions */,
+				DA13B60B28B7538300E468F8 /* Views */,
+				DA13B60A28B7538000E468F8 /* Models */,
 				DA13B5E228B7521F00E468F8 /* Assets.xcassets */,
 				DA13B5E428B7521F00E468F8 /* Preview Content */,
 			);
@@ -125,6 +141,35 @@
 				DA13B5FB28B7521F00E468F8 /* AdvancedSearchBoyUITestsLaunchTests.swift */,
 			);
 			path = AdvancedSearchBoyUITests;
+			sourceTree = "<group>";
+		};
+		DA13B60A28B7538000E468F8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA13B60E28B7544F00E468F8 /* QiitaOption.swift */,
+				DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */,
+				DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DA13B60B28B7538300E468F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA13B60828B752A500E468F8 /* SearchesView.swift */,
+				DA13B60C28B753C900E468F8 /* DetailView.swift */,
+				DA13B61728B7AF2500E468F8 /* DetailCellView.swift */,
+				DA13B61928B7C23100E468F8 /* DetailEditView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA13B61028B764C600E468F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA13B61128B764DF00E468F8 /* URL+queryItem.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA13B5E128B7521E00E468F8 /* ContentView.swift in Sources */,
+				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
+				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
+				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
+				DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */,
+				DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */,
+				DA13B60F28B7544F00E468F8 /* QiitaOption.swift in Sources */,
+				DA13B60D28B753C900E468F8 /* DetailView.swift in Sources */,
 				DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */,
+				DA13B61428B7AB3C00E468F8 /* QiitaOption+sampleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
