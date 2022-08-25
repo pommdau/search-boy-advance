@@ -63,7 +63,7 @@ struct QiitaOptions: Identifiable, Codable {
     var updatedAt: Date?
     
     var words: [String]
-    var includingWords: [String]
+    var excludingWords: [String]
     
     let sort: Sort
 
@@ -119,7 +119,7 @@ struct QiitaOptions: Identifiable, Codable {
         self.createdAt = createdAt
         self.updatedAt = updatedAt
         self.words = words
-        self.includingWords = includingWords
+        self.excludingWords = includingWords
         self.sort = sort
     }
     

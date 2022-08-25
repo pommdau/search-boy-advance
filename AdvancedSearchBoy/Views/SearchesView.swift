@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchesView: View {
     
-    let qiita = QiitaOptions(name: "SampleName", titles: ["macOS", "Unix"])
+    let qiita = QiitaOptions.sampleData[0]
     
     var body: some View {
         List {
@@ -23,7 +23,6 @@ struct SearchesView: View {
                     Text("Open")
                         .foregroundColor(.blue)
                 }
-
             }
             Text("Qiita02")
         }
