@@ -10,6 +10,28 @@ import Foundation
 
 struct QiitaOptions: Identifiable, Codable {
     
+    // MARK: - Definition
+    
+    enum Sort: Codable {
+        case created  // 新着順
+        case rel  // 関連順
+        case stock  // ストック数
+        case like  // いいね数順
+        
+        var displayTitle: String {
+            switch self {
+            case .created:
+                return "新着順"
+            case .rel:
+                return "関連順"
+            case .stock:
+                return "ストック数"
+            case .like:
+                return "いいね数順"
+            }
+        }
+    }
+    
     // MARK: - Properties
     
     // MARK: Private Properties
@@ -39,10 +61,13 @@ struct QiitaOptions: Identifiable, Codable {
     
     var words: [String]
     var includingWords: [String]
+    
+    let sort: Sort
 
     // MARK: Computed Properties
     
     var queryItems: [URLQueryItem] {
+        
 //        let titleQueryString = titles.reduce("", { (first, second) -> String in
 //            "\(first)+\(second)"
 //        })
@@ -50,11 +75,12 @@ struct QiitaOptions: Identifiable, Codable {
 //
 //        return [titlesQuery]
         
-        return [titles.createQuery(key: "q", values: [])]
+        return [URLQueryItem(name: "q", value: titles.createQueryValue(prefix: "title"))]
     }
         
     var url: URL? {
         let url = URL(string: "https://qiita.com/search")!  // baseURL
+        print(url.queryItemsAdded(queryItems)?.standardizedFileURL)
         return url.queryItemsAdded(queryItems)
     }
     
@@ -76,7 +102,8 @@ struct QiitaOptions: Identifiable, Codable {
          createdAt: Date? = nil,
          updatedAt: Date? = nil,
          words: [String] = [],
-         includingWords: [String] = []
+         includingWords: [String] = [],
+         sort: Sort = .like
     ) {
         self.id = id
         self.titles = titles
@@ -95,18 +122,16 @@ struct QiitaOptions: Identifiable, Codable {
         self.updatedAt = updatedAt
         self.words = words
         self.includingWords = includingWords
+        self.sort = sort
     }
     
 }
 
 extension Array where Element == String {
-    func createQuery(key: String, prefix: String) -> URLQueryItem {
-        var queryValue = self.reduce("", { (first, second) -> String in
-            "\(first)+\(second)"
+    // prefixの例: "title"
+    func createQueryValue(prefix: String) -> String {
+        return self.reduce("", { (first, second) -> String in
+            "\(first)+\(prefix):\(second)"
         })
-        queryValue.removeFirst()
-        let queryItem = URLQueryItem(name: key, value: queryValue)
-        
-        return queryItem
     }
 }

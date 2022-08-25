@@ -13,9 +13,21 @@ struct SearchesView: View {
     
     var body: some View {
         List {
-            Text("\(qiita.url!.absoluteString)")
+            HStack {
+                Text("\(qiita.url!.absoluteString)")
+                Spacer()
+                Button {
+                    guard let url = qiita.url else { return }
+                    UIApplication.shared.open(url)
+                } label: {
+                    Text("Open")
+                        .foregroundColor(.blue)
+                }
+
+            }
             Text("Qiita02")
         }
+        .buttonStyle(.plain)
         .navigationTitle("Searches")
     }
 }
