@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SearchesView: View {
+    
+    let qiita = QiitaOptions(titles: ["macOS", "Unix"])
+    
     var body: some View {
         List {
-            Text("Qiita01")
+            Text("\(qiita.url!.absoluteString)")
             Text("Qiita02")
         }
         .navigationTitle("Searches")
