@@ -23,8 +23,9 @@ struct SearchesView: View {
                         guard let url = option.url else { return }
                         UIApplication.shared.open(url)
                     } label: {
-                        Text("Open")
+                        Image(systemName: "square.and.arrow.up")
                             .foregroundColor(.blue)
+                            .padding(.trailing, 10)
                     }
                 }
             }
