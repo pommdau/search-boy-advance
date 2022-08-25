@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct QiitaOptions: Identifiable, Codable {
+struct QiitaOption: Identifiable, Codable {
     
     // MARK: - Definition
     

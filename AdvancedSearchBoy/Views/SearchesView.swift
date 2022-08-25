@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchesView: View {
     
-    let qiita = QiitaOptions.sampleData[0]
+    let qiita = QiitaOption.sampleData[0]
     
     var body: some View {
         List {
