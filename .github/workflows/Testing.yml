@@ -1,22 +1,45 @@
-name: Testing
-on:
-  pull_request:
-    branches:
-    - master
+name: CI  # ワークフローの名前
+
+on:  # トリガの設定
+# トリガはジョブで共有されるので、トリガを分ける場合はymlファイルを分ける
   workflow_dispatch:
-    branches:
-    - feature/*
-    - master
+#   push:
+#     branches:
+#       - main
+#       - develop
+#     paths-ignore:  # 無視するファイルを設定できる
+#       - Docs/**
+#       - README.md
+#   pull_request:
+#     branches:
+#       - develop
+#     paths-ignore:
+#       - Docs/**
+#       - README.md
+
+env:  # 環境変数の指定
+  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
+
 jobs:
-  test:
-    name: Testing Swift Package and iOS app
-    runs-on: macOS-latest
+  test:  # 今回はbuild+test
+    runs-on: macos-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
-      - name: Force XCode 11.3
-        run: sudo xcode-select -switch /Applications/Xcode_13.2.1.app
-      - name: Testing Swift package
-        run: exec ./.github/scripts/test_swift_package.sh
-      - name: Testing iOS app
-        run: exec ./.github/scripts/test_app.sh
+    
+    - name: Checkout repository
+      uses: actions/checkout@v3  # uses: 定義されているアクションを使える
+    
+#    - name: Cache SwiftPM
+#      uses: actions/cache@v3
+#      with:
+#        path: SwiftPMCache
+#        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+#        restore-keys: |
+#          ${{ runner.os }}-spm-
+    # ビルド
+    - name: Xcode build
+      run: make build-debug
+
+    # 単体テストの実行
+    - name: Xcode test
+      run: make test

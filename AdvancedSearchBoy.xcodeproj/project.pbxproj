@@ -21,6 +21,7 @@
 		DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
 		DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
 		DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */; };
+		DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAC1C0A328B8466A00978F9C /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +190,9 @@
 			dependencies = (
 			);
 			name = AdvancedSearchBoy;
+			packageProductDependencies = (
+				DAC1C0A328B8466A00978F9C /* Algorithms */,
+			);
 			productName = AdvancedSearchBoy;
 			productReference = DA13B5DB28B7521E00E468F8 /* AdvancedSearchBoy.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +265,9 @@
 				Base,
 			);
 			mainGroup = DA13B5D228B7521E00E468F8;
+			packageReferences = (
+				DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = DA13B5DC28B7521E00E468F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -635,6 +643,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAC1C0A328B8466A00978F9C /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA13B5D328B7521E00E468F8 /* Project object */;
 }
