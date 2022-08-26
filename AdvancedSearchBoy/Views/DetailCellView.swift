@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DetailCellView: View {
-    
+
     let name: String
     let includingText: String
     let excludingText: String
-    
+
     var body: some View {
         HStack {
             Text(name)
@@ -22,7 +22,7 @@ struct DetailCellView: View {
                     Text(includingText)
                         .foregroundColor(.secondary)
                 }
-                
+
                 if !excludingText.isEmpty {
                     Text(excludingText)
                         .foregroundColor(.red.opacity(0.8))
@@ -37,6 +37,6 @@ struct DetailCellView_Previews: PreviewProvider {
         DetailCellView(name: "Name",
                        includingText: "Hoge\nFuga\nHogo",
                        excludingText: "Piyo\nPogo\nPoem")
-        .previewLayout(.fixed(width: 400, height: 200))
+            .previewLayout(.fixed(width: 400, height: 200))
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SearchesView: View {
-    
+
     @State var option = QiitaOption.sampleData[0]
-    
+
     var body: some View {
         List {
             NavigationLink {
@@ -29,7 +29,6 @@ struct SearchesView: View {
                     }
                 }
             }
-
             Text("Qiita02")
         }
         .buttonStyle(.plain)

@@ -10,8 +10,8 @@ import Foundation
 extension URL {
 
     // クエリを一つ追加した新しいURLを返す
-    func queryItemAdded(name: String,  value: String?) -> URL? {
-        return self.queryItemsAdded([URLQueryItem(name: name, value: value)])
+    func queryItemAdded(name: String, value: String?) -> URL? {
+        self.queryItemsAdded([URLQueryItem(name: name, value: value)])
     }
 
     // クエリを複数追加した新しいURLを返す
