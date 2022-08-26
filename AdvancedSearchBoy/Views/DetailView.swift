@@ -66,8 +66,8 @@ struct DetailView: View {
 
                 if option.minStocks != nil || option.maxStocks != nil {
                     DetailCellView(name: "Stock",
-                                   includingText: option.minStocks != nil ? "min: \(option.minStocks!)" : "",
-                                   excludingText: option.maxStocks != nil ? "max: \(option.maxStocks!)" : "")
+                                   includingText: option.minStocks != nil ? "min: \(option.minStocks ?? 0)" : "",
+                                   excludingText: option.maxStocks != nil ? "max: \(option.maxStocks ?? 0)" : "")
                 }
             }
         }

@@ -76,14 +76,17 @@ struct QiitaOption: Identifiable, Codable {
     }
 
     var url: URL? {
-        let url = URL(string: "https://qiita.com/search")!  // baseURL
+        // baseURL
+        guard let url = URL(string: "https://qiita.com/search") else {
+            return nil
+        }
         return url.queryItemsAdded(queryItems)
     }
 
     // MARK: - LifeCycle
 
     init(id: UUID = UUID(),
-         name: String,
+         name: String = "",
          titles: [String] = [],
          excludingTitles: [String] = [],
          bodies: [String] = [],
@@ -128,8 +131,6 @@ struct QiitaOption: Identifiable, Codable {
 extension Array where Element == String {
     // prefixの例: "title"
     func createQueryValue(prefix: String) -> String {
-        self.reduce("", { first, second -> String in
-            "\(first)+\(prefix):\(second)"
-        })
+        self.reduce(into: "") { $0 += "+\(prefix):\($1)" }
     }
 }

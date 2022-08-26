@@ -20,7 +20,9 @@ struct SearchesView: View {
                     Text("\(option.name)")
                     Spacer()
                     Button {
-                        guard let url = option.url else { return }
+                        guard let url = option.url else {
+                            return
+                        }
                         UIApplication.shared.open(url)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
