@@ -9,36 +9,36 @@ import Foundation
 
 extension QiitaOption {
     struct Data {
-        
+
         var name: String = ""
-                
+
         var titles: [String] = []
         var excludingTitles: [String] = []
-        
+
         var bodies: [String] = []
         var excludingBodies: [String] = []
-        
+
         var codes: [String] = []
         var excludingCodes: [String] = []
-        
+
         var tags: [String] = []
         var excludingTags: [String] = []
-        
+
         var users: [String] = []
         var excludingUsers: [String] = []
 
-        var minStocks: Int? = nil
-        var maxStocks: Int? = nil
-        
-        var createdAt: Date? = nil
-        var updatedAt: Date? = nil
-        
+        var minStocks: Int?
+        var maxStocks: Int?
+
+        var createdAt: Date?
+        var updatedAt: Date?
+
         var words: [String] = []
         var excludingWords: [String] = []
-        
+
         var sort: Sort = .rel
     }
-    
+
     var data: Data {
         Data(name: name,
              titles: titles,

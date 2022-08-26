@@ -8,13 +8,13 @@
 import Foundation
 
 extension QiitaOption {
-    
+
     static let sampleData: [QiitaOption] = [
         QiitaOption(name: "name1",
-                     titles: ["macOS", "アプリ"],
-                     words: ["Swift"],
-                     sort: .like),
-        
+                    titles: ["macOS", "アプリ"],
+                    words: ["Swift"],
+                    sort: .like),
+
         QiitaOption(name: "Name2",
                     titles: ["title1", "title2"], excludingTitles: ["titleA", "titleB"],
                     bodies: ["body1"], excludingBodies: ["bodyA"],
@@ -26,5 +26,5 @@ extension QiitaOption {
                     words: ["word1"], includingWords: ["wordA"],
                     sort: .rel)
     ]
-    
+
 }

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    
+
     @Binding var includings: [String]
     @Binding var excludings: [String]
-    
+
     @State private var newIncluding = ""
     @State private var newExcluding = ""
-    
+
     var body: some View {
         Form {
             Section(header: Text("Including")) {
@@ -24,7 +24,7 @@ struct DetailEditView: View {
                 .onDelete { indices in
                     includings.remove(atOffsets: indices)
                 }
-                
+
                 HStack {
                     TextField("New", text: $newIncluding)
                     Button {
@@ -39,7 +39,7 @@ struct DetailEditView: View {
                     .disabled(newIncluding.isEmpty)
                 }
             }
-            
+
             Section(header: Text("Excluding")) {
                 ForEach(excludings, id: \.self) { excluding in
                     Text(excluding)

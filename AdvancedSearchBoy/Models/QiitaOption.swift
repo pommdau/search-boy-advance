@@ -9,15 +9,15 @@
 import Foundation
 
 struct QiitaOption: Identifiable, Codable {
-    
+
     // MARK: - Definition
-    
+
     enum Sort: String, Codable {
         case created  // 新着順
         case rel  // 関連順
         case stock  // ストック数
         case like  // いいね数順
-        
+
         var displayTitle: String {
             switch self {
             case .created:
@@ -31,59 +31,62 @@ struct QiitaOption: Identifiable, Codable {
             }
         }
     }
-    
+
     // MARK: - Properties
-    
+
     // MARK: Private Properties
-        
+
     let id: UUID
     let name: String
-    
+
     // MARK: Qiita Format
-    
+
     var titles: [String]
     var excludingTitles: [String]
-    
+
     var bodies: [String]
     var excludingBodies: [String]
-    
+
     var codes: [String]
     var excludingCodes: [String]
-    
+
     var tags: [String]
     var excludingTags: [String]
-    
+
     var users: [String]
     var excludingUsers: [String]
 
     var minStocks: Int?
     var maxStocks: Int?  // stocks:>=n が使える
-    
+
     var createdAt: Date?
     var updatedAt: Date?
-    
+
     var words: [String]
     var excludingWords: [String]
-    
+
     let sort: Sort
 
     // MARK: Computed Properties
-    
+
     var queryItems: [URLQueryItem] {
         let searchingQuery = URLQueryItem(name: "q", value: titles.createQueryValue(prefix: "title"))
         let sortQuery = URLQueryItem(name: "sort", value: sort.rawValue)
         return [searchingQuery, sortQuery]
     }
-        
+
     var url: URL? {
-        let url = URL(string: "https://qiita.com/search")!  // baseURL
+        // baseURL
+        guard let url = URL(string: "https://qiita.com/search") else {
+            return nil
+        }
         return url.queryItemsAdded(queryItems)
     }
-    
+
     // MARK: - LifeCycle
-    
+
     init(id: UUID = UUID(),
-         name: String,
+         name: String = "",
          titles: [String] = [],
          excludingTitles: [String] = [],
          bodies: [String] = [],
@@ -122,14 +125,12 @@ struct QiitaOption: Identifiable, Codable {
         self.excludingWords = includingWords
         self.sort = sort
     }
-    
+
 }
 
 extension Array where Element == String {
     // prefixの例: "title"
     func createQueryValue(prefix: String) -> String {
-        return self.reduce("", { (first, second) -> String in
-            "\(first)+\(prefix):\(second)"
-        })
+        self.reduce(into: "") { $0 += "+\(prefix):\($1)" }
     }
 }

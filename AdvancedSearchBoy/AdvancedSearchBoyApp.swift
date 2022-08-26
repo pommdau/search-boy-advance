@@ -14,6 +14,7 @@ struct AdvancedSearchBoyApp: App {
             NavigationView {
                 SearchesView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
