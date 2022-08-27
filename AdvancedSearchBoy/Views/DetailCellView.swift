@@ -9,34 +9,24 @@ import SwiftUI
 
 struct DetailCellView: View {
 
-    let name: String
-    let includingText: String
-    let excludingText: String
+    let title: String
+    let text: String
+    var rightTextColor: Color = .secondary
 
     var body: some View {
         HStack {
-            Text(name)
+            Text(title)
             Spacer()
-            VStack(alignment: .trailing) {
-                if !includingText.isEmpty {
-                    Text(includingText)
-                        .foregroundColor(.secondary)
-                }
-
-                if !excludingText.isEmpty {
-                    Text(excludingText)
-                        .foregroundColor(.red.opacity(0.8))
-                }
-            }
+            Text(text)
+                .foregroundColor(rightTextColor)
         }
     }
 }
 
 struct DetailCellView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailCellView(name: "Name",
-                       includingText: "Hoge\nFuga\nHogo",
-                       excludingText: "Piyo\nPogo\nPoem")
+        DetailCellView(title: "Name",
+                       text: "Hoge\nFuga\nHogo")
             .previewLayout(.fixed(width: 400, height: 200))
     }
 }

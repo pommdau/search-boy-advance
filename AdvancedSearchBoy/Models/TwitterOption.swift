@@ -78,6 +78,14 @@ struct TwitterOption: Identifiable, Codable {
         return queryItems
     }
 
+    var hashtagsString: String {
+        String(
+            hashtags
+                .reduce(into: "") { $0 += "#\($1)\n" }
+                .dropLast()
+        )
+    }
+
     var url: URL? {
         // baseURL
         guard let url = URL(string: "https://twitter.com/search") else {

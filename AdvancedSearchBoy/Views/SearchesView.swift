@@ -14,7 +14,7 @@ struct SearchesView: View {
     var body: some View {
         List {
             NavigationLink {
-                DetailView(option: $option)
+                //                DetailView(option: $option)
             } label: {
                 HStack {
                     Text("\(option.name)")
