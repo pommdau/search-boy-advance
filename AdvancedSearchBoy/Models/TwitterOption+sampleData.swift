@@ -14,7 +14,7 @@ extension TwitterOption {
                       type: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
-                      includingImages: false, includingVideos: false,
+                      includingImages: true, includingVideos: false,
                       minFavorites: 10, maxRetweets: 20,
                       createdSince: nil, createdUntil: nil)
     ]

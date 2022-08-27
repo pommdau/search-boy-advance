@@ -86,6 +86,16 @@ struct TwitterOption: Identifiable, Codable {
         )
     }
 
+    var filtersString: String {
+        var filtersString = ""
+        filtersString += includingImages ? "Images\n" : ""
+        filtersString += includingVideos ? "Videos\n" : ""
+        if filtersString.isEmpty {
+            return ""
+        }
+        return String(filtersString.dropLast())
+    }
+
     var url: URL? {
         // baseURL
         guard let url = URL(string: "https://twitter.com/search") else {
