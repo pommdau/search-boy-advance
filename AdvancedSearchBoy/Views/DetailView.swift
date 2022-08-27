@@ -30,11 +30,39 @@ struct DetailView: View {
                                    text: option.excludingWords.joined(separator: "\n"))
                 }
             }
-            
+
             if !option.filtersString.isEmpty {
                 Section("Filters") {
                     DetailCellView(title: "Including",
                                    text: option.filtersString)
+                }
+            }
+
+            if option.minFavorites > 0 || option.minRetweets > 0 {
+                Section("Engagements") {
+                    if option.minFavorites > 0 {
+                        DetailCellView(title: "Minimum favorites",
+                                       text: String(option.minFavorites))
+                    }
+
+                    if option.minRetweets > 0 {
+                        DetailCellView(title: "Minimum retweets",
+                                       text: String(option.minRetweets))
+                    }
+                }
+            }
+
+            if option.createdSince != nil || option.createdUntil != nil {
+                Section("Dates") {
+                    if option.createdSince != nil {
+                        DetailCellView(title: "Since",
+                                       text: "2022-08-28")
+                    }
+
+                    if option.createdUntil != nil {
+                        DetailCellView(title: "Until",
+                                       text: "2022-08-28")
+                    }
                 }
             }
         }

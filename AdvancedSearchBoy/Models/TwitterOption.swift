@@ -57,7 +57,7 @@ struct TwitterOption: Identifiable, Codable {
     // MARK: Engagement
 
     var minFavorites: Int
-    var maxRetweets: Int
+    var minRetweets: Int
 
     // MARK: Dates
 
@@ -127,7 +127,7 @@ struct TwitterOption: Identifiable, Codable {
         self.includingImages = includingImages
         self.includingVideos = includingVideos
         self.minFavorites = minFavorites
-        self.maxRetweets = maxRetweets
+        self.minRetweets = maxRetweets
         self.createdSince = createdSince
         self.createdUntil = createdUntil
     }
