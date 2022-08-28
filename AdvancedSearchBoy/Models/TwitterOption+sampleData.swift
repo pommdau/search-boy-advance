@@ -16,6 +16,6 @@ extension TwitterOption {
                       hashtags: ["hashtags1", "hashtagsA"],
                       includingImages: true, includingVideos: false,
                       minFavorites: 10, maxRetweets: 20,
-                      createdSince: nil, createdUntil: nil)
+                      createdSince: Date(), createdUntil: Date())
     ]
 }

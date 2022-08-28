@@ -25,6 +25,8 @@
 		DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
 		DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAC1C0A328B8466A00978F9C /* Algorithms */; };
 		DAE62C9928BA66D700A9C61F /* Color+twitterBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */; };
+		DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9C28BB124200A9C61F /* Date+Extension.swift */; };
+		DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterOption.swift; sourceTree = "<group>"; };
 		DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+sampleData.swift"; sourceTree = "<group>"; };
 		DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+twitterBlue.swift"; sourceTree = "<group>"; };
+		DAE62C9C28BB124200A9C61F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */,
 				DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */,
 				DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */,
+				DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */,
 				DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */,
 			);
 			path = Models;
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				DA13B61128B764DF00E468F8 /* URL+queryItem.swift */,
+				DAE62C9C28BB124200A9C61F /* Date+Extension.swift */,
 				DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */,
 			);
 			path = Extensions;
@@ -342,9 +348,11 @@
 			files = (
 				DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */,
 				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
+				DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */,
 				DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */,
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
 				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
+				DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */,
 				DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */,
 				DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */,
 				DA13B60F28B7544F00E468F8 /* QiitaOption.swift in Sources */,

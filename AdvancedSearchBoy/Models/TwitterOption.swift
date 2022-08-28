@@ -40,8 +40,8 @@ struct TwitterOption: Identifiable, Codable {
     // MARK: Private Properties
 
     let id: UUID
-    let name: String
-    let type: TweetType
+    var name: String
+    var type: TweetType
 
     // MARK: Words
 

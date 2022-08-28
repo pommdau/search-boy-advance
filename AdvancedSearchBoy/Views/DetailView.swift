@@ -54,14 +54,14 @@ struct DetailView: View {
 
             if option.createdSince != nil || option.createdUntil != nil {
                 Section("Dates") {
-                    if option.createdSince != nil {
+                    if let createdSince = option.createdSince {
                         DetailCellView(title: "Since",
-                                       text: "2022-08-28")
+                                       text: createdSince.toString())
                     }
 
-                    if option.createdUntil != nil {
+                    if let createdUntil = option.createdUntil {
                         DetailCellView(title: "Until",
-                                       text: "2022-08-28")
+                                       text: createdUntil.toString())
                     }
                 }
             }
