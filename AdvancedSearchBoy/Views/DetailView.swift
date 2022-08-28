@@ -10,6 +10,8 @@ import SwiftUI
 struct DetailView: View {
 
     @Binding var option: TwitterOption
+    @State private var data = TwitterOption.Data()
+    @State private var isPresentingEditView = false
 
     var body: some View {
         List {
@@ -69,6 +71,27 @@ struct DetailView: View {
         .navigationTitle(option.name)
         .toolbar {
             Button("Edit") {
+                isPresentingEditView = true
+                data = option.data
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView {
+                DetailEditView(data: $data)
+                    .navigationTitle(data.name)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                                option.update(from: data)
+                            }
+                        }
+                    }
             }
         }
     }

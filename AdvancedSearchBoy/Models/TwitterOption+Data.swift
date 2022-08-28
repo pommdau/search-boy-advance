@@ -11,15 +11,15 @@ extension TwitterOption {
 
     /// TwitterOptionの作成/編集時の受け渡し用のデータクラス
     struct Data {
-        var name: String
-        var type: TwitterOption.TweetType
-        var words: [String]
-        var excludingWords: [String]
-        var hashtags: [String]
-        var includingImages: Bool
-        var includingVideos: Bool
-        var minFavorites: Int
-        var minRetweets: Int
+        var name: String = ""
+        var type: TwitterOption.TweetType = .live
+        var words: [String] = []
+        var excludingWords: [String] = []
+        var hashtags: [String] = []
+        var includingImages = false
+        var includingVideos = false
+        var minFavorites: Int = 0
+        var minRetweets: Int = 0
         var createdSince: Date?
         var createdUntil: Date?
     }
