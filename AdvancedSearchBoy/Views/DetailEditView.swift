@@ -12,6 +12,11 @@ struct DetailEditView: View {
     @Binding var data: TwitterOption.Data
     @State private var newWord = ""
     @State private var newHashtag = ""
+    @State private var newExcludedWord = ""
+    @State private var newCreatedSince: Date?
+    @State private var newCreatedSinceIsValid = false
+    @State private var newCreatedUntil: Date?
+    @State private var newCreatedUntilIsValid = false
 
     var body: some View {
 
@@ -39,85 +44,137 @@ struct DetailEditView: View {
                 }
             }
 
-            Section("Hashtags") {
+            //            Section("Hashtags") {
+            //
+            //                ForEach(data.hashtags, id: \.self) { hashtag in
+            //                    Text("# \(hashtag)")
+            //                        .foregroundColor(.twitterBlue)
+            //                }
+            //                .onDelete { indices in
+            //                    data.hashtags.remove(atOffsets: indices)
+            //                }
+            //
+            //                HStack {
+            //                    Text("#")
+            //                        .foregroundColor(.twitterBlue)
+            //                        .padding(.trailing, -2)
+            //                    TextField("New Hashtag", text: $newHashtag)
+            //                        .foregroundColor(.twitterBlue)
+            //                    Button {
+            //                        withAnimation {
+            //                            data.hashtags.append(newHashtag)
+            //                            newHashtag = ""
+            //                        }
+            //                    } label: {
+            //                        Image(systemName: "plus.circle.fill")
+            //                    }
+            //                    .disabled(newHashtag.isEmpty)
+            //                }
+            //            }
+            //
+            //            Section("Excluded words") {
+            //                ForEach(data.excludingWords, id: \.self) { excludingWord in
+            //                    Text(excludingWord)
+            //                }
+            //                .onDelete { indices in
+            //                    data.excludingWords.remove(atOffsets: indices)
+            //                }
+            //
+            //                HStack {
+            //                    TextField("New Word", text: $newExcludedWord)
+            //                    Button {
+            //                        withAnimation {
+            //                            data.excludingWords.append(newExcludedWord)
+            //                            newExcludedWord = ""
+            //                        }
+            //                    } label: {
+            //                        Image(systemName: "plus.circle.fill")
+            //                    }
+            //                    .disabled(newExcludedWord.isEmpty)
+            //                }
+            //            }
 
-                ForEach(data.hashtags, id: \.self) { hashtag in
-                    Text("# \(hashtag)")
-                        .foregroundColor(.twitterBlue)
-                }
-                .onDelete { indices in
-                    data.hashtags.remove(atOffsets: indices)
+            //            Section("Order") {
+            //                Picker(selection: $data.type, label: Text("Type")) {
+            //                    Text(TwitterOption.TweetType.featured.displayTitle).tag(TwitterOption.TweetType.featured)
+            //                    Text(TwitterOption.TweetType.live.displayTitle).tag(TwitterOption.TweetType.live)
+            //                }
+            //                .pickerStyle(SegmentedPickerStyle())
+            //            }
+            //
+            //            Section("Filters") {
+            //                Toggle(isOn: $data.includingImages) {
+            //                    Text("画像を含む")
+            //                }
+            //                Toggle(isOn: $data.includingVideos) {
+            //                    Text("動画を含む")
+            //                }
+            //            }
+
+            Section("Engagements") {
+                HStack {
+                    Slider(value: $data.minFavorites,
+                           in: 0...1000,
+                           step: 10) {
+                        Text("Minimum favorites")  // For VoiceOver
+                    }
+                    Spacer()
+                    Text("\(Int(data.minFavorites)) favorites")
                 }
 
                 HStack {
-                    Text("#")
-                        .foregroundColor(.twitterBlue)
-                        .padding(.trailing, -2)
-                    TextField("New Hashtag", text: $newHashtag)
-                        .foregroundColor(.twitterBlue)
-                    Button {
-                        withAnimation {
-                            data.hashtags.append(newHashtag)
-                            newHashtag = ""
-                        }
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
+                    Slider(value: $data.minRetweets,
+                           in: 0...1000,
+                           step: 10) {
+                        Text("Minimum retweets")  // For VoiceOver
                     }
-                    .disabled(newHashtag.isEmpty)
+                    Spacer()
+                    Text("\(Int(data.minRetweets)) retweets")
                 }
             }
 
-            //                if !option.words.isEmpty {
-            //                    DetailCellView(title: "Words",
-            //                                   text: option.words.joined(separator: "\n"))
-            //                }
-            //
-            //                if !option.hashtags.isEmpty {
-            //                    DetailCellView(title: "Hashtags",
-            //                                   text: option.hashtagsString,
-            //                                   rightTextColor: .twitterBlue)
-            //                }
-            //
-            //                if !option.excludingWords.isEmpty {
-            //                    DetailCellView(title: "Excluded words",
-            //                                   text: option.excludingWords.joined(separator: "\n"))
-            //                }
+            Section("Date") {
+                HStack {
+                    Text("Since")
+                    Spacer()
+                    DatePicker("",
+                               selection: Binding<Date>(
+                                get: { self.newCreatedSince ?? Date() },
+                                set: { self.newCreatedSince = $0 }
+                               ),
+                               in: dateRange,
+                               displayedComponents: [.date]
+                    )
+                    Toggle(isOn: $newCreatedSinceIsValid) { }
+                        .labelsHidden()
+                }
 
-            //            if !option.filtersString.isEmpty {
-            //                Section("Filters") {
-            //                    DetailCellView(title: "Including",
-            //                                   text: option.filtersString)
-            //                }
-            //            }
-            //
-            //            if option.minFavorites > 0 || option.minRetweets > 0 {
-            //                Section("Engagements") {
-            //                    if option.minFavorites > 0 {
-            //                        DetailCellView(title: "Minimum favorites",
-            //                                       text: String(option.minFavorites))
-            //                    }
-            //
-            //                    if option.minRetweets > 0 {
-            //                        DetailCellView(title: "Minimum retweets",
-            //                                       text: String(option.minRetweets))
-            //                    }
-            //                }
-            //            }
-            //
-            //            if option.createdSince != nil || option.createdUntil != nil {
-            //                Section("Dates") {
-            //                    if let createdSince = option.createdSince {
-            //                        DetailCellView(title: "Since",
-            //                                       text: createdSince.toString())
-            //                    }
-            //
-            //                    if let createdUntil = option.createdUntil {
-            //                        DetailCellView(title: "Until",
-            //                                       text: createdUntil.toString())
-            //                    }
-            //                }
+                HStack {
+                    Text("Until")
+                    Spacer()
+                    DatePicker("",
+                               selection: Binding<Date>(
+                                get: { self.newCreatedUntil ?? Date() },
+                                set: { self.newCreatedUntil = $0 }
+                               ),
+                               in: dateRange,
+                               displayedComponents: [.date]
+                    )
+                    Toggle(isOn: $newCreatedUntilIsValid) { }
+                        .labelsHidden()
+                }
+            }
         }
+        .buttonStyle(.plain)
     }
+
+    private let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2006, month: 7, day: 15)  // Twitterのサービス開始日時
+        return (calendar.date(from: startComponents) ?? Date())
+            ...
+            Date()
+    }()
 }
 
 struct DetailEditView_Previews: PreviewProvider {

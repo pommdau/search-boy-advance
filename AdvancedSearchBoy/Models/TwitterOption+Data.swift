@@ -18,8 +18,8 @@ extension TwitterOption {
         var hashtags: [String] = []
         var includingImages = false
         var includingVideos = false
-        var minFavorites: Int = 0
-        var minRetweets: Int = 0
+        var minFavorites: Double = 0
+        var minRetweets: Double = 0
         var createdSince: Date?
         var createdUntil: Date?
     }
@@ -33,8 +33,8 @@ extension TwitterOption {
              hashtags: hashtags,
              includingImages: includingImages,
              includingVideos: includingVideos,
-             minFavorites: minFavorites,
-             minRetweets: minRetweets,
+             minFavorites: Double(minFavorites),
+             minRetweets: Double(minRetweets),
              createdSince: createdSince,
              createdUntil: createdUntil)
     }
@@ -47,7 +47,7 @@ extension TwitterOption {
                   excludingWords: data.excludingWords,
                   hashtags: data.hashtags,
                   includingImages: data.includingImages, includingVideos: data.includingVideos,
-                  minFavorites: data.minFavorites, maxRetweets: data.minRetweets,
+                  minFavorites: Int(data.minFavorites), maxRetweets: Int(data.minRetweets),
                   createdSince: data.createdSince, createdUntil: data.createdUntil)
     }
 
@@ -59,8 +59,8 @@ extension TwitterOption {
         self.hashtags = data.hashtags
         self.includingImages = data.includingImages
         self.includingVideos = data.includingVideos
-        self.minFavorites = data.minFavorites
-        self.minRetweets = data.minRetweets
+        self.minFavorites = Int(data.minFavorites)
+        self.minRetweets = Int(data.minRetweets)
         self.createdSince = data.createdSince
         self.createdUntil = data.createdUntil
     }
