@@ -50,7 +50,7 @@ extension TwitterOption {
                   minFavorites: data.minFavorites, maxRetweets: data.minRetweets,
                   createdSince: data.createdSince, createdUntil: data.createdUntil)
     }
-    
+
     mutating func update(from data: Data) {
         self.name = data.name
         self.type = data.type

@@ -9,52 +9,90 @@ import SwiftUI
 
 struct DetailEditView: View {
 
-    @Binding var includings: [String]
-    @Binding var excludings: [String]
-
-    @State private var newIncluding = ""
-    @State private var newExcluding = ""
+    @Binding var data: TwitterOption.Data
+    @State private var newWord = ""
 
     var body: some View {
+
         Form {
-            Section(header: Text("Including")) {
-                ForEach(includings, id: \.self) { including in
-                    Text(including)
+            Section("Words") {
+
+                ForEach(data.words, id: \.self) { word in
+                    Text(word)
                 }
                 .onDelete { indices in
-                    includings.remove(atOffsets: indices)
+                    data.words.remove(atOffsets: indices)
                 }
 
                 HStack {
-                    TextField("New", text: $newIncluding)
+                    TextField("New Word", text: $newWord)
                     Button {
                         withAnimation {
-                            includings.append(newIncluding)
-                            newIncluding = ""
+                            data.words.append(newWord)
+                            newWord = ""
                         }
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel("Add attendee")
                     }
-                    .disabled(newIncluding.isEmpty)
+                    .disabled(newWord.isEmpty)
                 }
+
+                //                if !option.words.isEmpty {
+                //                    DetailCellView(title: "Words",
+                //                                   text: option.words.joined(separator: "\n"))
+                //                }
+                //
+                //                if !option.hashtags.isEmpty {
+                //                    DetailCellView(title: "Hashtags",
+                //                                   text: option.hashtagsString,
+                //                                   rightTextColor: .twitterBlue)
+                //                }
+                //
+                //                if !option.excludingWords.isEmpty {
+                //                    DetailCellView(title: "Excluded words",
+                //                                   text: option.excludingWords.joined(separator: "\n"))
+                //                }
             }
 
-            Section(header: Text("Excluding")) {
-                ForEach(excludings, id: \.self) { excluding in
-                    Text(excluding)
-                }
-                .onDelete { indices in
-                    excludings.remove(atOffsets: indices)
-                }
-            }
+            //            if !option.filtersString.isEmpty {
+            //                Section("Filters") {
+            //                    DetailCellView(title: "Including",
+            //                                   text: option.filtersString)
+            //                }
+            //            }
+            //
+            //            if option.minFavorites > 0 || option.minRetweets > 0 {
+            //                Section("Engagements") {
+            //                    if option.minFavorites > 0 {
+            //                        DetailCellView(title: "Minimum favorites",
+            //                                       text: String(option.minFavorites))
+            //                    }
+            //
+            //                    if option.minRetweets > 0 {
+            //                        DetailCellView(title: "Minimum retweets",
+            //                                       text: String(option.minRetweets))
+            //                    }
+            //                }
+            //            }
+            //
+            //            if option.createdSince != nil || option.createdUntil != nil {
+            //                Section("Dates") {
+            //                    if let createdSince = option.createdSince {
+            //                        DetailCellView(title: "Since",
+            //                                       text: createdSince.toString())
+            //                    }
+            //
+            //                    if let createdUntil = option.createdUntil {
+            //                        DetailCellView(title: "Until",
+            //                                       text: createdUntil.toString())
+            //                    }
+            //                }
         }
     }
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(includings: .constant(["include1", "include2"]),
-                       excludings: .constant(["exclude1", "exclude2"]))
+        DetailEditView(data: .constant(TwitterOption.sampleData[0].data))
     }
 }
