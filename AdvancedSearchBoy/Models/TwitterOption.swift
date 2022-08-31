@@ -4,7 +4,6 @@
 //
 //  Created by HIROKI IKEUCHI on 2022/08/27.
 //
-//  ref: [Twitter検索オプションと高度な検索](https://www.howtonote.jp/twitter/helpful/index7.html)
 
 import Foundation
 

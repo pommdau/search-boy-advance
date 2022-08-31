@@ -112,25 +112,12 @@ struct DetailEditView: View {
             //            }
 
             Section("Engagements") {
-                HStack {
-                    Slider(value: $data.minFavorites,
-                           in: 0...1000,
-                           step: 10) {
-                        Text("Minimum favorites")  // For VoiceOver
-                    }
-                    Spacer()
-                    Text("\(Int(data.minFavorites)) favorites")
-                }
-
-                HStack {
-                    Slider(value: $data.minRetweets,
-                           in: 0...1000,
-                           step: 10) {
-                        Text("Minimum retweets")  // For VoiceOver
-                    }
-                    Spacer()
-                    Text("\(Int(data.minRetweets)) retweets")
-                }
+                EngagementsCellView(value: $data.minRetweets,
+                                    suffixLabelText: "favorites",
+                                    sliderTextForVoiceOver: "Minimum favorites")
+                EngagementsCellView(value: $data.minRetweets,
+                                    suffixLabelText: "retweets",
+                                    sliderTextForVoiceOver: "Minimum retweets")
             }
 
             Section("Date") {
