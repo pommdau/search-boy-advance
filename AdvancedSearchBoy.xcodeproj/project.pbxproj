@@ -21,6 +21,7 @@
 		DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
 		DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
 		DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */; };
+		DA17D24628BD1521002001F6 /* EngagementsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17D24528BD1521002001F6 /* EngagementsCellView.swift */; };
 		DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */; };
 		DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
 		DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAC1C0A328B8466A00978F9C /* Algorithms */; };
@@ -64,6 +65,7 @@
 		DA13B61728B7AF2500E468F8 /* DetailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellView.swift; sourceTree = "<group>"; };
 		DA13B61928B7C23100E468F8 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 		DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QiitaOption+Data.swift"; sourceTree = "<group>"; };
+		DA17D24528BD1521002001F6 /* EngagementsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementsCellView.swift; sourceTree = "<group>"; };
 		DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterOption.swift; sourceTree = "<group>"; };
 		DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+sampleData.swift"; sourceTree = "<group>"; };
 		DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+twitterBlue.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				DA13B60C28B753C900E468F8 /* DetailView.swift */,
 				DA13B61728B7AF2500E468F8 /* DetailCellView.swift */,
 				DA13B61928B7C23100E468F8 /* DetailEditView.swift */,
+				DA17D24528BD1521002001F6 /* EngagementsCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				DA13B60D28B753C900E468F8 /* DetailView.swift in Sources */,
 				DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */,
 				DA13B61428B7AB3C00E468F8 /* QiitaOption+sampleData.swift in Sources */,
+				DA17D24628BD1521002001F6 /* EngagementsCellView.swift in Sources */,
 				DAE62C9928BA66D700A9C61F /* Color+twitterBlue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

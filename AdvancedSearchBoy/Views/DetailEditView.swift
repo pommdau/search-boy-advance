@@ -134,35 +134,8 @@ struct DetailEditView: View {
             }
 
             Section("Date") {
-                HStack {
-                    Text("Since")
-                    Spacer()
-                    DatePicker("",
-                               selection: Binding<Date>(
-                                get: { self.newCreatedSince ?? Date() },
-                                set: { self.newCreatedSince = $0 }
-                               ),
-                               in: dateRange,
-                               displayedComponents: [.date]
-                    )
-                    Toggle(isOn: $newCreatedSinceIsValid) { }
-                        .labelsHidden()
-                }
-
-                HStack {
-                    Text("Until")
-                    Spacer()
-                    DatePicker("",
-                               selection: Binding<Date>(
-                                get: { self.newCreatedUntil ?? Date() },
-                                set: { self.newCreatedUntil = $0 }
-                               ),
-                               in: dateRange,
-                               displayedComponents: [.date]
-                    )
-                    Toggle(isOn: $newCreatedUntilIsValid) { }
-                        .labelsHidden()
-                }
+                createdSinceCellView()
+                createdUntilCellView()
             }
         }
         .buttonStyle(.plain)
@@ -175,6 +148,46 @@ struct DetailEditView: View {
             ...
             Date()
     }()
+}
+
+extension DetailEditView {
+
+    @ViewBuilder
+    private func createdSinceCellView() -> some View {
+        HStack {
+            Text("Since")
+            Spacer()
+            DatePicker("",
+                       selection: Binding<Date>(
+                        get: { self.newCreatedSince ?? Date() },
+                        set: { self.newCreatedSince = $0 }
+                       ),
+                       in: dateRange,
+                       displayedComponents: [.date]
+            )
+            Toggle(isOn: $newCreatedSinceIsValid) { }
+                .labelsHidden()
+        }
+    }
+
+    @ViewBuilder
+    private func createdUntilCellView() -> some View {
+        HStack {
+            Text("Until")
+            Spacer()
+            DatePicker("",
+                       selection: Binding<Date>(
+                        get: { self.newCreatedUntil ?? Date() },
+                        set: { self.newCreatedUntil = $0 }
+                       ),
+                       in: dateRange,
+                       displayedComponents: [.date]
+            )
+            Toggle(isOn: $newCreatedUntilIsValid) { }
+                .labelsHidden()
+        }
+    }
+
 }
 
 struct DetailEditView_Previews: PreviewProvider {
