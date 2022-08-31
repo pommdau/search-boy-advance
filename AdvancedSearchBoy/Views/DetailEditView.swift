@@ -110,20 +110,8 @@ struct DetailEditView: View {
             //                    Text("動画を含む")
             //                }
             //            }
-
-            Section("Engagements") {
-                EngagementsCellView(value: $data.minRetweets,
-                                    suffixLabelText: "favorites",
-                                    sliderTextForVoiceOver: "Minimum favorites")
-                EngagementsCellView(value: $data.minRetweets,
-                                    suffixLabelText: "retweets",
-                                    sliderTextForVoiceOver: "Minimum retweets")
-            }
-
-            Section("Date") {
-                createdSinceCellView()
-                createdUntilCellView()
-            }
+            engagementSection()
+            dateSection()
         }
         .buttonStyle(.plain)
     }
@@ -138,40 +126,23 @@ struct DetailEditView: View {
 }
 
 extension DetailEditView {
-
     @ViewBuilder
-    private func createdSinceCellView() -> some View {
-        HStack {
-            Text("Since")
-            Spacer()
-            DatePicker("",
-                       selection: Binding<Date>(
-                        get: { self.newCreatedSince ?? Date() },
-                        set: { self.newCreatedSince = $0 }
-                       ),
-                       in: dateRange,
-                       displayedComponents: [.date]
-            )
-            Toggle(isOn: $newCreatedSinceIsValid) { }
-                .labelsHidden()
+    private func engagementSection() -> some View {
+        Section("Engagements") {
+            EngagementsCellView(value: $data.minRetweets,
+                                suffixLabelText: "favorites",
+                                sliderTextForVoiceOver: "Minimum favorites")
+            EngagementsCellView(value: $data.minRetweets,
+                                suffixLabelText: "retweets",
+                                sliderTextForVoiceOver: "Minimum retweets")
         }
     }
 
     @ViewBuilder
-    private func createdUntilCellView() -> some View {
-        HStack {
-            Text("Until")
-            Spacer()
-            DatePicker("",
-                       selection: Binding<Date>(
-                        get: { self.newCreatedUntil ?? Date() },
-                        set: { self.newCreatedUntil = $0 }
-                       ),
-                       in: dateRange,
-                       displayedComponents: [.date]
-            )
-            Toggle(isOn: $newCreatedUntilIsValid) { }
-                .labelsHidden()
+    private func dateSection() -> some View {
+        Section("Date") {
+            DateCellView(title: "Since", date: $data.createdSince)
+            DateCellView(title: "Until", date: $data.createdUntil)
         }
     }
 
