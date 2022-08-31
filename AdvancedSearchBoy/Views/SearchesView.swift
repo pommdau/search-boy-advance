@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchesView: View {
 
-    @State var option = QiitaOption.sampleData[0]
+    @State var option = TwitterOption.sampleData[0]
 
     var body: some View {
         List {
@@ -19,11 +19,19 @@ struct SearchesView: View {
                 HStack {
                     Text("\(option.name)")
                     Spacer()
+
+                    Button {
+                        print("copy...")
+                    } label: {
+                        Image(systemName: "doc.on.doc")
+                            .foregroundColor(.blue)
+                    }
+
                     Button {
                         guard let url = option.url else {
                             return
                         }
-                        UIApplication.shared.open(url)
+                        UIApplication.shared.open(url)  // TODO: Handle macOS
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                             .foregroundColor(.blue)
