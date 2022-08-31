@@ -1,5 +1,5 @@
 //
-//  DateCellView.swift
+//  DateEditCellView.swift
 //  AdvancedSearchBoy
 //
 //  Created by HIROKI IKEUCHI on 2022/08/31.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DateCellView: View {
+struct DateEditCellView: View {
 
     let title: String
     @Binding var date: Date?
@@ -58,7 +58,7 @@ extension Date {
 
 struct DateCellView_Previews: PreviewProvider {
     static var previews: some View {
-        DateCellView(title: "Title", date: .constant(Date()))
+        DateEditCellView(title: "Title", date: .constant(Date()))
             .previewLayout(.fixed(width: 400, height: 120))
             .padding()
     }

@@ -129,20 +129,20 @@ extension DetailEditView {
     @ViewBuilder
     private func engagementSection() -> some View {
         Section("Engagements") {
-            EngagementsCellView(value: $data.minRetweets,
-                                suffixLabelText: "favorites",
-                                sliderTextForVoiceOver: "Minimum favorites")
-            EngagementsCellView(value: $data.minRetweets,
-                                suffixLabelText: "retweets",
-                                sliderTextForVoiceOver: "Minimum retweets")
+            EngagementsEditCellView(value: $data.minRetweets,
+                                    suffixLabelText: "favorites",
+                                    sliderTextForVoiceOver: "Minimum favorites")
+            EngagementsEditCellView(value: $data.minRetweets,
+                                    suffixLabelText: "retweets",
+                                    sliderTextForVoiceOver: "Minimum retweets")
         }
     }
 
     @ViewBuilder
     private func dateSection() -> some View {
         Section("Date") {
-            DateCellView(title: "Since", date: $data.createdSince)
-            DateCellView(title: "Until", date: $data.createdUntil)
+            DateEditCellView(title: "Since", date: $data.createdSince)
+            DateEditCellView(title: "Until", date: $data.createdUntil)
         }
     }
 
