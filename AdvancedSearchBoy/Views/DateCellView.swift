@@ -11,14 +11,12 @@ struct DateCellView: View {
 
     let title: String
     @Binding var date: Date?
-    @Binding var isValid: Bool
-
+    @State private var selectedDate = Date()
+    @State private var isValid = false
     private let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2006, month: 7, day: 15)  // Twitterのサービス開始日時
-        return (calendar.date(from: startComponents) ?? Date())
-            ...
-            Date()
+        (Date.twitterStartedAt ?? Date())
+        ...
+        Date()
     }()
 
     var body: some View {
@@ -26,50 +24,42 @@ struct DateCellView: View {
             Text(title)
             Spacer()
             DatePicker("",
-                       selection: Binding<Date>(
-                        get: { date ?? Date() },
-                        set: { date = $0 }
-                       ),
+                       selection: $selectedDate,
                        in: dateRange,
                        displayedComponents: [.date]
             )
+            .onChange(of: selectedDate) { _ in
+                if isValid {
+                    date = selectedDate
+                }
+            }
             Toggle(isOn: $isValid) {}
                 .labelsHidden()
-                .onChange(of: isValid) { newValue in
-                    if newValue, date == nil {
-                        date = Date()
-                    }
+                .onChange(of: isValid) { isOn in
+                    date = isOn ? selectedDate : nil
                 }
         }
-    }
-}
-
-struct DebugDateCellView: View {
-
-    @State private var date: Date?
-    @State private var isValid = false
-
-    var body: some View {
-        VStack {
-            DateCellView(title: "Ttite", date: $date, isValid: $isValid)
-            Spacer()
-            if let date = date,
-               isValid {
-                Text(date, style: .date)
-            } else {
-                Text("isEmpty")
+        .onAppear {
+            if let date = date {
+                selectedDate = date
+                isValid = true
             }
         }
     }
 }
 
+extension Date {
+    static var twitterStartedAt: Date? {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2006, month: 7, day: 15)  // Twitterのサービス開始日時
+        return calendar.date(from: startComponents)
+    }
+}
+
 struct DateCellView_Previews: PreviewProvider {
     static var previews: some View {
-
-        DebugDateCellView()
-
-        //        DateCellView(title: "TestTitle", date: .constant(Date()))
-        //            .previewLayout(.fixed(width: 400, height: 120))
-        //            .padding()
+        DateCellView(title: "Title", date: .constant(Date()))
+            .previewLayout(.fixed(width: 400, height: 120))
+            .padding()
     }
 }
