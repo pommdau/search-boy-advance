@@ -11,7 +11,7 @@ struct SearchesView: View {
 
     // MARK: - Properties
     
-    @State var options = [TwitterOption.sampleData[0], TwitterOption.sampleData[1]]
+    @Binding var options: [TwitterOption]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewOptionView = false
     @State private var newOptionData = TwitterOption.Data()
@@ -69,6 +69,7 @@ struct SearchesView: View {
                             isPresentingNewOptionView = false
                             newOptionData = TwitterOption.Data()
                         }
+                        .disabled(newOptionData.title.isEmpty)
                     }
                 }
         }
@@ -97,13 +98,14 @@ struct SearchesView: View {
         } label: {
             Image(systemName: "doc.on.doc.fill")
         }
+        .tint(.twitterBlue)
     }
 }
 
 struct SearchesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SearchesView {}
+            SearchesView(options: .constant([TwitterOption.sampleData[0], TwitterOption.sampleData[1]])) {}
         }
     }
 }

@@ -11,10 +11,7 @@ import SwiftUI
 struct AdvancedSearchBoyApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                SearchesView(saveAction: {})
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
+            Home()
         }
     }
 }
