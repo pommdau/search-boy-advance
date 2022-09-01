@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TwitterOption: Identifiable, Codable {
+struct TwitterOption: Identifiable, Codable, Equatable {
 
     // MARK: - Definition
 
@@ -117,6 +117,15 @@ struct TwitterOption: Identifiable, Codable {
         self.createdUntil = createdUntil
     }
 
+}
+
+extension TwitterOption {
+    
+    // UUIDだけ異なるオブジェクトを返す
+    var copy: TwitterOption {
+        .init(data: self.data)
+    }
+    
 }
 
 // extension Array where Element == String {

@@ -23,7 +23,34 @@ struct SearchesView: View {
         List {
             ForEach($options) { $option in
                 SearchCellView(option: $option)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            guard let index = options.firstIndex(where: { $0 == option }) else {
+                                return
+                            }
+                            withAnimation {
+                                _ = options.remove(at: index)
+                            }
+                        } label: {
+                            Image(systemName: "trash.fill")
+                        }
+                        
+                        Button {
+                            guard let index = options.firstIndex(where: { $0 == option }) else {
+                                return
+                            }
+                            withAnimation {
+                                options.insert(options[index].copy, at: index + 1)
+                            }
+                        } label: {
+                            Image(systemName: "doc.on.doc.fill")
+                        }
+                    }
             }
+            
+//            .onDelete { indices in
+//                options.remove(atOffsets: indices)
+//            }
         }
         .navigationTitle("Searches")
         .toolbar { newOptionButton() }
@@ -69,6 +96,10 @@ struct SearchesView: View {
                     }
                 }
         }
+    }
+    
+    @ViewBuilder
+    private func swipeButtons() -> some View {
     }
 }
 
