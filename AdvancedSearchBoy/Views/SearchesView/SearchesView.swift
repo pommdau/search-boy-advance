@@ -18,64 +18,47 @@ struct SearchesView: View {
     var body: some View {
         List {
             ForEach($options) { $option in
-                NavigationLink {
-                    DetailView(option: $option)
-                } label: {
-                    HStack {
-                        Text("\(option.title)")
-                        Spacer()
-
-                        Button {
-                            print("copy...")
-                        } label: {
-                            Image(systemName: "doc.on.doc")
-                                .foregroundColor(.blue)
+                SearchCellView(option: $option)
+            }
+        }
+        .navigationTitle("Searches")
+        .toolbar { newOptionButton() }
+        .sheet(isPresented: $isPresentingNewOptionView) {
+            detailEditView()
+        }
+    }
+    
+    @ViewBuilder
+    private func newOptionButton() -> some View {
+        Button {
+            isPresentingNewOptionView = true
+        } label: {
+            Image(systemName: "plus")
+        }
+        .accessibilityLabel("New Option")
+    }
+    
+    @ViewBuilder
+    private func detailEditView() -> some View {
+        NavigationView {
+            DetailEditView(data: $newOptionData)
+                .navigationTitle(newOptionData.title)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Dismiss") {
+                            isPresentingNewOptionView = false
+                            newOptionData = TwitterOption.Data()
                         }
-                        Button {
-                            guard let url = option.url else {
-                                return
-                            }
-                            UIApplication.shared.open(url)  // TODO: Handle macOS
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .foregroundColor(.blue)
-                                .padding(.trailing, 10)
+                    }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Add") {
+                            let newOption = TwitterOption(data: newOptionData)
+                            options.append(newOption)
+                            isPresentingNewOptionView = false
+                            newOptionData = TwitterOption.Data()
                         }
                     }
                 }
-            }
-        }
-        .buttonStyle(.plain)
-        .navigationTitle("Searches")
-        .toolbar {
-            Button {
-                isPresentingNewOptionView = true
-            } label: {
-                Image(systemName: "plus")
-            }
-            .accessibilityLabel("New Option")
-        }
-        .sheet(isPresented: $isPresentingNewOptionView) {
-            NavigationView {
-                DetailEditView(data: $newOptionData)
-                    .navigationTitle(newOptionData.title)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Dismiss") {
-                                isPresentingNewOptionView = false
-                                newOptionData = TwitterOption.Data()
-                            }
-                        }
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Add") {
-                                let newOption = TwitterOption(data: newOptionData)
-                                options.append(newOption)
-                                isPresentingNewOptionView = false
-                                newOptionData = TwitterOption.Data()
-                            }
-                        }
-                    }
-            }
         }
     }
 }
