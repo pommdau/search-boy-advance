@@ -9,11 +9,15 @@ import SwiftUI
 
 struct SearchesView: View {
 
+    // MARK: - Properties
+    
     @State var options = [TwitterOption.sampleData[0], TwitterOption.sampleData[1]]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewOptionView = false
     @State private var newOptionData = TwitterOption.Data()
     let saveAction: () -> Void
+    
+    // MARK: - View
 
     var body: some View {
         List {
@@ -26,7 +30,12 @@ struct SearchesView: View {
         .sheet(isPresented: $isPresentingNewOptionView) {
             detailEditView()
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
+    
+    // MARK: - ViewBuilder
     
     @ViewBuilder
     private func newOptionButton() -> some View {
