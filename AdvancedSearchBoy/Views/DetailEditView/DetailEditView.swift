@@ -32,7 +32,7 @@ extension DetailEditView {
     
     @ViewBuilder
     private func searchTitleSection() -> some View {
-        Section("Search Title") {
+        Section("Title") {
             TextField("Title", text: $data.title)
                 .font(.headline)
         }
