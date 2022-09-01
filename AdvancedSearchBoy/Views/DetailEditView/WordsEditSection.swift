@@ -9,12 +9,13 @@ import SwiftUI
 
 struct WordsEditSection: View {
     
-    let sectionTitle: String
+    let title: String
     @Binding var words: [String]
+    let newWordPlaceholder: String
     @State private var newWord = ""
     
     var body: some View {
-        Section(sectionTitle) {
+        Section(title) {
             ForEach(words, id: \.self) { word in
                 Text(word)
             }
@@ -41,8 +42,9 @@ struct WordsEditSection: View {
 struct WordsEditCellView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            WordsEditSection(sectionTitle: "Title",
-                             words: .constant(["word1", "word2"]))
+            WordsEditSection(title: "Title",
+                             words: .constant(["word1", "word2"]),
+                             newWordPlaceholder: "New words")
         }
     }
 }
