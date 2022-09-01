@@ -97,6 +97,7 @@ struct SearchesView: View {
         } label: {
             Image(systemName: "doc.on.doc.fill")
         }
+        .tint(.twitterBlue)
     }
 }
 

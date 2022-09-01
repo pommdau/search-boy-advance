@@ -18,22 +18,22 @@ struct SearchCellView: View {
             HStack {
                 Text("\(option.title)")
                 Spacer()
-                Button {
-                    print("copy...")
-                } label: {
-                    Image(systemName: "doc.on.doc")
-                        .foregroundColor(.blue)
-                }
+                                
                 Button {
                     guard let url = option.url else {
                         return
                     }
                     UIApplication.shared.open(url)  // TODO: Handle macOS
                 } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .foregroundColor(.blue)
-                        .padding(.trailing, 10)
+                    Label("Open", systemImage: "square.and.arrow.up")
+                        .labelStyle(.trailingIcon)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color.twitterBlue)
+                        .cornerRadius(4)
+                        .foregroundColor(.white)
                 }
+                .padding(.trailing, 8)
             }
             .buttonStyle(.plain)
         }
@@ -42,8 +42,11 @@ struct SearchCellView: View {
 
 struct SearchCellView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchCellView(option: .constant(TwitterOption.sampleData[0]))
-            .previewLayout(.fixed(width: 400, height: 120))
-            .padding()
+        NavigationView {
+            SearchCellView(option: .constant(TwitterOption.sampleData[0]))
+        }
+        .previewLayout(.fixed(width: 400, height: 120))
+        .padding()
+            
     }
 }

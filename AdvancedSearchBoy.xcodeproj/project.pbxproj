@@ -32,6 +32,7 @@
 		DAE62C9928BA66D700A9C61F /* Color+twitterBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */; };
 		DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9C28BB124200A9C61F /* Date+Extension.swift */; };
 		DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */; };
+		DAEE170F28C06C2200AD655E /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+twitterBlue.swift"; sourceTree = "<group>"; };
 		DAE62C9C28BB124200A9C61F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+Data.swift"; sourceTree = "<group>"; };
+		DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				DA13B61128B764DF00E468F8 /* URL+queryItem.swift */,
 				DAE62C9C28BB124200A9C61F /* Date+Extension.swift */,
 				DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */,
+				DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				DABC3F5828C0483400006838 /* SearchCellView.swift in Sources */,
 				DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */,
 				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
+				DAEE170F28C06C2200AD655E /* TrailingIconLabelStyle.swift in Sources */,
 				DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */,
 				DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */,
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
