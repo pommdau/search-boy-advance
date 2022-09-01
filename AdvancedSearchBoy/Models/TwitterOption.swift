@@ -116,6 +116,46 @@ extension TwitterOption {
         
         return excludingWordsValue.isEmpty ? nil : excludingWordsValue
     }
+    
+    var hashTagsQueryValue: String? {
+        var hashtagsValue = ""
+        for hashtag in hashtags {
+            if !hashtagsValue.isEmpty {
+                hashtagsValue += " "
+            }
+            hashtagsValue += "#\(hashtag)"
+        }
+        
+        return hashtagsValue.isEmpty ? nil : hashtagsValue
+    }
+    
+    var createdMinFavoritesQueryValue: String? {
+        guard minFavorites > 0 else {
+            return nil
+        }
+        return "min_faves:\(minFavorites)"
+    }
+    
+    var createdMinRetweetsQueryValue: String? {
+        guard minRetweets > 0 else {
+            return nil
+        }
+        return "min_retweets:\(minRetweets)"
+    }
+    
+    var createdSinceQueryValue: String? {
+        guard let createdSince = createdSince else {
+            return nil
+        }
+        return "since:\(createdSince.toString())"
+    }
+    
+    var createdUntilQueryValue: String? {
+        guard let createdUntil = createdUntil else {
+            return nil
+        }
+        return "until:\(createdUntil.toString())"
+    }
         
     var queryItems: [URLQueryItem] {
         
@@ -125,10 +165,30 @@ extension TwitterOption {
             qQueryList.append(wordsQueryValue)
         }
         
-        if let excludingWordsQueryValue = excludingWordsQueryValue,
-           !excludingWordsQueryValue.isEmpty {
+        if let excludingWordsQueryValue = excludingWordsQueryValue {
             qQueryList.append(excludingWordsQueryValue)
         }
+        
+        if let hashTagsQueryValue = hashTagsQueryValue {
+            qQueryList.append(hashTagsQueryValue)
+        }
+        
+        if let createdMinFavoritesQueryValue = createdMinFavoritesQueryValue {
+            qQueryList.append(createdMinFavoritesQueryValue)
+        }
+        
+        if let createdMinRetweetsQueryValue = createdMinRetweetsQueryValue {
+            qQueryList.append(createdMinRetweetsQueryValue)
+        }
+        
+        if let createdSinceQueryValue = createdSinceQueryValue {
+            qQueryList.append(createdSinceQueryValue)
+        }
+        
+        if let createdUntilQueryValue = createdUntilQueryValue {
+            qQueryList.append(createdUntilQueryValue)
+        }
+        
         qQueryList = qQueryList.compactMap { $0 }
         
         var queryItems = [URLQueryItem]()
