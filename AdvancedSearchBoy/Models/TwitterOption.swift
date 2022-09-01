@@ -36,30 +36,16 @@ struct TwitterOption: Identifiable, Codable {
 
     // MARK: - Properties
 
-    // MARK: Private Properties
-
     let id: UUID
-    var name: String
+    var title: String
     var type: TweetType
-
-    // MARK: Words
-
     var words: [String]
     var excludingWords: [String]
     var hashtags: [String]
-
-    // MARK: Filters
-
     var includingImages: Bool
     var includingVideos: Bool
-
-    // MARK: Engagement
-
     var minFavorites: Int
     var minRetweets: Int
-
-    // MARK: Dates
-
     var createdSince: Date?
     var createdUntil: Date?
 
@@ -105,7 +91,7 @@ struct TwitterOption: Identifiable, Codable {
 
     // MARK: - LifeCycle
     init(id: UUID = UUID(),
-         name: String = "",
+         title: String = "",
          type: TweetType = .live,
          words: [String] = [],
          excludingWords: [String] = [],
@@ -118,7 +104,7 @@ struct TwitterOption: Identifiable, Codable {
          createdUntil: Date? = nil
     ) {
         self.id = id
-        self.name = name
+        self.title = title
         self.type = type
         self.words = words
         self.excludingWords = excludingWords

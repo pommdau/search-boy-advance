@@ -68,7 +68,7 @@ struct DetailView: View {
                 }
             }
         }
-        .navigationTitle(option.name)
+        .navigationTitle(option.title)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
@@ -78,7 +78,7 @@ struct DetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
                 DetailEditView(data: $data)
-                    .navigationTitle(data.name)
+                    .navigationTitle(data.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {

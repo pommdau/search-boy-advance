@@ -22,7 +22,7 @@ struct SearchesView: View {
                     DetailView(option: $option)
                 } label: {
                     HStack {
-                        Text("\(option.name)")
+                        Text("\(option.title)")
                         Spacer()
 
                         Button {
