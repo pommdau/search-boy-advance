@@ -90,6 +90,7 @@ struct DetailView: View {
                                 isPresentingEditView = false
                                 option.update(from: data)
                             }
+                            .disabled(data.title.isEmpty)
                         }
                     }
             }

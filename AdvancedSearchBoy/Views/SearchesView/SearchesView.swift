@@ -69,6 +69,7 @@ struct SearchesView: View {
                             isPresentingNewOptionView = false
                             newOptionData = TwitterOption.Data()
                         }
+                        .disabled(newOptionData.title.isEmpty)
                     }
                 }
         }
