@@ -11,7 +11,7 @@ extension TwitterOption {
 
     /// TwitterOptionの作成/編集時の受け渡し用のデータクラス
     struct Data {
-        var title: String = ""
+        var title: String = "Title"
         var type: TwitterOption.TweetType = .live
         var words: [String] = []
         var excludingWords: [String] = []

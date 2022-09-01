@@ -10,14 +10,14 @@ import Foundation
 extension TwitterOption {
 
     static let sampleData: [TwitterOption] = [
-        TwitterOption(title: "name1",
+        TwitterOption(title: "Title1",
                       type: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
                       includingImages: true, includingVideos: false,
                       minFavorites: 10, maxRetweets: 20,
                       createdSince: Date(), createdUntil: Date()),
-        TwitterOption(title: "name2",
+        TwitterOption(title: "Title2",
                       type: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],

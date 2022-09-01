@@ -179,7 +179,7 @@
 		DA13B60B28B7538300E468F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA13B60828B752A500E468F8 /* SearchesView.swift */,
+				DABC3F5628C047F500006838 /* SearchesView */,
 				DA13B60C28B753C900E468F8 /* DetailView.swift */,
 				DA13B61728B7AF2500E468F8 /* DetailCellView.swift */,
 				DAAC1B5628C0279F00C95F38 /* DetailEditView */,
@@ -207,6 +207,14 @@
 				DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */,
 			);
 			path = DetailEditView;
+			sourceTree = "<group>";
+		};
+		DABC3F5628C047F500006838 /* SearchesView */ = {
+			isa = PBXGroup;
+			children = (
+				DA13B60828B752A500E468F8 /* SearchesView.swift */,
+			);
+			path = SearchesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

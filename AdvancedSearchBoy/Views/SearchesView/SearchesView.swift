@@ -58,6 +58,7 @@ struct SearchesView: View {
         .sheet(isPresented: $isPresentingNewOptionView) {
             NavigationView {
                 DetailEditView(data: $newOptionData)
+                    .navigationTitle(newOptionData.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Dismiss") {

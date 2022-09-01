@@ -13,6 +13,7 @@ struct DetailEditView: View {
 
     var body: some View {
         Form {
+            searchTitleSection()
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
             WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
             HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
@@ -28,6 +29,14 @@ struct DetailEditView: View {
 // MARK: - @ViewBuilder Sections
 
 extension DetailEditView {
+    
+    @ViewBuilder
+    private func searchTitleSection() -> some View {
+        Section("Search Title") {
+            TextField("Title", text: $data.title)
+                .font(.headline)
+        }
+    }
     
     @ViewBuilder
     private func filtersSection() -> some View {
