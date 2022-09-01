@@ -1,5 +1,5 @@
 //
-//  EngagementsCellView.swift
+//  EngagementsEditCellView.swift
 //  AdvancedSearchBoy
 //
 //  Created by HIROKI IKEUCHI on 2022/08/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EngagementsCellView: View {
+struct EngagementsEditCellView: View {
 
     @Binding var value: Double
     let suffixLabelText: String
@@ -28,9 +28,9 @@ struct EngagementsCellView: View {
 
 struct EngagementsCellView_Previews: PreviewProvider {
     static var previews: some View {
-        EngagementsCellView(value: .constant(10),
-                            suffixLabelText: "favorites",
-                            sliderTextForVoiceOver: "")
+        EngagementsEditCellView(value: .constant(10),
+                                suffixLabelText: "favorites",
+                                sliderTextForVoiceOver: "")
             .previewLayout(.fixed(width: 400, height: 120))
             .padding()
     }
