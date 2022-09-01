@@ -23,6 +23,7 @@ struct SearchCellView: View {
                     guard let url = option.url else {
                         return
                     }
+                    print(url.absoluteString)
                     UIApplication.shared.open(url)  // TODO: Handle macOS
                 } label: {
                     Label("Open", systemImage: "square.and.arrow.up")

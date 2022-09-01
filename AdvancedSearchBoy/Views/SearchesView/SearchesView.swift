@@ -29,7 +29,7 @@ struct SearchesView: View {
             }
         }
         .navigationTitle("Searches")
-        .toolbar { newOptionButton() }
+        .toolbar { toolbarButtons() }
         .sheet(isPresented: $isPresentingNewOptionView) {
             detailEditView()
         }
@@ -41,13 +41,22 @@ struct SearchesView: View {
     // MARK: - ViewBuilder
     
     @ViewBuilder
-    private func newOptionButton() -> some View {
-        Button {
-            isPresentingNewOptionView = true
-        } label: {
-            Image(systemName: "plus")
+    private func toolbarButtons() -> some View {
+        HStack {
+            Button {
+                isPresentingNewOptionView = true
+            } label: {
+                Image(systemName: "ellipsis")
+            }
+            .accessibilityLabel("Custom Action")
+            
+            Button {
+                isPresentingNewOptionView = true
+            } label: {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New Option")
         }
-        .accessibilityLabel("New Option")
     }
     
     @ViewBuilder
@@ -104,8 +113,10 @@ struct SearchesView: View {
 
 struct SearchesView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            SearchesView(options: .constant([TwitterOption.sampleData[0], TwitterOption.sampleData[1]])) {}
+        Group {
+            NavigationView {
+                SearchesView(options: .constant([TwitterOption.sampleData[0], TwitterOption.sampleData[1]])) {}
+            }
         }
     }
 }
