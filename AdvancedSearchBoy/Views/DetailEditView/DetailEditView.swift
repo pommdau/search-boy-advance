@@ -64,7 +64,7 @@ extension DetailEditView {
     @ViewBuilder
     private func engagementSection() -> some View {
         Section("Engagements") {
-            EngagementsEditCellView(value: $data.minRetweets,
+            EngagementsEditCellView(value: $data.minFavorites,
                                     suffixLabelText: "favorites",
                                     sliderTextForVoiceOver: "Minimum favorites")
             EngagementsEditCellView(value: $data.minRetweets,

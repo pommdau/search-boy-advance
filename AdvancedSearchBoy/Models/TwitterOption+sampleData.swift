@@ -25,4 +25,8 @@ extension TwitterOption {
                       minFavorites: 0, maxRetweets: 0,
                       createdSince: Date(), createdUntil: Date())
     ]
+    
+    static let recommendedData: [TwitterOption] = [
+        
+    ]
 }

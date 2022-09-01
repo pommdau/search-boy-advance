@@ -30,6 +30,7 @@ struct HashtagsEditSection: View {
                     .padding(.trailing, -2)
                 
                 TextField(newWordPlaceholder, text: $newWord)
+                    .foregroundColor(.twitterBlue)
                 Button {
                     withAnimation {
                         words.append(newWord)
