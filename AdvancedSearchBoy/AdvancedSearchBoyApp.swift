@@ -12,7 +12,7 @@ struct AdvancedSearchBoyApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SearchesView()
+                SearchesView(saveAction: {})
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
