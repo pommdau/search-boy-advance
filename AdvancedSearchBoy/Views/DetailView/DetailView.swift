@@ -38,12 +38,12 @@ struct DetailView: View {
                 }
             }
 
-            if !option.filtersString.isEmpty {
-                Section("Filters") {
-                    DetailCellView(title: "Including",
-                                   words: [option.filtersString])
-                }
-            }
+//            if !option.filtersString.isEmpty {
+//                Section("Filters") {
+//                    DetailCellView(title: "Including",
+//                                   words: [option.filtersString])
+//                }
+//            }
 
             if option.minFavorites > 0 || option.minRetweets > 0 {
                 Section("Engagements") {

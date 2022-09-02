@@ -14,14 +14,14 @@ extension TwitterOption {
                       type: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
-                      includingImages: true, includingVideos: false,
+                      mediaType: .images,
                       minFavorites: 10, maxRetweets: 20,
                       createdSince: Date(), createdUntil: Date()),
         TwitterOption(title: "Title2",
                       type: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
-                      includingImages: false, includingVideos: false,
+                      mediaType: .none,
                       minFavorites: 0, maxRetweets: 0,
                       createdSince: Date(), createdUntil: Date())
     ]
@@ -31,7 +31,7 @@ extension TwitterOption {
                       type: .featured,
                       words: ["ネコ", "かわいい"],
                       excludingWords: ["犬"],
-                      includingImages: true,
+                      mediaType: .images,
                       minFavorites: 100, maxRetweets: 100)
     ]
 }

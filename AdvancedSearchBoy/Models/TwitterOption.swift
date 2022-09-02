@@ -33,6 +33,41 @@ struct TwitterOption: Identifiable, Codable, Equatable {
             }
         }
     }
+    
+    enum MediaType: String, Codable, CaseIterable, Identifiable {
+        case none
+        case images
+        case videos
+        case gifs
+        
+        var id: Self { self }
+
+        var displayTitle: String {
+            switch self {
+            case .none:
+                return "Not specified"
+            case .images:
+                return "Image"
+            case .videos:
+                return "Video"
+            case .gifs:
+                return "GIF"
+            }
+        }
+
+        var queryValue: String? {
+            switch self {
+            case .none:
+                return nil
+            case .images:
+                return "filter:images"
+            case .videos:
+                return "filter:videos"
+            case .gifs:
+                return "card_name:animated_gif"
+            }
+        }
+    }
 
     // MARK: - Properties
 
@@ -42,8 +77,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     var words: [String]
     var excludingWords: [String]
     var hashtags: [String]
-    var includingImages: Bool
-    var includingVideos: Bool
+    var mediaType: MediaType
     var minFavorites: Int
     var minRetweets: Int
     var createdSince: Date?
@@ -56,8 +90,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
          words: [String] = [],
          excludingWords: [String] = [],
          hashtags: [String] = [],
-         includingImages: Bool = false,
-         includingVideos: Bool = false,
+         mediaType: MediaType = .none,
          minFavorites: Int = 0,
          maxRetweets: Int = 0,
          createdSince: Date? = nil,
@@ -69,8 +102,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
         self.words = words
         self.excludingWords = excludingWords
         self.hashtags = hashtags
-        self.includingImages = includingImages
-        self.includingVideos = includingVideos
+        self.mediaType = mediaType
         self.minFavorites = minFavorites
         self.minRetweets = maxRetweets
         self.createdSince = createdSince
@@ -172,7 +204,7 @@ extension TwitterOption {
         if let hashTagsQueryValue = hashTagsQueryValue {
             qQueryList.append(hashTagsQueryValue)
         }
-        
+                
         if let createdMinFavoritesQueryValue = createdMinFavoritesQueryValue {
             qQueryList.append(createdMinFavoritesQueryValue)
         }
@@ -224,16 +256,6 @@ extension TwitterOption {
                 .reduce(into: "") { $0 += "#\($1)\n" }
                 .dropLast()
         )
-    }
-
-    var filtersString: String {
-        var filtersString = ""
-        filtersString += includingImages ? "Images\n" : ""
-        filtersString += includingVideos ? "Videos\n" : ""
-        if filtersString.isEmpty {
-            return ""
-        }
-        return String(filtersString.dropLast())
     }
 }
 

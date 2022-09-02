@@ -15,9 +15,9 @@ struct DetailEditView: View {
         Form {
             searchTitleSection()
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
-            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
-            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
-            filtersSection()
+//            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
+//            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
+            mediaSection()
             orderSection()
             engagementSection()
             dateSection()
@@ -39,13 +39,12 @@ extension DetailEditView {
     }
     
     @ViewBuilder
-    private func filtersSection() -> some View {
-        Section("Filters") {
-            Toggle(isOn: $data.includingImages) {
-                Text("画像を含む")
-            }
-            Toggle(isOn: $data.includingVideos) {
-                Text("動画を含む")
+    private func mediaSection() -> some View {
+        Section("Medias") {
+            Picker(selection: $data.mediaType, label: Text("Type")) {
+                ForEach(TwitterOption.MediaType.allCases) { mediaType in
+                    Text(mediaType.displayTitle)
+                }
             }
         }
     }
