@@ -183,10 +183,8 @@
 		DA13B60A28B7538000E468F8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA9E4ACD28C2309B00C6189D /* Qiita */,
 				DA9E4ACB28C22EC900C6189D /* Word.swift */,
-				DA13B60E28B7544F00E468F8 /* QiitaOption.swift */,
-				DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */,
-				DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */,
 				DAEE171128C0762E00AD655E /* TwitterOptionStore.swift */,
 				DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */,
 				DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */,
@@ -217,6 +215,16 @@
 				DAD433DB28C088CF000656C7 /* String+containsWhitespace.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA9E4ACD28C2309B00C6189D /* Qiita */ = {
+			isa = PBXGroup;
+			children = (
+				DA13B60E28B7544F00E468F8 /* QiitaOption.swift */,
+				DA13B61B28B7D71600E468F8 /* QiitaOption+Data.swift */,
+				DA13B61328B7AB3C00E468F8 /* QiitaOption+sampleData.swift */,
+			);
+			path = Qiita;
 			sourceTree = "<group>";
 		};
 		DAAC1B5628C0279F00C95F38 /* DetailEditView */ = {

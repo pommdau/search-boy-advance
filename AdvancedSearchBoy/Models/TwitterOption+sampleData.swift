@@ -11,14 +11,14 @@ extension TwitterOption {
 
     static let sampleData: [TwitterOption] = [
         TwitterOption(title: "Title1",
-                      type: .live,
+                      sortedType: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
                       mediaType: .images,
                       minFavorites: 10, maxRetweets: 20,
                       createdSince: Date(), createdUntil: Date()),
         TwitterOption(title: "Title2",
-                      type: .live,
+                      sortedType: .live,
                       words: ["word1", "wordA"], excludingWords: ["excludingWords1", "excludingWordsA"],
                       hashtags: ["hashtags1", "hashtagsA"],
                       mediaType: .none,
@@ -28,7 +28,7 @@ extension TwitterOption {
     
     static let recommendedData: [TwitterOption] = [        
         TwitterOption(title: "ネコ",
-                      type: .featured,
+                      sortedType: .featured,
                       words: ["ネコ", "かわいい"],
                       excludingWords: ["犬"],
                       mediaType: .images,

@@ -11,7 +11,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
 
     // MARK: - Definition
 
-    enum TweetType: String, Codable, CaseIterable, Identifiable {
+    enum SortedType: String, Codable, CaseIterable, Identifiable {
         case featured // 話題のツイート
         case live  // 最新
         
@@ -75,7 +75,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
 
     let id: UUID
     var title: String
-    var type: TweetType
+    var sortedType: SortedType
     var words: [String]
     var excludingWords: [String]
     var hashtags: [String]
@@ -88,7 +88,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     // MARK: - LifeCycle
     init(id: UUID = UUID(),
          title: String = "",
-         type: TweetType = .live,
+         sortedType: SortedType = .live,
          words: [String] = [],
          excludingWords: [String] = [],
          hashtags: [String] = [],
@@ -100,7 +100,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     ) {
         self.id = id
         self.title = title
-        self.type = type
+        self.sortedType = sortedType
         self.words = words
         self.excludingWords = excludingWords
         self.hashtags = hashtags
@@ -227,7 +227,7 @@ extension TwitterOption {
         
         var queryItems = [URLQueryItem]()
         queryItems.append(URLQueryItem(name: "q", value: qQueryList.joined(separator: " ")))
-        if let typeQueryValue = type.queryValue {
+        if let typeQueryValue = sortedType.queryValue {
             queryItems.append(URLQueryItem(name: "f", value: typeQueryValue))
         }
 

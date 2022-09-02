@@ -12,7 +12,7 @@ extension TwitterOption {
     /// TwitterOptionの作成/編集時の受け渡し用のデータクラス
     struct Data {
         var title: String = ""
-        var type: TwitterOption.TweetType = .live
+        var sortedType: TwitterOption.SortedType = .live
         var words: [String] = []
         var excludingWords: [String] = []
         var hashtags: [String] = []
@@ -26,7 +26,7 @@ extension TwitterOption {
     /// QiitaOption -> QiitaOption.Data
     var data: Data {
         Data(title: title,
-             type: type,
+             sortedType: sortedType,
              words: words,
              excludingWords: excludingWords,
              hashtags: hashtags,
@@ -40,7 +40,7 @@ extension TwitterOption {
     /// QiitaOption.Data -> QiitaOption
     init(data: Data) {
         self.init(title: data.title,
-                  type: data.type,
+                  sortedType: data.sortedType,
                   words: data.words,
                   excludingWords: data.excludingWords,
                   hashtags: data.hashtags,
@@ -51,7 +51,7 @@ extension TwitterOption {
 
     mutating func update(from data: Data) {
         self.title = data.title
-        self.type = data.type
+        self.sortedType = data.sortedType
         self.words = data.words
         self.excludingWords = data.excludingWords
         self.hashtags = data.hashtags

@@ -13,14 +13,6 @@ struct DetailView: View {
     @State private var data = TwitterOption.Data()
     @State private var isPresentingEditView = false
     
-    @ViewBuilder
-    private func words() -> some View {
-        if !option.words.isEmpty {
-            DetailCellView(title: "Words",
-                           words: option.words)
-        }
-    }
-
     var body: some View {
         List {
             Section("Words") {
@@ -99,6 +91,14 @@ struct DetailView: View {
                         }
                     }
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func words() -> some View {
+        if !option.words.isEmpty {
+            DetailCellView(title: "Words",
+                           words: option.words)
         }
     }
 }

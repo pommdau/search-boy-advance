@@ -52,9 +52,9 @@ extension DetailEditView {
     @ViewBuilder
     private func orderSection() -> some View {
         Section("Order") {
-            Picker(selection: $data.type, label: Text("Type")) {
-                Text(TwitterOption.TweetType.featured.name).tag(TwitterOption.TweetType.featured)
-                Text(TwitterOption.TweetType.live.name).tag(TwitterOption.TweetType.live)
+            Picker(selection: $data.sortedType, label: Text("Type")) {
+                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
+                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
             }
             .pickerStyle(SegmentedPickerStyle())
         }
