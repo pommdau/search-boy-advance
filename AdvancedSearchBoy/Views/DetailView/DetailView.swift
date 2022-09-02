@@ -12,14 +12,19 @@ struct DetailView: View {
     @Binding var option: TwitterOption
     @State private var data = TwitterOption.Data()
     @State private var isPresentingEditView = false
+    
+    @ViewBuilder
+    private func words() -> some View {
+        if !option.words.isEmpty {
+            DetailCellView(title: "Words",
+                           words: option.words)
+        }
+    }
 
     var body: some View {
         List {
             Section("Words") {
-                if !option.words.isEmpty {
-                    DetailCellView(title: "Words",
-                                   words: option.words)
-                }
+                words()
 
                 if !option.hashtags.isEmpty {
                     DetailCellView(title: "Hashtags",

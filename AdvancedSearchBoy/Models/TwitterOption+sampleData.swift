@@ -26,7 +26,12 @@ extension TwitterOption {
                       createdSince: Date(), createdUntil: Date())
     ]
     
-    static let recommendedData: [TwitterOption] = [
-        
+    static let recommendedData: [TwitterOption] = [        
+        TwitterOption(title: "ネコ",
+                      type: .featured,
+                      words: ["ネコ", "かわいい"],
+                      excludingWords: ["犬"],
+                      includingImages: true,
+                      minFavorites: 100, maxRetweets: 100)
     ]
 }
