@@ -11,11 +11,13 @@ struct TwitterOption: Identifiable, Codable, Equatable {
 
     // MARK: - Definition
 
-    enum TweetType: String, Codable {
+    enum TweetType: String, Codable, CaseIterable, Identifiable {
         case featured // 話題のツイート
         case live  // 最新
+        
+        var id: Self { self }
 
-        var displayTitle: String {
+        var name: String {
             switch self {
             case .featured:
                 return "話題のツイート"
@@ -42,7 +44,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
         
         var id: Self { self }
 
-        var displayTitle: String {
+        var name: String {
             switch self {
             case .none:
                 return "Not specified"

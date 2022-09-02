@@ -43,7 +43,7 @@ extension DetailEditView {
         Section("Medias") {
             Picker(selection: $data.mediaType, label: Text("Type")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
-                    Text(mediaType.displayTitle)
+                    Text(mediaType.name)
                 }
             }
         }
@@ -53,8 +53,8 @@ extension DetailEditView {
     private func orderSection() -> some View {
         Section("Order") {
             Picker(selection: $data.type, label: Text("Type")) {
-                Text(TwitterOption.TweetType.featured.displayTitle).tag(TwitterOption.TweetType.featured)
-                Text(TwitterOption.TweetType.live.displayTitle).tag(TwitterOption.TweetType.live)
+                Text(TwitterOption.TweetType.featured.name).tag(TwitterOption.TweetType.featured)
+                Text(TwitterOption.TweetType.live.name).tag(TwitterOption.TweetType.live)
             }
             .pickerStyle(SegmentedPickerStyle())
         }
