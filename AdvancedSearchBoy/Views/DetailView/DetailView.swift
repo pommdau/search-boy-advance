@@ -18,25 +18,25 @@ struct DetailView: View {
             Section("Words") {
                 if !option.words.isEmpty {
                     DetailCellView(title: "Words",
-                                   text: option.words.joined(separator: "\n"))
+                                   words: option.words)
                 }
 
                 if !option.hashtags.isEmpty {
                     DetailCellView(title: "Hashtags",
-                                   text: option.hashtagsString,
+                                   words: option.hashtags.map { "#\($0)" },
                                    rightTextColor: .twitterBlue)
                 }
 
                 if !option.excludingWords.isEmpty {
                     DetailCellView(title: "Excluded words",
-                                   text: option.excludingWords.joined(separator: "\n"))
+                                   words: option.excludingWords)
                 }
             }
 
             if !option.filtersString.isEmpty {
                 Section("Filters") {
                     DetailCellView(title: "Including",
-                                   text: option.filtersString)
+                                   words: [option.filtersString])
                 }
             }
 
@@ -44,12 +44,12 @@ struct DetailView: View {
                 Section("Engagements") {
                     if option.minFavorites > 0 {
                         DetailCellView(title: "Minimum favorites",
-                                       text: String(option.minFavorites))
+                                       words: [String(option.minFavorites)])
                     }
 
                     if option.minRetweets > 0 {
                         DetailCellView(title: "Minimum retweets",
-                                       text: String(option.minRetweets))
+                                       words: [String(option.minRetweets)])
                     }
                 }
             }
@@ -58,12 +58,12 @@ struct DetailView: View {
                 Section("Dates") {
                     if let createdSince = option.createdSince {
                         DetailCellView(title: "Since",
-                                       text: createdSince.toString())
+                                       words: [createdSince.toString()])
                     }
 
                     if let createdUntil = option.createdUntil {
                         DetailCellView(title: "Until",
-                                       text: createdUntil.toString())
+                                       words: [createdUntil.toString()])
                     }
                 }
             }
