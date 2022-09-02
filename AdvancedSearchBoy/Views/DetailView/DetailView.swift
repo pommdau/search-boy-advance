@@ -20,7 +20,7 @@ struct DetailView: View {
 
                 if !option.hashtags.isEmpty {
                     DetailCellView(title: "Hashtags",
-                                   words: option.hashtags.map { "#\($0)" },
+                                   words: option.hashtags,
                                    rightTextColor: .twitterBlue)
                 }
 
@@ -41,12 +41,12 @@ struct DetailView: View {
                 Section("Engagements") {
                     if option.minFavorites > 0 {
                         DetailCellView(title: "Minimum favorites",
-                                       words: [String(option.minFavorites)])
+                                       words: [Word(value: String(option.minFavorites))])
                     }
 
                     if option.minRetweets > 0 {
                         DetailCellView(title: "Minimum retweets",
-                                       words: [String(option.minRetweets)])
+                                       words: [Word(value: String(option.minRetweets))])
                     }
                 }
             }
@@ -55,12 +55,12 @@ struct DetailView: View {
                 Section("Dates") {
                     if let createdSince = option.createdSince {
                         DetailCellView(title: "Since",
-                                       words: [createdSince.toString()])
+                                       words: [Word(value: createdSince.toString())])
                     }
 
                     if let createdUntil = option.createdUntil {
                         DetailCellView(title: "Until",
-                                       words: [createdUntil.toString()])
+                                       words: [Word(value: createdUntil.toString())])
                     }
                 }
             }

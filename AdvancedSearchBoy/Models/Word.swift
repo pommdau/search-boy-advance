@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Word: Identifiable, Codable {
+struct Word: Identifiable, Codable, Equatable {
     let id: UUID
     var value: String
     

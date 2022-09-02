@@ -13,9 +13,9 @@ extension TwitterOption {
     struct Data {
         var title: String = ""
         var sortedType: TwitterOption.SortedType = .live
-        var words: [String] = []
-        var excludingWords: [String] = []
-        var hashtags: [String] = []
+        var words: [Word] = []
+        var excludingWords: [Word] = []
+        var hashtags: [Word] = []
         var mediaType: MediaType = .none
         var minFavorites: Double = 0
         var minRetweets: Double = 0

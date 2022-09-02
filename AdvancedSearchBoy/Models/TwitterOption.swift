@@ -76,9 +76,9 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     let id: UUID
     var title: String
     var sortedType: SortedType
-    var words: [String]
-    var excludingWords: [String]
-    var hashtags: [String]
+    var words: [Word]
+    var excludingWords: [Word]
+    var hashtags: [Word]
     var mediaType: MediaType
     var minFavorites: Int
     var minRetweets: Int
@@ -89,9 +89,9 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     init(id: UUID = UUID(),
          title: String = "",
          sortedType: SortedType = .live,
-         words: [String] = [],
-         excludingWords: [String] = [],
-         hashtags: [String] = [],
+         words: [Word] = [],
+         excludingWords: [Word] = [],
+         hashtags: [Word] = [],
          mediaType: MediaType = .none,
          minFavorites: Int = 0,
          maxRetweets: Int = 0,
@@ -124,10 +124,10 @@ extension TwitterOption {
                 wordsValue += " "
             }
             
-            if word.containsWhitespace {
+            if word.value.containsWhitespace {
                 wordsValue += "\"\(word)\""
             } else {
-                wordsValue += word
+                wordsValue += word.value
             }
         }
         
@@ -141,7 +141,7 @@ extension TwitterOption {
                 excludingWordsValue += " "
             }
             
-            if excludingWord.containsWhitespace {
+            if excludingWord.value.containsWhitespace {
                 excludingWordsValue += "-\"\(excludingWord)\""
             } else {
                 excludingWordsValue += "-\(excludingWord)"

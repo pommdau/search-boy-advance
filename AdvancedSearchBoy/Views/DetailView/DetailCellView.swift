@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailCellView: View {
 
     let title: String
-    let words: [String]
+    let words: [Word]
     var rightTextColor: Color = .secondary
 
     var body: some View {
@@ -18,8 +18,8 @@ struct DetailCellView: View {
             Text(title)
             Spacer()
             VStack(alignment: .trailing) {
-                ForEach(words, id: \.self) { word in
-                    Text(word)
+                ForEach(words) { word in
+                    Text(word.value)
                 }
             }
             .foregroundColor(rightTextColor)
@@ -30,7 +30,7 @@ struct DetailCellView: View {
 struct DetailCellView_Previews: PreviewProvider {
     static var previews: some View {
         DetailCellView(title: "Name",
-                       words: ["Hogeeee", "Fuga", "Hogo"])
+                       words: [Word(value: "Hoge"), Word(value: "Pogoooooo"), Word(value: "Fuga")])
             .previewLayout(.fixed(width: 400, height: 200))
     }
 }
