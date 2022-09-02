@@ -21,7 +21,7 @@ struct DetailView: View {
                 if !option.hashtags.isEmpty {
                     DetailCellView(title: "Hashtags",
                                    words: option.hashtags,
-                                   rightTextColor: .twitterBlue)
+                                   isHashtags: true)
                 }
 
                 if !option.excludingWords.isEmpty {

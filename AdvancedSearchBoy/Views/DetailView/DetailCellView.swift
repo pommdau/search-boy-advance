@@ -11,7 +11,7 @@ struct DetailCellView: View {
 
     let title: String
     let words: [Word]
-    var rightTextColor: Color = .secondary
+    var isHashtags = false
 
     var body: some View {
         HStack {
@@ -19,10 +19,14 @@ struct DetailCellView: View {
             Spacer()
             VStack(alignment: .trailing) {
                 ForEach(words) { word in
-                    Text(word.value)
+                    if isHashtags {
+                        Text("# \(word.value)")
+                    } else {
+                        Text(word.value)
+                    }
                 }
+                .foregroundColor(isHashtags ? .twitterBlue : .label)
             }
-            .foregroundColor(rightTextColor)
         }
     }
 }

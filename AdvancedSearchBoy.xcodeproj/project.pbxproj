@@ -25,6 +25,7 @@
 		DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */; };
 		DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
 		DA9E4ACC28C22EC900C6189D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E4ACB28C22EC900C6189D /* Word.swift */; };
+		DA9E4ACF28C237AC00C6189D /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */; };
 		DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */; };
 		DAAC1B5A28C0286A00C95F38 /* WordsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5928C0286A00C95F38 /* WordsEditSection.swift */; };
 		DAAC1B5C28C0359000C95F38 /* HashtagsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */; };
@@ -80,6 +81,7 @@
 		DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterOption.swift; sourceTree = "<group>"; };
 		DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+sampleData.swift"; sourceTree = "<group>"; };
 		DA9E4ACB28C22EC900C6189D /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIColor.swift"; sourceTree = "<group>"; };
 		DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEditCellView.swift; sourceTree = "<group>"; };
 		DAAC1B5928C0286A00C95F38 /* WordsEditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsEditSection.swift; sourceTree = "<group>"; };
 		DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsEditSection.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				DA13B61128B764DF00E468F8 /* URL+queryItem.swift */,
 				DAE62C9C28BB124200A9C61F /* Date+Extension.swift */,
 				DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */,
+				DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */,
 				DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */,
 				DAD433DB28C088CF000656C7 /* String+containsWhitespace.swift */,
 			);
@@ -428,6 +431,7 @@
 				DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */,
 				DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */,
 				DA9E4ACC28C22EC900C6189D /* Word.swift in Sources */,
+				DA9E4ACF28C237AC00C6189D /* Color+UIColor.swift in Sources */,
 				DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */,
 				DA13B61C28B7D71600E468F8 /* QiitaOption+Data.swift in Sources */,
 				DAEE171628C07A0A00AD655E /* Home.swift in Sources */,
