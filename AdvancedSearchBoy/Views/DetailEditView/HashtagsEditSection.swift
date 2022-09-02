@@ -16,9 +16,13 @@ struct HashtagsEditSection: View {
     
     var body: some View {
         Section(title) {
-            ForEach(words) { word in
-                Text("# \(word.value)")
-                    .foregroundColor(.twitterBlue)
+            ForEach($words) { $word in
+                HStack {
+                    Text("#")
+                        .padding(.trailing, -2)
+                    TextField("", text: $word.value)
+                }
+                .foregroundColor(.twitterBlue)
             }
             .onDelete { indices in
                 words.remove(atOffsets: indices)
@@ -28,7 +32,6 @@ struct HashtagsEditSection: View {
                 Text("#")
                     .foregroundColor(.twitterBlue)
                     .padding(.trailing, -2)
-                
                 TextField(newWordPlaceholder, text: $newWord.value)
                     .foregroundColor(.twitterBlue)
                 Button {
