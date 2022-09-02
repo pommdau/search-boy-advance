@@ -15,8 +15,8 @@ struct DetailEditView: View {
         Form {
             searchTitleSection()
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
-//            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
-//            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
+            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
+            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
             mediaSection()
             orderSection()
             engagementSection()

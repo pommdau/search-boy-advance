@@ -16,8 +16,8 @@ struct WordsEditSection: View {
     
     var body: some View {
         Section(title) {
-            ForEach(words, id: \.self) { word in
-                Text(word)
+            ForEach($words, id: \.self) { $word in
+                TextField("", text: $word)
             }
             .onDelete { indices in
                 words.remove(atOffsets: indices)
