@@ -44,7 +44,7 @@ struct SearchesView: View {
     private func toolbarButtons() -> some View {
         HStack {
             Button {
-                isPresentingNewOptionView = true
+                options.append(TwitterOption.recommendedData[0])
             } label: {
                 Image(systemName: "ellipsis")
             }

@@ -18,7 +18,7 @@ struct QiitaOption: Identifiable, Codable {
         case stock  // ストック数
         case like  // いいね数順
 
-        var displayTitle: String {
+        var name: String {
             switch self {
             case .created:
                 return "新着順"

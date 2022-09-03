@@ -11,11 +11,13 @@ struct TwitterOption: Identifiable, Codable, Equatable {
 
     // MARK: - Definition
 
-    enum TweetType: String, Codable {
+    enum SortedType: String, Codable, CaseIterable, Identifiable {
         case featured // 話題のツイート
         case live  // 最新
+        
+        var id: Self { self }
 
-        var displayTitle: String {
+        var name: String {
             switch self {
             case .featured:
                 return "話題のツイート"
@@ -33,17 +35,51 @@ struct TwitterOption: Identifiable, Codable, Equatable {
             }
         }
     }
+    
+    enum MediaType: String, Codable, CaseIterable, Identifiable {
+        case none
+        case images
+        case videos
+        case gifs
+        
+        var id: Self { self }
+
+        var name: String {
+            switch self {
+            case .none:
+                return "Not specified"
+            case .images:
+                return "Image"
+            case .videos:
+                return "Video"
+            case .gifs:
+                return "GIF"
+            }
+        }
+
+        var queryValue: String? {
+            switch self {
+            case .none:
+                return nil
+            case .images:
+                return "filter:images"
+            case .videos:
+                return "filter:videos"
+            case .gifs:
+                return "card_name:animated_gif"
+            }
+        }
+    }
 
     // MARK: - Properties
 
     let id: UUID
     var title: String
-    var type: TweetType
-    var words: [String]
-    var excludingWords: [String]
-    var hashtags: [String]
-    var includingImages: Bool
-    var includingVideos: Bool
+    var sortedType: SortedType
+    var words: [Word]
+    var excludingWords: [Word]
+    var hashtags: [Word]
+    var mediaType: MediaType
     var minFavorites: Int
     var minRetweets: Int
     var createdSince: Date?
@@ -52,12 +88,11 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     // MARK: - LifeCycle
     init(id: UUID = UUID(),
          title: String = "",
-         type: TweetType = .live,
-         words: [String] = [],
-         excludingWords: [String] = [],
-         hashtags: [String] = [],
-         includingImages: Bool = false,
-         includingVideos: Bool = false,
+         sortedType: SortedType = .live,
+         words: [Word] = [],
+         excludingWords: [Word] = [],
+         hashtags: [Word] = [],
+         mediaType: MediaType = .none,
          minFavorites: Int = 0,
          maxRetweets: Int = 0,
          createdSince: Date? = nil,
@@ -65,12 +100,11 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     ) {
         self.id = id
         self.title = title
-        self.type = type
+        self.sortedType = sortedType
         self.words = words
         self.excludingWords = excludingWords
         self.hashtags = hashtags
-        self.includingImages = includingImages
-        self.includingVideos = includingVideos
+        self.mediaType = mediaType
         self.minFavorites = minFavorites
         self.minRetweets = maxRetweets
         self.createdSince = createdSince
@@ -90,10 +124,10 @@ extension TwitterOption {
                 wordsValue += " "
             }
             
-            if word.containsWhitespace {
+            if word.value.containsWhitespace {
                 wordsValue += "\"\(word)\""
             } else {
-                wordsValue += word
+                wordsValue += word.value
             }
         }
         
@@ -107,7 +141,7 @@ extension TwitterOption {
                 excludingWordsValue += " "
             }
             
-            if excludingWord.containsWhitespace {
+            if excludingWord.value.containsWhitespace {
                 excludingWordsValue += "-\"\(excludingWord)\""
             } else {
                 excludingWordsValue += "-\(excludingWord)"
@@ -172,7 +206,7 @@ extension TwitterOption {
         if let hashTagsQueryValue = hashTagsQueryValue {
             qQueryList.append(hashTagsQueryValue)
         }
-        
+                
         if let createdMinFavoritesQueryValue = createdMinFavoritesQueryValue {
             qQueryList.append(createdMinFavoritesQueryValue)
         }
@@ -193,7 +227,7 @@ extension TwitterOption {
         
         var queryItems = [URLQueryItem]()
         queryItems.append(URLQueryItem(name: "q", value: qQueryList.joined(separator: " ")))
-        if let typeQueryValue = type.queryValue {
+        if let typeQueryValue = sortedType.queryValue {
             queryItems.append(URLQueryItem(name: "f", value: typeQueryValue))
         }
 
@@ -224,16 +258,6 @@ extension TwitterOption {
                 .reduce(into: "") { $0 += "#\($1)\n" }
                 .dropLast()
         )
-    }
-
-    var filtersString: String {
-        var filtersString = ""
-        filtersString += includingImages ? "Images\n" : ""
-        filtersString += includingVideos ? "Videos\n" : ""
-        if filtersString.isEmpty {
-            return ""
-        }
-        return String(filtersString.dropLast())
     }
 }
 

@@ -12,31 +12,21 @@ struct DetailView: View {
     @Binding var option: TwitterOption
     @State private var data = TwitterOption.Data()
     @State private var isPresentingEditView = false
-
+    
     var body: some View {
         List {
             Section("Words") {
-                if !option.words.isEmpty {
-                    DetailCellView(title: "Words",
-                                   text: option.words.joined(separator: "\n"))
-                }
+                words()
 
                 if !option.hashtags.isEmpty {
                     DetailCellView(title: "Hashtags",
-                                   text: option.hashtagsString,
-                                   rightTextColor: .twitterBlue)
+                                   words: option.hashtags,
+                                   isHashtags: true)
                 }
 
                 if !option.excludingWords.isEmpty {
                     DetailCellView(title: "Excluded words",
-                                   text: option.excludingWords.joined(separator: "\n"))
-                }
-            }
-
-            if !option.filtersString.isEmpty {
-                Section("Filters") {
-                    DetailCellView(title: "Including",
-                                   text: option.filtersString)
+                                   words: option.excludingWords)
                 }
             }
 
@@ -44,12 +34,12 @@ struct DetailView: View {
                 Section("Engagements") {
                     if option.minFavorites > 0 {
                         DetailCellView(title: "Minimum favorites",
-                                       text: String(option.minFavorites))
+                                       words: [Word(value: String(option.minFavorites))])
                     }
 
                     if option.minRetweets > 0 {
                         DetailCellView(title: "Minimum retweets",
-                                       text: String(option.minRetweets))
+                                       words: [Word(value: String(option.minRetweets))])
                     }
                 }
             }
@@ -58,12 +48,12 @@ struct DetailView: View {
                 Section("Dates") {
                     if let createdSince = option.createdSince {
                         DetailCellView(title: "Since",
-                                       text: createdSince.toString())
+                                       words: [Word(value: createdSince.toString())])
                     }
 
                     if let createdUntil = option.createdUntil {
                         DetailCellView(title: "Until",
-                                       text: createdUntil.toString())
+                                       words: [Word(value: createdUntil.toString())])
                     }
                 }
             }
@@ -78,7 +68,6 @@ struct DetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
                 DetailEditView(data: $data)
-                    .navigationTitle(data.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -94,6 +83,14 @@ struct DetailView: View {
                         }
                     }
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func words() -> some View {
+        if !option.words.isEmpty {
+            DetailCellView(title: "Words",
+                           words: option.words)
         }
     }
 }

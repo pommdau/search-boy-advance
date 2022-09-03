@@ -10,15 +10,23 @@ import SwiftUI
 struct DetailCellView: View {
 
     let title: String
-    let text: String
-    var rightTextColor: Color = .secondary
+    let words: [Word]
+    var isHashtags = false
 
     var body: some View {
         HStack {
             Text(title)
             Spacer()
-            Text(text)
-                .foregroundColor(rightTextColor)
+            VStack(alignment: .trailing) {
+                ForEach(words) { word in
+                    if isHashtags {
+                        Text("# \(word.value)")
+                    } else {
+                        Text(word.value)
+                    }
+                }
+                .foregroundColor(isHashtags ? .twitterBlue : .label)
+            }
         }
     }
 }
@@ -26,7 +34,7 @@ struct DetailCellView: View {
 struct DetailCellView_Previews: PreviewProvider {
     static var previews: some View {
         DetailCellView(title: "Name",
-                       text: "Hoge\nFuga\nHogo")
+                       words: [Word(value: "Hoge"), Word(value: "Pogoooooo"), Word(value: "Fuga")])
             .previewLayout(.fixed(width: 400, height: 200))
     }
 }

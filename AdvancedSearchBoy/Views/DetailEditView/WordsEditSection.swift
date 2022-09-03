@@ -10,30 +10,30 @@ import SwiftUI
 struct WordsEditSection: View {
     
     let title: String
-    @Binding var words: [String]
+    @Binding var words: [Word]
     let newWordPlaceholder: String
-    @State private var newWord = ""
+    @State private var newWord = Word(value: "")
     
     var body: some View {
         Section(title) {
-            ForEach(words, id: \.self) { word in
-                Text(word)
+            ForEach($words) { $word in
+                TextField("", text: $word.value)
             }
             .onDelete { indices in
                 words.remove(atOffsets: indices)
             }
 
             HStack {
-                TextField("New Word", text: $newWord)
+                TextField("New Word", text: $newWord.value)
                 Button {
                     withAnimation {
                         words.append(newWord)
-                        newWord = ""
+                        newWord = Word(value: "")
                     }
                 } label: {
                     Image(systemName: "plus.circle.fill")
                 }
-                .disabled(newWord.isEmpty)
+                .disabled(newWord.value.isEmpty)
             }
         }
     }
@@ -43,7 +43,7 @@ struct WordsEditCellView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             WordsEditSection(title: "Title",
-                             words: .constant(["word1", "word2"]),
+                             words: .constant([Word(value: "word2"), Word(value: "word4")]),
                              newWordPlaceholder: "New words")
         }
     }

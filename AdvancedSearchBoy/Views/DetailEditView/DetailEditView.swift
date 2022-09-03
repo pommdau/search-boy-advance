@@ -13,16 +13,17 @@ struct DetailEditView: View {
 
     var body: some View {
         Form {
-            searchTitleSection()
+            titleSection()
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
             WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
             HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
-            filtersSection()
-            orderSection()
+            mediaSection()
+            sortedSection()
             engagementSection()
             dateSection()
         }
         .buttonStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -31,31 +32,32 @@ struct DetailEditView: View {
 extension DetailEditView {
     
     @ViewBuilder
-    private func searchTitleSection() -> some View {
-        Section("Title") {
+    private func titleSection() -> some View {
+        Section {
             TextField("Title", text: $data.title)
-                .font(.headline)
+                .font(.body.bold())
+        } header: {
+            Text("Title")
         }
     }
     
     @ViewBuilder
-    private func filtersSection() -> some View {
-        Section("Filters") {
-            Toggle(isOn: $data.includingImages) {
-                Text("画像を含む")
-            }
-            Toggle(isOn: $data.includingVideos) {
-                Text("動画を含む")
+    private func mediaSection() -> some View {
+        Section("Medias") {
+            Picker(selection: $data.mediaType, label: Text("Type")) {
+                ForEach(TwitterOption.MediaType.allCases) { mediaType in
+                    Text(mediaType.name)
+                }
             }
         }
     }
     
     @ViewBuilder
-    private func orderSection() -> some View {
-        Section("Order") {
-            Picker(selection: $data.type, label: Text("Type")) {
-                Text(TwitterOption.TweetType.featured.displayTitle).tag(TwitterOption.TweetType.featured)
-                Text(TwitterOption.TweetType.live.displayTitle).tag(TwitterOption.TweetType.live)
+    private func sortedSection() -> some View {
+        Section("Sorted") {
+            Picker(selection: $data.sortedType, label: Text("Sorted")) {
+                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
+                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
             }
             .pickerStyle(SegmentedPickerStyle())
         }
