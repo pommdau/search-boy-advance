@@ -13,16 +13,17 @@ struct DetailEditView: View {
 
     var body: some View {
         Form {
-            searchTitleSection()
+            titleSection()
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
             WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
             HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
             mediaSection()
-            orderSection()
+            sortedSection()
             engagementSection()
             dateSection()
         }
         .buttonStyle(.plain)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -31,10 +32,12 @@ struct DetailEditView: View {
 extension DetailEditView {
     
     @ViewBuilder
-    private func searchTitleSection() -> some View {
-        Section("Title") {
+    private func titleSection() -> some View {
+        Section {
             TextField("Title", text: $data.title)
-                .font(.headline)
+                .font(.body.bold())
+        } header: {
+            Text("Title")
         }
     }
     
@@ -50,9 +53,9 @@ extension DetailEditView {
     }
     
     @ViewBuilder
-    private func orderSection() -> some View {
-        Section("Order") {
-            Picker(selection: $data.sortedType, label: Text("Type")) {
+    private func sortedSection() -> some View {
+        Section("Sorted") {
+            Picker(selection: $data.sortedType, label: Text("Sorted")) {
                 Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
                 Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
             }

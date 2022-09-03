@@ -30,13 +30,6 @@ struct DetailView: View {
                 }
             }
 
-//            if !option.filtersString.isEmpty {
-//                Section("Filters") {
-//                    DetailCellView(title: "Including",
-//                                   words: [option.filtersString])
-//                }
-//            }
-
             if option.minFavorites > 0 || option.minRetweets > 0 {
                 Section("Engagements") {
                     if option.minFavorites > 0 {
@@ -75,7 +68,6 @@ struct DetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationView {
                 DetailEditView(data: $data)
-                    .navigationTitle(data.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
