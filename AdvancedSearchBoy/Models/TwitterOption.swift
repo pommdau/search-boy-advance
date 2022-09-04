@@ -37,7 +37,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
          language: Language = .none,
          isSafeSearch: Bool = false,
          minFavorites: Int = 0,
-         maxRetweets: Int = 0,  // TODO: max -> min
+         minRetweets: Int = 0,
          sortedType: SortedType = .live,
          user: String = "",
          onlyFollowing: Bool = false,
@@ -53,7 +53,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
         self.language = language
         self.isSafeSearch = isSafeSearch
         self.minFavorites = minFavorites
-        self.minRetweets = maxRetweets
+        self.minRetweets = minRetweets
         self.sortedType = sortedType
         self.user = user
         self.onlyFollowing = onlyFollowing

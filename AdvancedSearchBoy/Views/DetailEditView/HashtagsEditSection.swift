@@ -16,34 +16,43 @@ struct HashtagsEditSection: View {
     
     var body: some View {
         Section(title) {
-            ForEach($words) { $word in
-                HStack {
-                    Text("#")
-                        .padding(.trailing, -2)
-                    TextField("", text: $word.value)
-                }
-                .foregroundColor(.twitterBlue)
-            }
-            .onDelete { indices in
-                words.remove(atOffsets: indices)
-            }
-
+            currentWordCells()
+            newWordCell()
+        }
+    }
+    
+    @ViewBuilder
+    private func currentWordCells() -> some View {
+        ForEach($words) { $word in
             HStack {
                 Text("#")
-                    .foregroundColor(.twitterBlue)
                     .padding(.trailing, -2)
-                TextField(newWordPlaceholder, text: $newWord.value)
-                    .foregroundColor(.twitterBlue)
-                Button {
-                    withAnimation {
-                        words.append(newWord)
-                        newWord = Word(value: "")
-                    }
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                }
-                .disabled(newWord.value.isEmpty)
+                TextField("", text: $word.value)
             }
+            .foregroundColor(.twitterBlue)
+        }
+        .onDelete { indices in
+            words.remove(atOffsets: indices)
+        }
+    }
+    
+    @ViewBuilder
+    private func newWordCell() -> some View {
+        HStack {
+            Text("#")
+                .foregroundColor(.twitterBlue)
+                .padding(.trailing, -2)
+            TextField(newWordPlaceholder, text: $newWord.value)
+                .foregroundColor(.twitterBlue)
+            Button {
+                withAnimation {
+                    words.append(newWord)
+                    newWord = Word(value: "")
+                }
+            } label: {
+                Image(systemName: "plus.circle.fill")
+            }
+            .disabled(newWord.value.isEmpty)
         }
     }
 }

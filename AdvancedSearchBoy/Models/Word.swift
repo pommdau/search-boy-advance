@@ -12,7 +12,7 @@ struct Word: Identifiable, Codable, Equatable {
     let id: UUID
     var value: String
     
-    init(id: UUID = UUID(), value: String) {
+    init(value: String, id: UUID = UUID()) {
         self.id = id
         self.value = value
     }

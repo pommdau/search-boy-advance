@@ -55,7 +55,7 @@ extension TwitterOption {
                   language: data.language,
                   isSafeSearch: data.isSafeSearch,
                   minFavorites: Int(data.minFavorites),
-                  maxRetweets: Int(data.minRetweets),
+                  minRetweets: Int(data.minRetweets),
                   sortedType: data.sortedType,
                   user: data.user,
                   onlyFollowing: data.onlyFollowing,
