@@ -98,7 +98,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(option: .constant(TwitterOption.sampleData[0]))
+            DetailView(option: .constant(TwitterOption.sampleData[1]))
         }
     }
 }

@@ -14,13 +14,13 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             titleSection()
-//            WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
-//            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
-//            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
-            mediaSection()
-            
-            userSection()
+            WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
+            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
+            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
+            filtersSection()
             engagementSection()
+            sortSection()
+            tweetedBySection()
             dateSection()
         }
         .buttonStyle(.plain)
@@ -43,8 +43,8 @@ extension DetailEditView {
     }
     
     @ViewBuilder
-    private func mediaSection() -> some View {
-        Section("Medias") {
+    private func filtersSection() -> some View {
+        Section("Filters") {
 
             Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
@@ -52,45 +52,15 @@ extension DetailEditView {
                 }
             }
             
-            Text("Language")
+            Picker(selection: $data.language, label: Text("Language")) {
+                ForEach(TwitterOption.Language.allCases) { language in
+                    Text(language.name)
+                }
+            }
             
-            HStack {
-                Text("Sorted")
-                    .padding(.trailing, 4)
-                Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                    Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                    Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
-                }
-                .pickerStyle(SegmentedPickerStyle())
+            Toggle(isOn: $data.isSafeSearch) {
+                Text("Safe Search")
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func userSection() -> some View {
-        Section("From") {
-            HStack {
-                Text("User")
-                Spacer()
-                HStack(alignment: .center) {
-                    Text("@")
-                        .offset(x: 6)
-                    TextField(text: $data.title) {
-                        Text("user")
-                    }
-                    .lineLimit(1)
-                    .fixedSize()
-                }
-            }
-            Text("Only Following")
-        }
-    }
-    
-    @ViewBuilder
-    private func dateSection() -> some View {
-        Section("Date") {
-            DateEditCellView(title: "Since", date: $data.createdSince)
-            DateEditCellView(title: "Until", date: $data.createdUntil)
         }
     }
     
@@ -105,10 +75,54 @@ extension DetailEditView {
                                     sliderTextForVoiceOver: "Minimum retweets")
         }
     }
+    
+    @ViewBuilder
+    private func sortSection() -> some View {
+        HStack {
+            Text("Sorted")
+                .padding(.trailing, 4)
+            Picker(selection: $data.sortedType, label: Text("Sorted")) {
+                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
+                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
+    
+    @ViewBuilder
+    private func tweetedBySection() -> some View {
+        Section("Tweeted by") {
+            HStack {
+                Text("User")
+                Spacer()
+                HStack(alignment: .center) {
+                    Text("@")
+                        .offset(x: 6)
+                    TextField(text: $data.title) {
+                        Text("user")
+                    }
+                    .lineLimit(1)
+                    .fixedSize()
+                }
+            }
+            
+            Toggle(isOn: $data.onlyFollowing) {
+                Text("Only Following")
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func dateSection() -> some View {
+        Section("Date") {
+            DateEditCellView(title: "Since", date: $data.createdSince)
+            DateEditCellView(title: "Until", date: $data.createdUntil)
+        }
+    }
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(TwitterOption.sampleData[0].data))
+        DetailEditView(data: .constant(TwitterOption.sampleData[1].data))
     }
 }

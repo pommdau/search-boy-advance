@@ -23,6 +23,7 @@ extension TwitterOption {
                       onlyFollowing: false,
                       createdSince: nil, createdUntil: nil),
         
+        // 全オプション設定済み
         TwitterOption(title: "Title2",
                       words: [Word(value: "ネコ")], excludingWords: [Word(value: "犬")],
                       hashtags: [Word(value: "かわいい")],
@@ -31,8 +32,8 @@ extension TwitterOption {
                       isSafeSearch: true,
                       minFavorites: 10, maxRetweets: 20,
                       sortedType: .featured,
-                      user: nil,
-                      onlyFollowing: false,
+                      user: "ikeh1024",
+                      onlyFollowing: true,
                       createdSince: Date.twitterStartedAt, createdUntil: Date())
     ]
     
