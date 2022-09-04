@@ -18,7 +18,10 @@ struct DetailEditView: View {
 //            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
 //            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
             mediaSection()
+            
+            userSection()
             engagementSection()
+            dateSection()
         }
         .buttonStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
@@ -42,16 +45,14 @@ extension DetailEditView {
     @ViewBuilder
     private func mediaSection() -> some View {
         Section("Medias") {
-            
-            Text("User")
-            Text("Only Following")
-            Text("Language")
-            
+
             Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
                     Text(mediaType.name)
                 }
             }
+            
+            Text("Language")
             
             HStack {
                 Text("Sorted")
@@ -62,7 +63,32 @@ extension DetailEditView {
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
-            
+        }
+    }
+    
+    @ViewBuilder
+    private func userSection() -> some View {
+        Section("From") {
+            HStack {
+                Text("User")
+                Spacer()
+                HStack(alignment: .center) {
+                    Text("@")
+                        .offset(x: 6)
+                    TextField(text: $data.title) {
+                        Text("user")
+                    }
+                    .lineLimit(1)
+                    .fixedSize()
+                }
+            }
+            Text("Only Following")
+        }
+    }
+    
+    @ViewBuilder
+    private func dateSection() -> some View {
+        Section("Date") {
             DateEditCellView(title: "Since", date: $data.createdSince)
             DateEditCellView(title: "Until", date: $data.createdUntil)
         }
