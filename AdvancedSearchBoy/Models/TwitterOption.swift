@@ -9,108 +9,57 @@ import Foundation
 
 struct TwitterOption: Identifiable, Codable, Equatable {
 
-    // MARK: - Definition
-
-    enum SortedType: String, Codable, CaseIterable, Identifiable {
-        case featured // 話題のツイート
-        case live  // 最新
-        
-        var id: Self { self }
-
-        var name: String {
-            switch self {
-            case .featured:
-                return "話題のツイート"
-            case .live:
-                return "最新"
-            }
-        }
-
-        var queryValue: String? {
-            switch self {
-            case .featured:
-                return nil
-            case .live:
-                return "live"
-            }
-        }
-    }
-    
-    enum MediaType: String, Codable, CaseIterable, Identifiable {
-        case none
-        case images
-        case videos
-        case gifs
-        
-        var id: Self { self }
-
-        var name: String {
-            switch self {
-            case .none:
-                return "Not specified"
-            case .images:
-                return "Image"
-            case .videos:
-                return "Video"
-            case .gifs:
-                return "GIF"
-            }
-        }
-
-        var queryValue: String? {
-            switch self {
-            case .none:
-                return nil
-            case .images:
-                return "filter:images"
-            case .videos:
-                return "filter:videos"
-            case .gifs:
-                return "card_name:animated_gif"
-            }
-        }
-    }
-
     // MARK: - Properties
 
     let id: UUID
     var title: String
-    var sortedType: SortedType
     var words: [Word]
     var excludingWords: [Word]
     var hashtags: [Word]
     var mediaType: MediaType
+    var language: Language
+    var isSafeSearch: Bool
     var minFavorites: Int
     var minRetweets: Int
+    var sortedType: SortedType
+    var user: String
+    var onlyFollowing: Bool
     var createdSince: Date?
     var createdUntil: Date?
 
     // MARK: - LifeCycle
     init(id: UUID = UUID(),
          title: String = "",
-         sortedType: SortedType = .live,
          words: [Word] = [],
          excludingWords: [Word] = [],
          hashtags: [Word] = [],
          mediaType: MediaType = .none,
+         language: Language = .none,
+         isSafeSearch: Bool = false,
          minFavorites: Int = 0,
-         maxRetweets: Int = 0,
+         maxRetweets: Int = 0,  // TODO: max -> min
+         sortedType: SortedType = .live,
+         user: String = "",
+         onlyFollowing: Bool = false,
          createdSince: Date? = nil,
          createdUntil: Date? = nil
     ) {
         self.id = id
         self.title = title
-        self.sortedType = sortedType
         self.words = words
         self.excludingWords = excludingWords
         self.hashtags = hashtags
         self.mediaType = mediaType
+        self.language = language
+        self.isSafeSearch = isSafeSearch
         self.minFavorites = minFavorites
         self.minRetweets = maxRetweets
+        self.sortedType = sortedType
+        self.user = user
+        self.onlyFollowing = onlyFollowing
         self.createdSince = createdSince
         self.createdUntil = createdUntil
     }
-
 }
 
 // MARK: - URL

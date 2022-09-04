@@ -17,9 +17,10 @@ struct DetailEditView: View {
             WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
             WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
             HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
-            mediaSection()
-            sortedSection()
+            filtersSection()
             engagementSection()
+            sortSection()
+            tweetedBySection()
             dateSection()
         }
         .buttonStyle(.plain)
@@ -42,24 +43,24 @@ extension DetailEditView {
     }
     
     @ViewBuilder
-    private func mediaSection() -> some View {
-        Section("Medias") {
-            Picker(selection: $data.mediaType, label: Text("Type")) {
+    private func filtersSection() -> some View {
+        Section("Filters") {
+
+            Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
                     Text(mediaType.name)
                 }
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func sortedSection() -> some View {
-        Section("Sorted") {
-            Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+            
+            Picker(selection: $data.language, label: Text("Language")) {
+                ForEach(TwitterOption.Language.allCases) { language in
+                    Text(language.name)
+                }
             }
-            .pickerStyle(SegmentedPickerStyle())
+            
+            Toggle(isOn: $data.isSafeSearch) {
+                Text("Safe Search")
+            }
         }
     }
     
@@ -74,7 +75,43 @@ extension DetailEditView {
                                     sliderTextForVoiceOver: "Minimum retweets")
         }
     }
-
+    
+    @ViewBuilder
+    private func sortSection() -> some View {
+        HStack {
+            Text("Sorted")
+                .padding(.trailing, 4)
+            Picker(selection: $data.sortedType, label: Text("Sorted")) {
+                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
+                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
+    
+    @ViewBuilder
+    private func tweetedBySection() -> some View {
+        Section("Tweeted by") {
+            HStack {
+                Text("User")
+                Spacer()
+                HStack(alignment: .center) {
+                    Text("@")
+                        .offset(x: 6)
+                    TextField(text: $data.user) {
+                        Text("user")
+                    }
+                    .lineLimit(1)
+                    .fixedSize()
+                }
+            }
+            
+            Toggle(isOn: $data.onlyFollowing) {
+                Text("Only Following")
+            }
+        }
+    }
+    
     @ViewBuilder
     private func dateSection() -> some View {
         Section("Date") {
@@ -82,11 +119,10 @@ extension DetailEditView {
             DateEditCellView(title: "Until", date: $data.createdUntil)
         }
     }
-
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(TwitterOption.sampleData[0].data))
+        DetailEditView(data: .constant(TwitterOption.sampleData[1].data))
     }
 }
