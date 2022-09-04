@@ -15,26 +15,14 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            
             wordsSection()
             excludingWordsSection()
             hashtagsSection()
             filtersSection()
             engagementSection()
-
-//            if option.createdSince != nil || option.createdUntil != nil {
-//                Section("Dates") {
-//                    if let createdSince = option.createdSince {
-//                        DetailCellView(title: "Since",
-//                                       words: [Word(value: createdSince.toString())])
-//                    }
-//
-//                    if let createdUntil = option.createdUntil {
-//                        DetailCellView(title: "Until",
-//                                       words: [Word(value: createdUntil.toString())])
-//                    }
-//                }
-//            }
+            sortSection()
+            tweetedBySection()
+            dateSection()
         }
         .navigationTitle(option.title)
         .toolbar {
@@ -44,23 +32,30 @@ struct DetailView: View {
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
-            NavigationView {
-                DetailEditView(data: $data)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                isPresentingEditView = false
-                            }
-                        }
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
-                                isPresentingEditView = false
-                                option.update(from: data)
-                            }
-                            .disabled(data.title.isEmpty)
+            detailEditView()
+        }
+    }
+}
+
+extension DetailView {
+    @ViewBuilder
+    private func detailEditView() -> some View {
+        NavigationView {
+            DetailEditView(data: $data)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            isPresentingEditView = false
                         }
                     }
-            }
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") {
+                            isPresentingEditView = false
+                            option.update(from: data)
+                        }
+                        .disabled(data.title.isEmpty)
+                    }
+                }
         }
     }
 }
@@ -149,45 +144,38 @@ extension DetailView {
     
     @ViewBuilder
     private func sortSection() -> some View {
-        HStack {
-            Text("Sorted")
-                .padding(.trailing, 4)
-            Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
-            }
-            .pickerStyle(SegmentedPickerStyle())
+        Section("Sorted") {
+            DetailCellView(text: option.sortedType.name)
         }
     }
     
     @ViewBuilder
     private func tweetedBySection() -> some View {
-        Section("Tweeted by") {
-            HStack {
-                Text("User")
-                Spacer()
-                HStack(alignment: .center) {
-                    Text("@")
-                        .offset(x: 6)
-                    TextField(text: $data.title) {
-                        Text("user")
-                    }
-                    .lineLimit(1)
-                    .fixedSize()
+        if option.user != nil || option.onlyFollowing {
+            Section("Tweeted by") {
+                if let user = option.user {
+                    DetailCellView(title: "User", text: "@\(user)")
                 }
-            }
-            
-            Toggle(isOn: $data.onlyFollowing) {
-                Text("Only Following")
+                
+                if option.onlyFollowing {
+                    DetailCellView(title: "Only Following", text: "ON")
+                }
             }
         }
     }
     
     @ViewBuilder
     private func dateSection() -> some View {
-        Section("Date") {
-            DateEditCellView(title: "Since", date: $data.createdSince)
-            DateEditCellView(title: "Until", date: $data.createdUntil)
+        if option.createdSince != nil || option.createdUntil != nil {
+            Section("Date") {
+                if let createdSince = option.createdSince {
+                    DetailCellView(title: "Since", text: createdSince.toString())
+                }
+                
+                if let createdUntil = option.createdUntil {
+                    DetailCellView(title: "Until", text: createdUntil.toString())
+                }
+            }
         }
     }
     
