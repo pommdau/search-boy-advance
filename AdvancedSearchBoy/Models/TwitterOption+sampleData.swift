@@ -34,6 +34,18 @@ extension TwitterOption {
                       sortedType: .featured,
                       user: "ikeh1024",
                       onlyFollowing: true,
+                      createdSince: Date.twitterStartedAt, createdUntil: Date()),
+        
+        TwitterOption(title: "Title3",
+                      words: [Word(value: "ネコ"), Word(value: "イヌ")], excludingWords: [Word(value: "猫"), Word(value: "犬")],
+                      hashtags: [Word(value: "かわいい"), Word(value: "ネコ")],
+                      mediaType: .images,
+                      language: .japanese,
+                      isSafeSearch: true,
+                      minFavorites: 10, maxRetweets: 20,
+                      sortedType: .featured,
+                      user: "ikeh1024",
+                      onlyFollowing: true,
                       createdSince: Date.twitterStartedAt, createdUntil: Date())
     ]
     
