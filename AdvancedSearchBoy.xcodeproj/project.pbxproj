@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0C382328C4A7BB0009DE4E /* TwitterOption+enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C382228C4A7BB0009DE4E /* TwitterOption+enum.swift */; };
 		DA13B5DF28B7521E00E468F8 /* AdvancedSearchBoyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */; };
 		DA13B5E328B7521F00E468F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E228B7521F00E468F8 /* Assets.xcassets */; };
 		DA13B5E628B7521F00E468F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA13B5E528B7521F00E468F8 /* Preview Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0C382228C4A7BB0009DE4E /* TwitterOption+enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+enum.swift"; sourceTree = "<group>"; };
 		DA13B5DB28B7521E00E468F8 /* AdvancedSearchBoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdvancedSearchBoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA13B5DE28B7521E00E468F8 /* AdvancedSearchBoyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchBoyApp.swift; sourceTree = "<group>"; };
 		DA13B5E228B7521F00E468F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				DA9E4ACB28C22EC900C6189D /* Word.swift */,
 				DAEE171128C0762E00AD655E /* TwitterOptionStore.swift */,
 				DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */,
+				DA0C382228C4A7BB0009DE4E /* TwitterOption+enum.swift */,
 				DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */,
 				DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */,
 				DAEE171328C076DC00AD655E /* ErrorWrapper.swift */,
@@ -428,6 +431,7 @@
 				DAEE171828C07BF800AD655E /* ErrorView.swift in Sources */,
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
 				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
+				DA0C382328C4A7BB0009DE4E /* TwitterOption+enum.swift in Sources */,
 				DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */,
 				DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */,
 				DA9E4ACC28C22EC900C6189D /* Word.swift in Sources */,
