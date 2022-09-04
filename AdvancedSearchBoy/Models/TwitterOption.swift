@@ -20,9 +20,9 @@ struct TwitterOption: Identifiable, Codable, Equatable {
         var name: String {
             switch self {
             case .featured:
-                return "話題のツイート"
+                return "Top"
             case .live:
-                return "最新"
+                return "Latest"
             }
         }
 
@@ -70,6 +70,35 @@ struct TwitterOption: Identifiable, Codable, Equatable {
             }
         }
     }
+    
+    enum Language: String, Codable, CaseIterable, Identifiable {
+        case none = "none"
+        case japanese = "ja"
+        case english = "en"
+        case german = "de"
+        case french = "fr"
+        case spanish = "es"
+        case italian = "it"
+        case dutch = "nl"  // オランダ語
+        case russian = "ru"
+        case chinese = "zh"
+        case korean = "ko"
+        
+        var id: Self { self }
+
+        var name: String {
+            self.rawValue.initialUppercased()
+        }
+
+        var queryValue: String? {
+            switch self {
+            case .none:
+                return nil
+            default:
+                return "lang:\(self.rawValue)"
+            }
+        }
+    }
 
     // MARK: - Properties
 
@@ -84,6 +113,9 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     var minRetweets: Int
     var createdSince: Date?
     var createdUntil: Date?
+//    var user: String
+//    var onlyFollowing: Bool  // 検索対象をフォローしている人に限定する
+//    var lang: Lang
 
     // MARK: - LifeCycle
     init(id: UUID = UUID(),

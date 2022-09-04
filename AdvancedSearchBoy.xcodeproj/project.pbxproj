@@ -31,7 +31,7 @@
 		DAAC1B5C28C0359000C95F38 /* HashtagsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */; };
 		DABC3F5828C0483400006838 /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABC3F5728C0483400006838 /* SearchCellView.swift */; };
 		DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAC1C0A328B8466A00978F9C /* Algorithms */; };
-		DAD433DC28C088CF000656C7 /* String+containsWhitespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD433DB28C088CF000656C7 /* String+containsWhitespace.swift */; };
+		DAD433DC28C088CF000656C7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD433DB28C088CF000656C7 /* String+Extension.swift */; };
 		DAE62C9928BA66D700A9C61F /* Color+twitterBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */; };
 		DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9C28BB124200A9C61F /* Date+Extension.swift */; };
 		DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */; };
@@ -86,7 +86,7 @@
 		DAAC1B5928C0286A00C95F38 /* WordsEditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsEditSection.swift; sourceTree = "<group>"; };
 		DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsEditSection.swift; sourceTree = "<group>"; };
 		DABC3F5728C0483400006838 /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
-		DAD433DB28C088CF000656C7 /* String+containsWhitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+containsWhitespace.swift"; sourceTree = "<group>"; };
+		DAD433DB28C088CF000656C7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+twitterBlue.swift"; sourceTree = "<group>"; };
 		DAE62C9C28BB124200A9C61F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+Data.swift"; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */,
 				DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */,
 				DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */,
-				DAD433DB28C088CF000656C7 /* String+containsWhitespace.swift */,
+				DAD433DB28C088CF000656C7 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */,
 				DA13B60928B752A500E468F8 /* SearchesView.swift in Sources */,
 				DAEE170F28C06C2200AD655E /* TrailingIconLabelStyle.swift in Sources */,
-				DAD433DC28C088CF000656C7 /* String+containsWhitespace.swift in Sources */,
+				DAD433DC28C088CF000656C7 /* String+Extension.swift in Sources */,
 				DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */,
 				DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */,
 				DAEE171228C0762E00AD655E /* TwitterOptionStore.swift in Sources */,

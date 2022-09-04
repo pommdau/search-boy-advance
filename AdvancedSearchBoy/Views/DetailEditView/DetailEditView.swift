@@ -14,13 +14,11 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             titleSection()
-            WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
-            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
-            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
+//            WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
+//            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
+//            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
             mediaSection()
-            sortedSection()
             engagementSection()
-            dateSection()
         }
         .buttonStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
@@ -44,22 +42,29 @@ extension DetailEditView {
     @ViewBuilder
     private func mediaSection() -> some View {
         Section("Medias") {
-            Picker(selection: $data.mediaType, label: Text("Type")) {
+            
+            Text("User")
+            Text("Only Following")
+            Text("Language")
+            
+            Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
                     Text(mediaType.name)
                 }
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func sortedSection() -> some View {
-        Section("Sorted") {
-            Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+            
+            HStack {
+                Text("Sorted")
+                    .padding(.trailing, 4)
+                Picker(selection: $data.sortedType, label: Text("Sorted")) {
+                    Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
+                    Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+                }
+                .pickerStyle(SegmentedPickerStyle())
             }
-            .pickerStyle(SegmentedPickerStyle())
+            
+            DateEditCellView(title: "Since", date: $data.createdSince)
+            DateEditCellView(title: "Until", date: $data.createdUntil)
         }
     }
     
@@ -74,15 +79,6 @@ extension DetailEditView {
                                     sliderTextForVoiceOver: "Minimum retweets")
         }
     }
-
-    @ViewBuilder
-    private func dateSection() -> some View {
-        Section("Date") {
-            DateEditCellView(title: "Since", date: $data.createdSince)
-            DateEditCellView(title: "Until", date: $data.createdUntil)
-        }
-    }
-
 }
 
 struct DetailEditView_Previews: PreviewProvider {
