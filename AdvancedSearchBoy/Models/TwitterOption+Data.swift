@@ -21,7 +21,7 @@ extension TwitterOption {
         var minFavorites: Double = 0
         var minRetweets: Double = 0
         var sortedType: TwitterOption.SortedType = .live
-        var user: String? = nil
+        var user: String = ""
         var onlyFollowing = false
         var createdSince: Date?
         var createdUntil: Date?

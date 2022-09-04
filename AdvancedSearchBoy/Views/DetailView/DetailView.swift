@@ -76,7 +76,6 @@ extension DetailView {
                     Text(word.value)
                 }
             }
-            .textCase(nil)
         }
     }
     
@@ -88,7 +87,6 @@ extension DetailView {
                     Text(excludingWords.value)
                 }
             }
-            .textCase(nil)
         }
     }
     
@@ -101,7 +99,6 @@ extension DetailView {
                         .foregroundColor(.twitterBlue)
                 }
             }
-            .textCase(nil)
         }
     }
         
@@ -110,16 +107,15 @@ extension DetailView {
         if isFiltersSectionValud {
             Section("Filters") {
                 if option.mediaType != .none {
-                    DetailCellView(title: "Media", text: option.mediaType.name)
+                    DetailCellView(type: .titleAndText("Media", option.mediaType.name))
                 }
                 
                 if option.language != .none {
-                    DetailCellView(title: "Language", text: option.language.name)
+                    DetailCellView(type: .titleAndText("Language", option.language.name))
                 }
                 
                 if option.isSafeSearch {
-                    DetailCellView(title: "Safe Search",
-                                   text: "On")
+                    DetailCellView(type: .titleAndCheckmark("Safe Search"))
                 }
             }
         }
@@ -130,13 +126,11 @@ extension DetailView {
         if option.minFavorites > 0 || option.minRetweets > 0 {
             Section("Engagements") {
                 if option.minFavorites > 0 {
-                    DetailCellView(title: "Minimum favorites",
-                                   text: String(option.minFavorites))
+                    DetailCellView(type: .titleAndText("Minimum favorites", String(option.minFavorites)))
                 }
 
                 if option.minRetweets > 0 {
-                    DetailCellView(title: "Minimum retweets",
-                                   text: String(option.minRetweets))
+                    DetailCellView(type: .titleAndText("Minimum retweets", String(option.minRetweets)))
                 }
             }
         }
@@ -145,20 +139,20 @@ extension DetailView {
     @ViewBuilder
     private func sortSection() -> some View {
         Section("Sorted") {
-            DetailCellView(text: option.sortedType.name)
+            DetailCellView(type: .text(option.sortedType.name))
         }
     }
     
     @ViewBuilder
     private func tweetedBySection() -> some View {
-        if option.user != nil || option.onlyFollowing {
+        if !option.user.isEmpty || option.onlyFollowing {
             Section("Tweeted by") {
-                if let user = option.user {
-                    DetailCellView(title: "User", text: "@\(user)")
+                if !option.user.isEmpty {
+                    DetailCellView(type: .titleAndText("User", "@ \(option.user)"))
                 }
                 
                 if option.onlyFollowing {
-                    DetailCellView(title: "Only Following", text: "ON")
+                    DetailCellView(type: .titleAndCheckmark("Only Following"))
                 }
             }
         }
@@ -169,16 +163,15 @@ extension DetailView {
         if option.createdSince != nil || option.createdUntil != nil {
             Section("Date") {
                 if let createdSince = option.createdSince {
-                    DetailCellView(title: "Since", text: createdSince.toString())
+                    DetailCellView(type: .titleAndText("Since", createdSince.toString()))
                 }
                 
                 if let createdUntil = option.createdUntil {
-                    DetailCellView(title: "Until", text: createdUntil.toString())
+                    DetailCellView(type: .titleAndText("Until", createdUntil.toString()))
                 }
             }
         }
     }
-    
 }
 
 struct DetailView_Previews: PreviewProvider {

@@ -98,7 +98,7 @@ extension DetailEditView {
                 HStack(alignment: .center) {
                     Text("@")
                         .offset(x: 6)
-                    TextField(text: $data.title) {
+                    TextField(text: $data.user) {
                         Text("user")
                     }
                     .lineLimit(1)

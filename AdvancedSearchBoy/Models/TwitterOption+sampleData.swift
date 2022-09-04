@@ -19,7 +19,7 @@ extension TwitterOption {
                       isSafeSearch: false,
                       minFavorites: 0, maxRetweets: 0,
                       sortedType: .featured,
-                      user: nil,
+                      user: "",
                       onlyFollowing: false,
                       createdSince: nil, createdUntil: nil),
         
@@ -57,7 +57,8 @@ extension TwitterOption {
                       language: .none,
                       isSafeSearch: false,
                       minFavorites: 0, maxRetweets: 0,
-                      sortedType: .featured, user: nil,
+                      sortedType: .featured,
+                      user: "",
                       onlyFollowing: false,
                       createdSince: nil, createdUntil: nil)
     ]

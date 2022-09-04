@@ -8,26 +8,37 @@
 import SwiftUI
 
 struct DetailCellView: View {
+    
+    enum CellType {
+        case titleAndText(String, String)
+        case titleAndCheckmark(String)
+        case text(String)
+        case hashtag(String)
+    }
 
-    var title: String?
-    var text: String
-    var isHashtags = false
+    let type: CellType
 
     var body: some View {
         
-        if let title = title {
+        switch type {
+        case let .titleAndText(title, text):
             HStack {
                 Text(title)
                 Spacer()
                 Text(text)
             }
-        } else {
-            if isHashtags {
-                Text("# \(text)")
+        case .titleAndCheckmark(let title):
+            HStack {
+                Text(title)
+                Spacer()
+                Image(systemName: "checkmark.circle")
                     .foregroundColor(.twitterBlue)
-            } else {
-                Text(text)
             }
+        case .text(let text):
+            Text(text)
+        case .hashtag(let text):
+            Text("# \(text)")
+                .foregroundColor(.twitterBlue)
         }
     }
 }
@@ -35,13 +46,7 @@ struct DetailCellView: View {
 struct DetailCellView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DetailCellView(title: "Title", text: "Text", isHashtags: false)
-                .padding()
-            .previewLayout(.fixed(width: 400, height: 200))
-            
-            DetailCellView(text: "Text", isHashtags: true)
-                .padding()
-                .previewLayout(.fixed(width: 400, height: 200))
+            DetailCellView(type: .hashtag("hogehoge"))
         }
         
     }

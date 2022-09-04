@@ -22,7 +22,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     var minFavorites: Int
     var minRetweets: Int
     var sortedType: SortedType
-    var user: String?
+    var user: String
     var onlyFollowing: Bool
     var createdSince: Date?
     var createdUntil: Date?
@@ -39,7 +39,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
          minFavorites: Int = 0,
          maxRetweets: Int = 0,  // TODO: max -> min
          sortedType: SortedType = .live,
-         user: String? = nil,
+         user: String = "",
          onlyFollowing: Bool = false,
          createdSince: Date? = nil,
          createdUntil: Date? = nil
