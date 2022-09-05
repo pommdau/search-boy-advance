@@ -141,7 +141,7 @@ struct Query {
         guard !option.user.isEmpty else {
             return nil
         }
-        return "user:@\(option.user)"
+        return "from:@\(option.user)"
     }
     
     private var onlyFollowing: String? {
