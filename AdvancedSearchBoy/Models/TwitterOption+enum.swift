@@ -23,15 +23,6 @@ extension TwitterOption {
                 return "Latest"
             }
         }
-
-        var queryValue: String? {
-            switch self {
-            case .featured:
-                return nil
-            case .live:
-                return "live"
-            }
-        }
     }
     
     enum MediaType: String, Codable, CaseIterable, Identifiable {
@@ -52,19 +43,6 @@ extension TwitterOption {
                 return "Video"
             case .gifs:
                 return "GIF"
-            }
-        }
-
-        var queryValue: String? {
-            switch self {
-            case .none:
-                return nil
-            case .images:
-                return "filter:images"
-            case .videos:
-                return "filter:videos"
-            case .gifs:
-                return "card_name:animated_gif"
             }
         }
     }
@@ -108,15 +86,6 @@ extension TwitterOption {
                 return "Chinese"
             case .korean:
                 return "Korean"
-            }
-        }
-
-        var queryValue: String? {
-            switch self {
-            case .none:
-                return nil
-            default:
-                return "lang:\(self.rawValue)"
             }
         }
     }

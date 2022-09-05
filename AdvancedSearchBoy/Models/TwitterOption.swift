@@ -65,15 +65,17 @@ struct TwitterOption: Identifiable, Codable, Equatable {
 // MARK: - Helpers
 
 extension TwitterOption {
+    
+    var url: URL? {
+        // baseURL
+        guard let url = URL(string: "https://twitter.com/search") else {
+            return nil
+        }
+        return url.queryItemsAdded(Query(option: self).queryItems)
+    }
+    
     // UUIDだけ異なるオブジェクトを返す
     var copy: TwitterOption {
         .init(data: self.data)
     }
 }
-
-// extension Array where Element == String {
-//    // prefixの例: "title"
-//    func createQueryValue(prefix: String) -> String {
-//        self.reduce(into: "") { $0 += "+\(prefix):\($1)" }
-//    }
-// }

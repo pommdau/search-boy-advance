@@ -50,15 +50,29 @@ extension TwitterOption {
     ]
     
     static let recommendedData: [TwitterOption] = [
-        TwitterOption(title: "Title1",
-                      words: [Word(value: "twitter")], excludingWords: [Word(value: "facebook")],
-                      hashtags: [Word(value: "")],
-                      mediaType: .none,
+        TwitterOption(title: "(Sample) Pretty cat videos",
+                      words: [Word(value: "pretty")],
+                      excludingWords: [],
+                      hashtags: [Word(value: "cat")],
+                      mediaType: .videos,
                       language: .none,
-                      isSafeSearch: false,
-                      minFavorites: 0, minRetweets: 0,
+                      isSafeSearch: true,
+                      minFavorites: 100, minRetweets: 0,
                       sortedType: .featured,
                       user: "",
+                      onlyFollowing: false,
+                      createdSince: nil, createdUntil: nil),
+        
+        TwitterOption(title: "(Sample) From @Twitter",
+                      words: [Word(value: "Happy"), Word(value: "you")],
+                      excludingWords: [Word(value: "unhappy")],
+                      hashtags: [Word(value: "Lovetwitter")],
+                      mediaType: .images,
+                      language: .none,
+                      isSafeSearch: true,
+                      minFavorites: 10, minRetweets: 15,
+                      sortedType: .featured,
+                      user: "Twitter",
                       onlyFollowing: false,
                       createdSince: nil, createdUntil: nil)
     ]

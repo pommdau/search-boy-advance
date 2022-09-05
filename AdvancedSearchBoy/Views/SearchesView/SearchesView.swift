@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct SearchesView: View {
 
@@ -23,6 +24,17 @@ struct SearchesView: View {
         List {
             ForEach($options) { $option in
                 SearchCellView(option: $option)
+                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                        Button {
+                            guard let url = option.url?.absoluteString else {
+                                return
+                            }
+                            UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)                            
+                        } label: {
+                            Text("Copy to clipboard")
+                        }
+                        .tint(.systemGreen)
+                    }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         swipeActionButtons(option: option)
                     }
@@ -43,12 +55,17 @@ struct SearchesView: View {
     @ViewBuilder
     private func toolbarButtons() -> some View {
         HStack {
-            Button {
-                options.append(TwitterOption.recommendedData[0])
+            Menu {
+                Button {
+                    withAnimation {
+                        options.append(TwitterOption.recommendedData[0])
+                    }
+                } label: {
+                    Text("Add sample search")
+                }
             } label: {
                 Image(systemName: "ellipsis")
             }
-            .accessibilityLabel("Custom Action")
             
             Button {
                 isPresentingNewOptionView = true

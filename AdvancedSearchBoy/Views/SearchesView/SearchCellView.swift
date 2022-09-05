@@ -24,7 +24,7 @@ struct SearchCellView: View {
                         return
                     }
                     print(url.absoluteString)
-                    UIApplication.shared.open(url)  // TODO: Handle macOS
+                    UIApplication.shared.open(url)
                 } label: {
                     Label("Open", systemImage: "square.and.arrow.up")
                         .labelStyle(.trailingIcon)
