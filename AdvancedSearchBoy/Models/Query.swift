@@ -47,7 +47,7 @@ struct Query {
                 value += " "
             }
             if word.value.containsWhitespace {
-                value += "\"\(word)\""
+                value += "\"\(word.value)\""
             } else {
                 value += word.value
             }
@@ -64,9 +64,9 @@ struct Query {
             }
             
             if excludingWord.value.containsWhitespace {
-                value += "-\"\(excludingWord)\""
+                value += "-\"\(excludingWord.value)\""
             } else {
-                value += "-\(excludingWord)"
+                value += "-\(excludingWord.value)"
             }
         }
         
@@ -79,7 +79,7 @@ struct Query {
             if !value.isEmpty {
                 value += " "
             }
-            value += "#\(hashtag)"
+            value += "#\(hashtag.value)"
         }
         
         return value.isEmpty ? nil : value
