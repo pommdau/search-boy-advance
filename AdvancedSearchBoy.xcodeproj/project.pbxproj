@@ -38,6 +38,7 @@
 		DAEE171428C076DC00AD655E /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171328C076DC00AD655E /* ErrorWrapper.swift */; };
 		DAEE171628C07A0A00AD655E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171528C07A0A00AD655E /* Home.swift */; };
 		DAEE171828C07BF800AD655E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171728C07BF800AD655E /* ErrorView.swift */; };
+		DAF7C95228C510330042A4CE /* TwitterOption+query.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF7C95128C510330042A4CE /* TwitterOption+query.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		DAEE171328C076DC00AD655E /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		DAEE171528C07A0A00AD655E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DAEE171728C07BF800AD655E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		DAF7C95128C510330042A4CE /* TwitterOption+query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+query.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				DA9E4ACB28C22EC900C6189D /* Word.swift */,
 				DAEE171128C0762E00AD655E /* TwitterOptionStore.swift */,
 				DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */,
+				DAF7C95128C510330042A4CE /* TwitterOption+query.swift */,
 				DA0C382228C4A7BB0009DE4E /* TwitterOption+enum.swift */,
 				DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */,
 				DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */,
@@ -414,6 +417,7 @@
 				DAEE171828C07BF800AD655E /* ErrorView.swift in Sources */,
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
 				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
+				DAF7C95228C510330042A4CE /* TwitterOption+query.swift in Sources */,
 				DA0C382328C4A7BB0009DE4E /* TwitterOption+enum.swift in Sources */,
 				DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */,
 				DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */,

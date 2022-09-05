@@ -45,7 +45,7 @@ extension TwitterOption {
         var name: String {
             switch self {
             case .none:
-                return "Not specified"
+                return "(Not specified)"
             case .images:
                 return "Image"
             case .videos:
@@ -85,7 +85,30 @@ extension TwitterOption {
         var id: Self { self }
 
         var name: String {
-            self.rawValue.initialUppercased()
+            switch self {
+            case .none:
+                return "(Not specified)"
+            case .japanese:
+                return "Japanese"
+            case .english:
+                return "English"
+            case .german:
+                return "German"
+            case .french:
+                return "French"
+            case .spanish:
+                return "Spanish"
+            case .italian:
+                return "Italian"
+            case .dutch:
+                return "Dutch"
+            case .russian:
+                return "Russian"
+            case .chinese:
+                return "Chinese"
+            case .korean:
+                return "Korean"
+            }
         }
 
         var queryValue: String? {
