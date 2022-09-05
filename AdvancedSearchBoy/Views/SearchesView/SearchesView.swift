@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct SearchesView: View {
 
@@ -25,9 +26,12 @@ struct SearchesView: View {
                 SearchCellView(option: $option)
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
                         Button {
-                            print("arrow.right.doc.on.clipboard")
+                            guard let url = option.url?.absoluteString else {
+                                return
+                            }
+                            UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)                            
                         } label: {
-                            Image(systemName: "doc.on.doc.fill")
+                            Text("Copy to clipboard")
                         }
                         .tint(.systemGreen)
                     }
