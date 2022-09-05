@@ -12,7 +12,7 @@ struct ErrorWrapper: Identifiable {
     let error: Error
     let guidance: String
     
-    init(id: UUID = UUID(), error: Error, guidance: String) {
+    init(error: Error, guidance: String, id: UUID = UUID()) {
         self.id = id
         self.error = error
         self.guidance = guidance

@@ -16,7 +16,7 @@ extension URL {
 
     // クエリを複数追加した新しいURLを返す
     func queryItemsAdded(_ queryItems: [URLQueryItem]) -> URL? {
-        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: nil != self.baseURL) else {
+        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: self.baseURL != nil) else {
             return nil
         }
         components.queryItems = queryItems + (components.queryItems ?? [])

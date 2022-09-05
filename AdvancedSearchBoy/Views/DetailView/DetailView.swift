@@ -63,8 +63,8 @@ extension DetailView {
 extension DetailView {
     
     private var isFiltersSectionValud: Bool {
-        option.mediaType != .none &&
-        option.language != .none &&
+        option.mediaType != .none ||
+        option.language != .none ||
         option.isSafeSearch
     }
         
