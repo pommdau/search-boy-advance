@@ -33,7 +33,7 @@ struct SearchesView: View {
                         } label: {
                             Text("Copy to clipboard")
                         }
-                        .tint(.systemGreen)
+                        .tint(.twitterBlue)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         swipeActionButtons(option: option)
