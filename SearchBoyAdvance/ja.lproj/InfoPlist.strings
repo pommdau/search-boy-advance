@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+ SearchBoyAdvance
+
+  Created by HIROKI IKEUCHI on 2022/09/06.
+  
+*/
+
+CFBundleDisplayName = "Twitter詳細検索くん";
