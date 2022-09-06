@@ -11,12 +11,11 @@ import UniformTypeIdentifiers
 struct SearchesView: View {
 
     // MARK: - Properties
-    
-    @Binding var options: [TwitterOption]
     @Environment(\.scenePhase) private var scenePhase
+    @Binding var options: [TwitterOption]
+    let saveAction: () -> Void
     @State private var isPresentingNewOptionView = false
     @State private var newOptionData = TwitterOption.Data()
-    let saveAction: () -> Void
     
     // MARK: - View
 
@@ -25,22 +24,14 @@ struct SearchesView: View {
             ForEach($options) { $option in
                 SearchCellView(option: $option)
                     .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                        Button {
-                            guard let url = option.url?.absoluteString else {
-                                return
-                            }
-                            UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)                            
-                        } label: {
-                            Text("Copy to clipboard")
-                        }
-                        .tint(.twitterBlue)
+                        swipeLeadingActionButtons(option: option)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        swipeActionButtons(option: option)
+                        swipeTrailingActionButtons(option: option)
                     }
             }
         }
-        .navigationTitle("Searches".localize)
+        .navigationTitle("Searches List".localize)
         .toolbar { toolbarButtons() }
         .sheet(isPresented: $isPresentingNewOptionView) {
             detailEditView()
@@ -61,7 +52,7 @@ struct SearchesView: View {
                         options.append(TwitterOption.recommendedData[0])
                     }
                 } label: {
-                    Text("Add sample search")
+                    Text("Add the sample search")
                 }
             } label: {
                 Image(systemName: "ellipsis")
@@ -102,7 +93,20 @@ struct SearchesView: View {
     }
     
     @ViewBuilder
-    private func swipeActionButtons(option: TwitterOption) -> some View {
+    private func swipeLeadingActionButtons(option: TwitterOption) -> some View {
+        Button {
+            guard let url = option.url?.absoluteString else {
+                return
+            }
+            UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)
+        } label: {
+            Text("Copy to clipboard")
+        }
+        .tint(.twitterBlue)
+    }
+    
+    @ViewBuilder
+    private func swipeTrailingActionButtons(option: TwitterOption) -> some View {
         Button(role: .destructive) {
             guard let index = options.firstIndex(where: { $0 == option }) else {
                 return
