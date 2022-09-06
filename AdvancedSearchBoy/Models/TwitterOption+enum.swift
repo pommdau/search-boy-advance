@@ -18,9 +18,9 @@ extension TwitterOption {
         var name: String {
             switch self {
             case .featured:
-                return "Top"
+                return "Top".localize
             case .live:
-                return "Latest"
+                return "Latest".localize
             }
         }
     }

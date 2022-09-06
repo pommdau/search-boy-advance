@@ -50,9 +50,10 @@
 "Until" = "次の日付以前";
 
 /* SearchesView */
+"Searches List" = "検索リスト";
 "Copy to clipboard" = "クリップボードにコピー";
 "Searches" = "検索";
-"Add sample search" = "サンプルの検索例を追加";
+"Add the sample search" = "サンプルの検索例を追加";
 "Dismiss" = "キャンセル";
 "Add" = "追加";
 

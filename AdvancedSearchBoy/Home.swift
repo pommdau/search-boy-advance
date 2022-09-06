@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Home: View {
     
+    @AppStorage("launchingAtFirstTime") var launchingAtFirstTime = true
     @StateObject private var store = TwitterOptionStore()
     @State private var errorWrapper: ErrorWrapper?
     
@@ -29,6 +30,10 @@ struct Home: View {
         .task {
             do {
                 store.options = try await TwitterOptionStore.load()
+                if launchingAtFirstTime {
+                    store.options += TwitterOption.recommendedData
+                    launchingAtFirstTime = false
+                }
             } catch {
                 errorWrapper = ErrorWrapper(error: error,
                                             guidance: "will load sample data and continue.")
@@ -36,7 +41,7 @@ struct Home: View {
         }
         .sheet(item: $errorWrapper) {
             // onDismiss
-            store.options = TwitterOption.sampleData
+            store.options = TwitterOption.recommendedData
         } content: { wrapper in
             ErrorView(errorWrapper: wrapper)
         }
