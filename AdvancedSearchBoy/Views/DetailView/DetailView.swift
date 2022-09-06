@@ -107,15 +107,15 @@ extension DetailView {
         if isFiltersSectionValud {
             Section("Filters") {
                 if option.mediaType != .none {
-                    DetailCellView(type: .titleAndText("Media", option.mediaType.name))
+                    DetailCellView(type: .titleAndText("Media".localize, option.mediaType.name))
                 }
                 
                 if option.language != .none {
-                    DetailCellView(type: .titleAndText("Language", option.language.name))
+                    DetailCellView(type: .titleAndText("Language".localize, option.language.name))
                 }
                 
                 if option.isSafeSearch {
-                    DetailCellView(type: .titleAndCheckmark("Safe Search"))
+                    DetailCellView(type: .titleAndCheckmark("Safe Search".localize))
                 }
             }
         }
@@ -126,11 +126,11 @@ extension DetailView {
         if option.minFavorites > 0 || option.minRetweets > 0 {
             Section("Engagements") {
                 if option.minFavorites > 0 {
-                    DetailCellView(type: .titleAndText("Minimum favorites", String(option.minFavorites)))
+                    DetailCellView(type: .titleAndText("Minimum favorites".localize, String(option.minFavorites)))
                 }
 
                 if option.minRetweets > 0 {
-                    DetailCellView(type: .titleAndText("Minimum retweets", String(option.minRetweets)))
+                    DetailCellView(type: .titleAndText("Minimum retweets".localize, String(option.minRetweets)))
                 }
             }
         }
@@ -138,7 +138,7 @@ extension DetailView {
     
     @ViewBuilder
     private func sortSection() -> some View {
-        Section("Sorted") {
+        Section("Sort") {
             DetailCellView(type: .text(option.sortedType.name))
         }
     }
@@ -148,11 +148,11 @@ extension DetailView {
         if !option.user.isEmpty || option.onlyFollowing {
             Section("Tweeted by") {
                 if !option.user.isEmpty {
-                    DetailCellView(type: .titleAndText("User", "@ \(option.user)"))
+                    DetailCellView(type: .titleAndText("User".localize, "@ \(option.user)"))
                 }
                 
                 if option.onlyFollowing {
-                    DetailCellView(type: .titleAndCheckmark("Only Following"))
+                    DetailCellView(type: .titleAndCheckmark("Only Following".localize))
                 }
             }
         }
@@ -163,11 +163,11 @@ extension DetailView {
         if option.createdSince != nil || option.createdUntil != nil {
             Section("Date") {
                 if let createdSince = option.createdSince {
-                    DetailCellView(type: .titleAndText("Since", createdSince.toString()))
+                    DetailCellView(type: .titleAndText("Since".localize, createdSince.toString()))
                 }
                 
                 if let createdUntil = option.createdUntil {
-                    DetailCellView(type: .titleAndText("Until", createdUntil.toString()))
+                    DetailCellView(type: .titleAndText("Until".localize, createdUntil.toString()))
                 }
             }
         }
@@ -176,8 +176,11 @@ extension DetailView {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            DetailView(option: .constant(TwitterOption.sampleData[2]))
+        ForEach(["ja", "en"], id: \.self) { id in
+            NavigationView {
+                DetailView(option: .constant(TwitterOption.sampleData[2]))
+            }
+            .environment(\.locale, .init(identifier: id))
         }
     }
 }

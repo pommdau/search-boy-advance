@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  AdvancedSearchBoy
+
+  Created by HIROKI IKEUCHI on 2022/09/06.
+  
+*/
+
+/* TwitterOption */
+
+
+/* SearchesView */
+"Copy to clipboard" = "Copy to clipboard";
+"Searches" = "Searches";
+"Add sample search" = "Add sample search";
+"Dismiss" = "Dismiss";
+"Add" = "Add";
+
+/* SearchCellView */
+"Open" = "Open";
+
+/* DetailView */
+// Toolbar
+"Edit" = "Edit";
+"Cancel" = "Cancel";
+"Done" = "Done";
+
+// Sections
+"Words" = "Words";
+"Excluding Words" = "Excluding Words";
+"Hashtags" = "Hashtags";
+"Filters" = "Filters";
+"Engagement" = "Engagement";
+"Sort" = "Sort";
+"Tweeted by" = "Tweeted by";
+"Date" = "Date";
+
+// Twitter Option
+"Media" = "Media";
+"Language" = "Language";
+"Safe Search" = "Safe Search";
+"Minimum favorites" = "Minimum favorites";
+"Minimum retweets" = "Minimum retweets";
+"User" = "User";
+"Only Following" = "Only Following";
+"Since" = "Since";
+"Until" = "Until";

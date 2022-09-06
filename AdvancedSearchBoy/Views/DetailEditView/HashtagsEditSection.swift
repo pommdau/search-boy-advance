@@ -60,9 +60,9 @@ struct HashtagsEditSection: View {
 struct HashtagsEditSection_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            HashtagsEditSection(title: "Title",
+            HashtagsEditSection(title: "Hashtags".localize,
                                 words: .constant([Word(value: "word1"), Word(value: "word2")]),
-                                newWordPlaceholder: "New Hashtag")
+                                newWordPlaceholder: "New Hashtag".localize)
         }
     }
 }

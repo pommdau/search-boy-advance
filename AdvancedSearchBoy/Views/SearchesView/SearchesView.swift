@@ -40,7 +40,7 @@ struct SearchesView: View {
                     }
             }
         }
-        .navigationTitle("Searches")
+        .navigationTitle("Searches".localize)
         .toolbar { toolbarButtons() }
         .sheet(isPresented: $isPresentingNewOptionView) {
             detailEditView()
@@ -130,10 +130,11 @@ struct SearchesView: View {
 
 struct SearchesView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        ForEach(["ja", "en"], id: \.self) { id in
             NavigationView {
                 SearchesView(options: .constant([TwitterOption.sampleData[0], TwitterOption.sampleData[1]])) {}
             }
+            .environment(\.locale, .init(identifier: id))
         }
     }
 }
