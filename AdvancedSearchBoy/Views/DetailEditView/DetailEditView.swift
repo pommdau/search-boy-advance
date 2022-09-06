@@ -48,13 +48,13 @@ extension DetailEditView {
 
             Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
-                    Text(mediaType.name)
+                    Text(mediaType.name.localize)
                 }
             }
             
             Picker(selection: $data.language, label: Text("Language")) {
                 ForEach(TwitterOption.Language.allCases) { language in
-                    Text(language.name)
+                    Text(language.name.localize)
                 }
             }
             
@@ -82,8 +82,8 @@ extension DetailEditView {
             Text("Sort")
                 .padding(.trailing, 4)
             Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+                Text(TwitterOption.SortedType.featured.name.localize).tag(TwitterOption.SortedType.featured)
+                Text(TwitterOption.SortedType.live.name.localize).tag(TwitterOption.SortedType.live)
             }
             .pickerStyle(SegmentedPickerStyle())
         }

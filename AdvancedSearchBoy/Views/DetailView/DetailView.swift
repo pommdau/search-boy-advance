@@ -107,11 +107,11 @@ extension DetailView {
         if isFiltersSectionValud {
             Section("Filters") {
                 if option.mediaType != .none {
-                    DetailCellView(type: .titleAndText("Media".localize, option.mediaType.name))
+                    DetailCellView(type: .titleAndText("Media".localize, option.mediaType.name.localize))
                 }
                 
                 if option.language != .none {
-                    DetailCellView(type: .titleAndText("Language".localize, option.language.name))
+                    DetailCellView(type: .titleAndText("Language".localize, option.language.name.localize))
                 }
                 
                 if option.isSafeSearch {

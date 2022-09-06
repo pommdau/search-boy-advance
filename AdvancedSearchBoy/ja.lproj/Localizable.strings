@@ -6,6 +6,49 @@
   
 */
 
+/* Twitter Option */
+
+"Words" = "キーワード";
+"Excluding Words" = "除外するキーワード";
+"Hashtags" = "ハッシュタグ";
+"Filters" = "フィルター";
+
+"Media" = "メディア";
+"(Not specified)" = "(未選択)";
+"Image" = "画像";
+"Video" = "動画";
+"GIF" = "GIF";
+
+"Language" = "言語";
+"Japanese" = "日本語";
+"English" = "英語";
+"German" = "ドイツ語";
+"French" = "フランス語";
+"Spanish" = "スペイン語";
+"Italian" = "イタリア語";
+"Dutch" = "オランダ語";
+"Russian" = "ロシア語";
+"Chinese" = "中国語";
+"Korean" = "韓国語";
+
+"Safe Search" = "セーフサーチ";
+
+"Engagements" = "エンゲージメント";
+"Minimum favorites" = "いいねの最小件数";
+"Minimum retweets" = "リツイートの最小件数";
+
+"Sort" = "ソート順";
+"Top" = "話題";
+"Latest" = "最新";
+
+"Tweeted by" = "ツイート元";
+"User" = "ユーザ";
+"Only Following" = "フォローしているユーザ";
+
+"Date" = "日付";
+"Since" = "次の日付以降";
+"Until" = "次の日付以前";
+
 /* SearchesView */
 "Copy to clipboard" = "クリップボードにコピー";
 "Searches" = "検索";
@@ -21,27 +64,6 @@
 "Edit" = "編集";
 "Cancel" = "キャンセル";
 "Done" = "完了";
-
-// Sections
-"Words" = "キーワード";
-"Excluding Words" = "除外するキーワード";
-"Hashtags" = "ハッシュタグ";
-"Filters" = "フィルター";
-"Engagements" = "エンゲージメント";
-"Sort" = "ソート順";
-"Tweeted by" = "ツイート元";
-"Date" = "日付";
-
-// Twitter Option
-"Media" = "メディア";
-"Language" = "言語";
-"Safe Search" = "セーフサーチ";
-"Minimum favorites" = "いいねの最小件数";
-"Minimum retweets" = "リツイートの最小件数";
-"User" = "ユーザ";
-"Only Following" = "フォローしているユーザ";
-"Since" = "次の日付以降";
-"Until" = "次の日付以前";
 
 /* DetailEditView */
 "Title" = "タイトル";
