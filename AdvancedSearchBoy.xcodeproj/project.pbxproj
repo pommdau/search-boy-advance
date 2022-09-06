@@ -31,7 +31,6 @@
 		DAAC1B5A28C0286A00C95F38 /* WordsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5928C0286A00C95F38 /* WordsEditSection.swift */; };
 		DAAC1B5C28C0359000C95F38 /* HashtagsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */; };
 		DABC3F5828C0483400006838 /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABC3F5728C0483400006838 /* SearchCellView.swift */; };
-		DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAC1C0A328B8466A00978F9C /* Algorithms */; };
 		DAD433DC28C088CF000656C7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD433DB28C088CF000656C7 /* String+Extension.swift */; };
 		DAE62C9928BA66D700A9C61F /* Color+twitterBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */; };
 		DAE62C9D28BB124200A9C61F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9C28BB124200A9C61F /* Date+Extension.swift */; };
@@ -108,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC1C0A428B8466A00978F9C /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +276,6 @@
 			);
 			name = AdvancedSearchBoy;
 			packageProductDependencies = (
-				DAC1C0A328B8466A00978F9C /* Algorithms */,
 			);
 			productName = AdvancedSearchBoy;
 			productReference = DA13B5DB28B7521E00E468F8 /* AdvancedSearchBoy.app */;
@@ -354,7 +351,6 @@
 			);
 			mainGroup = DA13B5D228B7521E00E468F8;
 			packageReferences = (
-				DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = DA13B5DC28B7521E00E468F8 /* Products */;
 			projectDirPath = "";
@@ -792,25 +788,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-algorithms.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DAC1C0A328B8466A00978F9C /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DAC1C0A228B8466A00978F9C /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA13B5D328B7521E00E468F8 /* Project object */;
 }
