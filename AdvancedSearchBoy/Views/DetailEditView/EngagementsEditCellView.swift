@@ -21,7 +21,7 @@ struct EngagementsEditCellView: View {
                 Text(sliderTextForVoiceOver)  // For VoiceOver
             }
             Spacer()
-            Text("\(Int(value)) \(suffixLabelText)")
+            Text("> \(Int(value)) \(suffixLabelText)")
         }
     }
 }

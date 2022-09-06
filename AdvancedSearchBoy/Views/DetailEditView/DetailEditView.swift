@@ -82,8 +82,9 @@ extension DetailEditView {
             Text("Sort")
                 .padding(.trailing, 4)
             Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name.localize).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name.localize).tag(TwitterOption.SortedType.live)
+                ForEach(TwitterOption.SortedType.allCases) { sortedType in
+                    Text(sortedType.name.localize).tag(sortedType)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
         }
