@@ -50,13 +50,13 @@ extension TwitterOption {
     ]
     
     static let recommendedData: [TwitterOption] = [
-        TwitterOption(title: "(Sample) Pretty cat videos",
+        TwitterOption(title: "Pretty cat images",
                       words: [Word(value: "pretty")],
                       excludingWords: [],
                       hashtags: [Word(value: "cat")],
-                      mediaType: .videos,
+                      mediaType: .images,
                       language: .none,
-                      isSafeSearch: true,
+                      isSafeSearch: false,
                       minFavorites: 100, minRetweets: 0,
                       sortedType: .featured,
                       user: "",

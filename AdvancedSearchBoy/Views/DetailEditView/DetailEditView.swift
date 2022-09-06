@@ -14,9 +14,9 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             titleSection()
-            WordsEditSection(title: "Words", words: $data.words, newWordPlaceholder: "New Word")
-            WordsEditSection(title: "Excluded words", words: $data.excludingWords, newWordPlaceholder: "New Word")
-            HashtagsEditSection(title: "Hashtags", words: $data.hashtags, newWordPlaceholder: "New Hashtag")
+            WordsEditSection(title: "Words".localize, words: $data.words, newWordPlaceholder: "New Word".localize)
+            WordsEditSection(title: "Excluding Words".localize, words: $data.excludingWords, newWordPlaceholder: "New Word".localize)
+            HashtagsEditSection(title: "Hashtags".localize, words: $data.hashtags, newWordPlaceholder: "New Hashtag".localize)
             filtersSection()
             engagementSection()
             sortSection()
@@ -35,10 +35,10 @@ extension DetailEditView {
     @ViewBuilder
     private func titleSection() -> some View {
         Section {
-            TextField("Title", text: $data.title)
+            TextField("Title".localize, text: $data.title)
                 .font(.body.bold())
         } header: {
-            Text("Title")
+            Text("Title".localize)
         }
     }
     
@@ -48,13 +48,13 @@ extension DetailEditView {
 
             Picker(selection: $data.mediaType, label: Text("Media")) {
                 ForEach(TwitterOption.MediaType.allCases) { mediaType in
-                    Text(mediaType.name)
+                    Text(mediaType.name.localize)
                 }
             }
             
             Picker(selection: $data.language, label: Text("Language")) {
                 ForEach(TwitterOption.Language.allCases) { language in
-                    Text(language.name)
+                    Text(language.name.localize)
                 }
             }
             
@@ -68,10 +68,10 @@ extension DetailEditView {
     private func engagementSection() -> some View {
         Section("Engagements") {
             EngagementsEditCellView(value: $data.minFavorites,
-                                    suffixLabelText: "favorites",
+                                    suffixLabelText: "favorites".localize,
                                     sliderTextForVoiceOver: "Minimum favorites")
             EngagementsEditCellView(value: $data.minRetweets,
-                                    suffixLabelText: "retweets",
+                                    suffixLabelText: "retweets".localize,
                                     sliderTextForVoiceOver: "Minimum retweets")
         }
     }
@@ -79,11 +79,12 @@ extension DetailEditView {
     @ViewBuilder
     private func sortSection() -> some View {
         HStack {
-            Text("Sorted")
+            Text("Sort")
                 .padding(.trailing, 4)
             Picker(selection: $data.sortedType, label: Text("Sorted")) {
-                Text(TwitterOption.SortedType.featured.name).tag(TwitterOption.SortedType.featured)
-                Text(TwitterOption.SortedType.live.name).tag(TwitterOption.SortedType.live)
+                ForEach(TwitterOption.SortedType.allCases) { sortedType in
+                    Text(sortedType.name.localize).tag(sortedType)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
         }
@@ -115,14 +116,17 @@ extension DetailEditView {
     @ViewBuilder
     private func dateSection() -> some View {
         Section("Date") {
-            DateEditCellView(title: "Since", date: $data.createdSince)
-            DateEditCellView(title: "Until", date: $data.createdUntil)
+            DateEditCellView(title: "Since".localize, date: $data.createdSince)
+            DateEditCellView(title: "Until".localize, date: $data.createdUntil)
         }
     }
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(TwitterOption.sampleData[1].data))
+        ForEach(["ja", "en"], id: \.self) { id in
+            DetailEditView(data: .constant(TwitterOption.sampleData[1].data))
+                .environment(\.locale, .init(identifier: id))
+        }
     }
 }

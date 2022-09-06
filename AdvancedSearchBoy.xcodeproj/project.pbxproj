@@ -22,6 +22,9 @@
 		DA17D24628BD1521002001F6 /* EngagementsEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17D24528BD1521002001F6 /* EngagementsEditCellView.swift */; };
 		DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */; };
 		DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
+		DA5C9A5128C6CC1A003DCFDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5C9A5328C6CC1A003DCFDF /* Localizable.strings */; };
+		DA6E815D28C6D392006A10F6 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E815C28C6D392006A10F6 /* String+Localization.swift */; };
+		DA6E816028C72C19006A10F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA6E816228C72C19006A10F6 /* InfoPlist.strings */; };
 		DA9E4ACC28C22EC900C6189D /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E4ACB28C22EC900C6189D /* Word.swift */; };
 		DA9E4ACF28C237AC00C6189D /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */; };
 		DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */; };
@@ -77,6 +80,11 @@
 		DA17D24528BD1521002001F6 /* EngagementsEditCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementsEditCellView.swift; sourceTree = "<group>"; };
 		DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterOption.swift; sourceTree = "<group>"; };
 		DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+sampleData.swift"; sourceTree = "<group>"; };
+		DA5C9A5228C6CC1A003DCFDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA5C9A5428C6CC1B003DCFDF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA6E815C28C6D392006A10F6 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		DA6E816128C72C19006A10F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA6E816328C72C1D006A10F6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DA9E4ACB28C22EC900C6189D /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIColor.swift"; sourceTree = "<group>"; };
 		DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEditCellView.swift; sourceTree = "<group>"; };
@@ -150,6 +158,8 @@
 				DA13B60A28B7538000E468F8 /* Models */,
 				DA13B60B28B7538300E468F8 /* Views */,
 				DA13B5E228B7521F00E468F8 /* Assets.xcassets */,
+				DA6E816228C72C19006A10F6 /* InfoPlist.strings */,
+				DA5C9A5328C6CC1A003DCFDF /* Localizable.strings */,
 				DA13B5E428B7521F00E468F8 /* Preview Content */,
 			);
 			path = AdvancedSearchBoy;
@@ -215,6 +225,7 @@
 				DA9E4ACE28C237AC00C6189D /* Color+UIColor.swift */,
 				DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */,
 				DAD433DB28C088CF000656C7 /* String+Extension.swift */,
+				DA6E815C28C6D392006A10F6 /* String+Localization.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +350,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = DA13B5D228B7521E00E468F8;
 			packageReferences = (
@@ -361,6 +373,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA13B5E628B7521F00E468F8 /* Preview Assets.xcassets in Resources */,
+				DA6E816028C72C19006A10F6 /* InfoPlist.strings in Resources */,
+				DA5C9A5128C6CC1A003DCFDF /* Localizable.strings in Resources */,
 				DA13B5E328B7521F00E468F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +432,7 @@
 				DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */,
 				DA13B61228B764DF00E468F8 /* URL+queryItem.swift in Sources */,
 				DAF7C95228C510330042A4CE /* Query.swift in Sources */,
+				DA6E815D28C6D392006A10F6 /* String+Localization.swift in Sources */,
 				DA0C382328C4A7BB0009DE4E /* TwitterOption+enum.swift in Sources */,
 				DAAC1B5528BF8CE200C95F38 /* DateEditCellView.swift in Sources */,
 				DAE62C9F28BB93DF00A9C61F /* TwitterOption+Data.swift in Sources */,
@@ -466,6 +481,27 @@
 			targetProxy = DA13B5F628B7521F00E468F8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA5C9A5328C6CC1A003DCFDF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA5C9A5228C6CC1A003DCFDF /* en */,
+				DA5C9A5428C6CC1B003DCFDF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DA6E816228C72C19006A10F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA6E816128C72C19006A10F6 /* en */,
+				DA6E816328C72C1D006A10F6 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DA13B5FD28B7521F00E468F8 /* Debug */ = {
