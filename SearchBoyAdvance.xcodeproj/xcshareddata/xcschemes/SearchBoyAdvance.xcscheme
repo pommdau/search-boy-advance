@@ -94,6 +94,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "SearchBoyAdvance"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

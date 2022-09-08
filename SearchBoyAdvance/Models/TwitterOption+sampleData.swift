@@ -64,4 +64,45 @@ extension TwitterOption {
                       onlyFollowing: false,
                       createdSince: nil, createdUntil: nil)
     ]
+    
+    static let screenshotData: [TwitterOption] = [
+        TwitterOption(title: "Pretty cat images".localize,
+                      words: [Word(value: "pretty".localize), Word(value: "cat".localize)],
+                      excludingWords: [],
+                      hashtags: [],
+                      mediaType: .images,
+                      language: .none,
+                      isSafeSearch: false,
+                      minFavorites: 50, minRetweets: 0,
+                      sortedType: .featured,
+                      user: "",
+                      onlyFollowing: false,
+                      createdSince: nil, createdUntil: nil),
+        
+        TwitterOption(title: "Pretty frog images".localize,
+                      words: [Word(value: "pretty".localize), Word(value: "frog".localize)],
+                      excludingWords: [],
+                      hashtags: [],
+                      mediaType: .images,
+                      language: .none,
+                      isSafeSearch: false,
+                      minFavorites: 50, minRetweets: 0,
+                      sortedType: .featured,
+                      user: "",
+                      onlyFollowing: false,
+                      createdSince: nil, createdUntil: nil),
+        
+        TwitterOption(title: "Pretty horse images".localize,
+                      words: [Word(value: "pretty".localize), Word(value: "horse".localize)],
+                      excludingWords: [],
+                      hashtags: [],
+                      mediaType: .images,
+                      language: .none,
+                      isSafeSearch: false,
+                      minFavorites: 50, minRetweets: 0,
+                      sortedType: .featured,
+                      user: "",
+                      onlyFollowing: false,
+                      createdSince: nil, createdUntil: nil)
+    ]
 }

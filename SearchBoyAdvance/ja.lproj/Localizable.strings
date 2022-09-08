@@ -72,3 +72,13 @@
 "New Hashtag" = "新しいハッシュタグ";
 "favorites" = "いいね";
 "retweets" = "リツイート";
+
+/* TwitterOption+sampleData */
+
+"pretty" = "かわいい";
+"Pretty cat images" = "かわいいネコの画像";
+"Pretty frog images" = "かわいいカエルの画像";
+"Pretty horse images" = "かわいいウマの画像";
+"cat" = "ネコ";
+"frog" = "カエル";
+"horse" = "ウマ";

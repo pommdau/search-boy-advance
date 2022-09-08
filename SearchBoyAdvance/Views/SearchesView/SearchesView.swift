@@ -49,7 +49,12 @@ struct SearchesView: View {
             Menu {
                 Button {
                     withAnimation {
+#if DEBUG
+                        options += TwitterOption.screenshotData
+#else
                         options.append(TwitterOption.recommendedData[0])
+#endif
+                        
                     }
                 } label: {
                     Text("Add the sample search")
