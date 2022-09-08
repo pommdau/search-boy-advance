@@ -4,7 +4,7 @@ Twitter詳細検索くん (SearchBoyAdvance)
 `Twitter詳細検索くん`はTwitterの詳細検索の各オプションを簡単に設定し、また管理するアプリです。
 
 - __[サポートページ](https://github.com/pommdau/search-boy-advance.github.io/blob/main/support-page/support-page-ja.md)__ 
-- __Mac App Store:__
+- __Mac App Store:__ https://apps.apple.com/us/app/searchboyadvance/id1643714939
 
 概要
 --------------------------
