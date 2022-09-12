@@ -26,6 +26,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
     var onlyFollowing: Bool
     var createdSince: Date?
     var createdUntil: Date?
+    var timeZone: TimeZone
 
     // MARK: - LifeCycle
     init(id: UUID = UUID(),
@@ -42,7 +43,8 @@ struct TwitterOption: Identifiable, Codable, Equatable {
          user: String = "",
          onlyFollowing: Bool = false,
          createdSince: Date? = nil,
-         createdUntil: Date? = nil
+         createdUntil: Date? = nil,
+         timeZone: TimeZone = .none
     ) {
         self.id = id
         self.title = title
@@ -59,6 +61,7 @@ struct TwitterOption: Identifiable, Codable, Equatable {
         self.onlyFollowing = onlyFollowing
         self.createdSince = createdSince
         self.createdUntil = createdUntil
+        self.timeZone = timeZone
     }
 }
 

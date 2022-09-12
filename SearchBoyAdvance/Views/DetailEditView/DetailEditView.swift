@@ -118,6 +118,11 @@ extension DetailEditView {
         Section("Date") {
             DateEditCellView(title: "Since".localize, date: $data.createdSince)
             DateEditCellView(title: "Until".localize, date: $data.createdUntil)
+            Picker(selection: $data.timeZone, label: Text("TimeZone")) {
+                ForEach(TwitterOption.TimeZone.allCases) { timeZone in
+                    Text(timeZone.name.localize)
+                }
+            }
         }
     }
 }

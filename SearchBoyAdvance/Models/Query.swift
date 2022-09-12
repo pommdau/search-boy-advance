@@ -152,13 +152,33 @@ struct Query {
         guard let createdSince = option.createdSince else {
             return nil
         }
-        return "since:\(createdSince.toString())"
+        var createdSinceString = "since:\(createdSince.toString())"
+
+        if let timeZone = timeZone {
+            createdSinceString += "_\(timeZone)"
+        }
+        
+        return createdSinceString
     }
     
     private var createdUntil: String? {
         guard let createdUntil = option.createdUntil else {
             return nil
         }
-        return "until:\(createdUntil.toString())"
+        
+        var createdUntilString = "until:\(createdUntil.toString())"
+        if let timeZone = timeZone {
+            createdUntilString += "_\(timeZone)"
+        }
+        
+        return createdUntilString
+    }
+    
+    private var timeZone: String? {
+        if option.timeZone == .none {
+            return nil
+        }
+
+        return option.timeZone.rawValue
     }
 }

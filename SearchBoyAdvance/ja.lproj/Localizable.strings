@@ -48,6 +48,7 @@
 "Date" = "日付";
 "Since" = "次の日付以降";
 "Until" = "次の日付以前";
+"TimeZone" = "タイムゾーン";
 
 /* SearchesView */
 "Searches List" = "検索リスト";
