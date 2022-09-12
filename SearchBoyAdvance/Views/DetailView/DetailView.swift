@@ -163,11 +163,11 @@ extension DetailView {
         if option.createdSince != nil || option.createdUntil != nil {
             Section("Date") {
                 if let createdSince = option.createdSince {
-                    DetailCellView(type: .titleAndText("Since".localize, createdSince.toString()))
+                    DetailCellView(type: .titleAndText("Since".localize, createdSince.toDisplayString()))
                 }
                 
                 if let createdUntil = option.createdUntil {
-                    DetailCellView(type: .titleAndText("Until".localize, createdUntil.toString()))
+                    DetailCellView(type: .titleAndText("Until".localize, createdUntil.toDisplayString()))
                 }
             }
         }
