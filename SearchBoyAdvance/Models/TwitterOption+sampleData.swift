@@ -34,7 +34,8 @@ extension TwitterOption {
                       sortedType: .featured,
                       user: "ikeh1024",
                       onlyFollowing: true,
-                      createdSince: Date.twitterStartedAt, createdUntil: Date()),
+                      createdSince: Date.twitterStartedAt, createdUntil: Date(),
+                      timeZone: .jst),
                 
         TwitterOption(title: "(Sample) From @Twitter",
                       words: [Word(value: "Happy"), Word(value: "you")],

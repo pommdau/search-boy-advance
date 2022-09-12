@@ -163,11 +163,15 @@ extension DetailView {
         if option.createdSince != nil || option.createdUntil != nil {
             Section("Date") {
                 if let createdSince = option.createdSince {
-                    DetailCellView(type: .titleAndText("Since".localize, createdSince.toString()))
+                    DetailCellView(type: .titleAndText("Since".localize, createdSince.toDisplayString()))
                 }
                 
                 if let createdUntil = option.createdUntil {
-                    DetailCellView(type: .titleAndText("Until".localize, createdUntil.toString()))
+                    DetailCellView(type: .titleAndText("Until".localize, createdUntil.toDisplayString()))
+                }
+                
+                if option.timeZone != .none {
+                    DetailCellView(type: .titleAndText("TimeZone".localize, option.timeZone.name))
                 }
             }
         }
@@ -178,7 +182,7 @@ struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(["ja", "en"], id: \.self) { id in
             NavigationView {
-                DetailView(option: .constant(TwitterOption.sampleData[2]))
+                DetailView(option: .constant(TwitterOption.sampleData[1]))
             }
             .environment(\.locale, .init(identifier: id))
         }

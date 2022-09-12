@@ -10,7 +10,14 @@ import Foundation
 
 extension Date {
 
-    func toString(format: String = "yyyy-MM-dd") -> String {
+    func toString(format: String = "yyyy-MM-dd_HH:mm:ss") -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = format
+        return formatter.string(from: self)
+    }
+        
+    func toDisplayString(format: String = "yyyy-MM-dd HH:mm") -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.dateFormat = format

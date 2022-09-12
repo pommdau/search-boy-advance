@@ -49,12 +49,8 @@ struct SearchesView: View {
             Menu {
                 Button {
                     withAnimation {
-#if DEBUG
-                        options += TwitterOption.screenshotData
-#else
+//                        options += TwitterOption.screenshotData  // for debugging
                         options.append(TwitterOption.recommendedData[0])
-#endif
-                        
                     }
                 } label: {
                     Text("Add the sample search")
@@ -100,10 +96,7 @@ struct SearchesView: View {
     @ViewBuilder
     private func swipeLeadingActionButtons(option: TwitterOption) -> some View {
         Button {
-            guard let url = option.url?.absoluteString else {
-                return
-            }
-            UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)
+            copyToClipboard(WithOption: option)
         } label: {
             Text("Copy to clipboard")
         }
@@ -113,27 +106,73 @@ struct SearchesView: View {
     @ViewBuilder
     private func swipeTrailingActionButtons(option: TwitterOption) -> some View {
         Button(role: .destructive) {
-            guard let index = options.firstIndex(where: { $0 == option }) else {
-                return
-            }
-            withAnimation {
-                _ = options.remove(at: index)
-            }
+            remove(WithOption: option)
         } label: {
             Image(systemName: "trash.fill")
         }
         
         Button {
-            guard let index = options.firstIndex(where: { $0 == option }) else {
-                return
-            }
-            withAnimation {
-                options.insert(options[index].copy, at: index + 1)
-            }
+           copy(WithOption: option)
         } label: {
             Image(systemName: "doc.on.doc.fill")
         }
         .tint(.twitterBlue)
+    }
+    
+    @ViewBuilder
+    private func contextMenuButtons(WithOption option: TwitterOption) -> some View {
+        Button("Open...") {
+            open(WithOption: option)
+        }
+        
+        Button("Copy to clipboard".localize) {
+            copyToClipboard(WithOption: option)
+        }
+        
+        Button("Duplicate".localize) {
+            copy(WithOption: option)
+        }
+        
+        Button("Remove".localize) {
+            remove(WithOption: option)
+        }
+    }
+}
+
+// MARK: - Actions
+
+extension SearchesView {
+    
+    private func open(WithOption option: TwitterOption) {
+        guard let url = option.url else {
+            return
+        }
+        UIApplication.shared.open(url)
+    }
+    
+    private func remove(WithOption option: TwitterOption) {
+        guard let index = options.firstIndex(where: { $0 == option }) else {
+            return
+        }
+        withAnimation {
+            _ = options.remove(at: index)
+        }
+    }
+    
+    private func copy(WithOption option: TwitterOption) {
+        guard let index = options.firstIndex(where: { $0 == option }) else {
+            return
+        }
+        withAnimation {
+            options.insert(options[index].copy, at: index + 1)
+        }
+    }
+    
+    private func copyToClipboard(WithOption option: TwitterOption) {
+        guard let url = option.url?.absoluteString else {
+            return
+        }
+        UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)
     }
 }
 

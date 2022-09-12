@@ -25,6 +25,7 @@ extension TwitterOption {
         var onlyFollowing = false
         var createdSince: Date?
         var createdUntil: Date?
+        var timeZone: TwitterOption.TimeZone = .none
     }
 
     /// QiitaOption -> QiitaOption.Data
@@ -42,7 +43,8 @@ extension TwitterOption {
              user: user,
              onlyFollowing: onlyFollowing,
              createdSince: createdSince,
-             createdUntil: createdUntil)
+             createdUntil: createdUntil,
+             timeZone: timeZone)
     }
 
     /// QiitaOption.Data -> QiitaOption
@@ -60,7 +62,8 @@ extension TwitterOption {
                   user: data.user,
                   onlyFollowing: data.onlyFollowing,
                   createdSince: data.createdSince,
-                  createdUntil: data.createdUntil)
+                  createdUntil: data.createdUntil,
+                  timeZone: data.timeZone)
     }
 
     mutating func update(from data: Data) {
@@ -78,5 +81,6 @@ extension TwitterOption {
         self.onlyFollowing = data.onlyFollowing
         self.createdSince = data.createdSince
         self.createdUntil = data.createdUntil
+        self.timeZone = data.timeZone
     }
 }

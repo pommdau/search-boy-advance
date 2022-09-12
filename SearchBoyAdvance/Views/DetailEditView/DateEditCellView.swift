@@ -26,7 +26,7 @@ struct DateEditCellView: View {
             DatePicker("",
                        selection: $selectedDate,
                        in: dateRange,
-                       displayedComponents: [.date]
+                       displayedComponents: [.date, .hourAndMinute]
             )
             .onChange(of: selectedDate) { _ in
                 if isValid {
