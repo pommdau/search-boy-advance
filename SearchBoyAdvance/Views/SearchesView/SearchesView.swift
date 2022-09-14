@@ -147,7 +147,11 @@ extension SearchesView {
         guard let url = option.url else {
             return
         }
+        #if os(macOS)
+        NSWorkspace.shared.open(url)
+        #else
         UIApplication.shared.open(url)
+        #endif
     }
     
     private func remove(WithOption option: TwitterOption) {
@@ -172,7 +176,13 @@ extension SearchesView {
         guard let url = option.url?.absoluteString else {
             return
         }
+#if os(macOS)
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: nil)
+        pasteboard.setString(url, forType: .string)
+#else
         UIPasteboard.general.setValue(url, forPasteboardType: UTType.plainText.identifier)
+#endif
     }
 }
 

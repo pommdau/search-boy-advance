@@ -26,7 +26,9 @@ struct Home: View {
                 }
             }
         }
+        #if !os(macOS)
         .navigationViewStyle(StackNavigationViewStyle())
+        #endif
         .task {
             do {
                 store.options = try await TwitterOptionStore.load()

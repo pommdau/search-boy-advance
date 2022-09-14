@@ -20,6 +20,37 @@
 		DA13B61828B7AF2500E468F8 /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
 		DA13B61A28B7C23100E468F8 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
 		DA17D24628BD1521002001F6 /* EngagementsEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17D24528BD1521002001F6 /* EngagementsEditCellView.swift */; };
+		DA2CBAD728D15B7800549A2F /* MacSearchBoyAdvanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CBAD628D15B7800549A2F /* MacSearchBoyAdvanceApp.swift */; };
+		DA2CBAD928D15B7800549A2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CBAD828D15B7800549A2F /* ContentView.swift */; };
+		DA2CBADB28D15B7900549A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2CBADA28D15B7900549A2F /* Assets.xcassets */; };
+		DA2CBADE28D15B7900549A2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2CBADD28D15B7900549A2F /* Preview Assets.xcassets */; };
+		DA2CBAE328D15B8700549A2F /* Color+twitterBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9828BA66D700A9C61F /* Color+twitterBlue.swift */; };
+		DA2CBAE428D15B8700549A2F /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E815C28C6D392006A10F6 /* String+Localization.swift */; };
+		DA2CBAE628D15B8700549A2F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9C28BB124200A9C61F /* Date+Extension.swift */; };
+		DA2CBAE728D15B8700549A2F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD433DB28C088CF000656C7 /* String+Extension.swift */; };
+		DA2CBAE828D15B8700549A2F /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE170E28C06C2200AD655E /* TrailingIconLabelStyle.swift */; };
+		DA2CBAE928D15B8700549A2F /* URL+queryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61128B764DF00E468F8 /* URL+queryItem.swift */; };
+		DA2CBAEB28D15B8A00549A2F /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9E4ACB28C22EC900C6189D /* Word.swift */; };
+		DA2CBAEC28D15B8A00549A2F /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171328C076DC00AD655E /* ErrorWrapper.swift */; };
+		DA2CBAED28D15B8A00549A2F /* TwitterOptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171128C0762E00AD655E /* TwitterOptionStore.swift */; };
+		DA2CBAEE28D15B8A00549A2F /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
+		DA2CBAEF28D15B8A00549A2F /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF7C95128C510330042A4CE /* Query.swift */; };
+		DA2CBAF028D15B8A00549A2F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE171728C07BF800AD655E /* ErrorView.swift */; };
+		DA2CBAF128D15B8A00549A2F /* TwitterOption+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE62C9E28BB93DF00A9C61F /* TwitterOption+Data.swift */; };
+		DA2CBAF228D15B8A00549A2F /* TwitterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */; };
+		DA2CBAF328D15B8A00549A2F /* TwitterOption+enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0C382228C4A7BB0009DE4E /* TwitterOption+enum.swift */; };
+		DA2CBAF428D15B9000549A2F /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABC3F5728C0483400006838 /* SearchCellView.swift */; };
+		DA2CBAF528D15B9000549A2F /* HashtagsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5B28C0359000C95F38 /* HashtagsEditSection.swift */; };
+		DA2CBAF628D15B9000549A2F /* EngagementsEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA17D24528BD1521002001F6 /* EngagementsEditCellView.swift */; };
+		DA2CBAF728D15B9000549A2F /* DateEditCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5428BF8CE200C95F38 /* DateEditCellView.swift */; };
+		DA2CBAF828D15B9000549A2F /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61928B7C23100E468F8 /* DetailEditView.swift */; };
+		DA2CBAF928D15B9000549A2F /* DetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B61728B7AF2500E468F8 /* DetailCellView.swift */; };
+		DA2CBAFA28D15B9000549A2F /* SearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60828B752A500E468F8 /* SearchesView.swift */; };
+		DA2CBAFB28D15B9000549A2F /* WordsEditSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAC1B5928C0286A00C95F38 /* WordsEditSection.swift */; };
+		DA2CBAFC28D15B9000549A2F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA13B60C28B753C900E468F8 /* DetailView.swift */; };
+		DA2CBAFD28D15B9400549A2F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5C9A5328C6CC1A003DCFDF /* Localizable.strings */; };
+		DA2CBAFE28D15B9400549A2F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA6E816228C72C19006A10F6 /* InfoPlist.strings */; };
+		DA2CBB0028D15D5100549A2F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CBAFF28D15D5100549A2F /* Home.swift */; };
 		DA586C7028BA2ABB0071EE0A /* TwitterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */; };
 		DA586C7228BA611F0071EE0A /* TwitterOption+sampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */; };
 		DA5C9A5128C6CC1A003DCFDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA5C9A5328C6CC1A003DCFDF /* Localizable.strings */; };
@@ -77,6 +108,13 @@
 		DA13B61728B7AF2500E468F8 /* DetailCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellView.swift; sourceTree = "<group>"; };
 		DA13B61928B7C23100E468F8 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 		DA17D24528BD1521002001F6 /* EngagementsEditCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementsEditCellView.swift; sourceTree = "<group>"; };
+		DA2CBAD428D15B7800549A2F /* MacSearchBoyAdvance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacSearchBoyAdvance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA2CBAD628D15B7800549A2F /* MacSearchBoyAdvanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSearchBoyAdvanceApp.swift; sourceTree = "<group>"; };
+		DA2CBAD828D15B7800549A2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DA2CBADA28D15B7900549A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA2CBADD28D15B7900549A2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA2CBADF28D15B7900549A2F /* MacSearchBoyAdvance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacSearchBoyAdvance.entitlements; sourceTree = "<group>"; };
+		DA2CBAFF28D15D5100549A2F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DA586C6F28BA2ABB0071EE0A /* TwitterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterOption.swift; sourceTree = "<group>"; };
 		DA586C7128BA611F0071EE0A /* TwitterOption+sampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TwitterOption+sampleData.swift"; sourceTree = "<group>"; };
 		DA5C9A5228C6CC1A003DCFDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -124,6 +162,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA2CBAD128D15B7800549A2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -133,6 +178,7 @@
 				DA13B5DD28B7521E00E468F8 /* SearchBoyAdvance */,
 				DA13B5EE28B7521F00E468F8 /* SearchBoyAdvanceTests */,
 				DA13B5F828B7521F00E468F8 /* SearchBoyAdvanceUITests */,
+				DA2CBAD528D15B7800549A2F /* MacSearchBoyAdvance */,
 				DA13B5DC28B7521E00E468F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +189,7 @@
 				DA13B5DB28B7521E00E468F8 /* SearchBoyAdvance.app */,
 				DA13B5EB28B7521F00E468F8 /* SearchBoyAdvanceTests.xctest */,
 				DA13B5F528B7521F00E468F8 /* SearchBoyAdvanceUITests.xctest */,
+				DA2CBAD428D15B7800549A2F /* MacSearchBoyAdvance.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +273,27 @@
 				DA6E815C28C6D392006A10F6 /* String+Localization.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA2CBAD528D15B7800549A2F /* MacSearchBoyAdvance */ = {
+			isa = PBXGroup;
+			children = (
+				DA2CBAD628D15B7800549A2F /* MacSearchBoyAdvanceApp.swift */,
+				DA2CBAD828D15B7800549A2F /* ContentView.swift */,
+				DA2CBAFF28D15D5100549A2F /* Home.swift */,
+				DA2CBADA28D15B7900549A2F /* Assets.xcassets */,
+				DA2CBADF28D15B7900549A2F /* MacSearchBoyAdvance.entitlements */,
+				DA2CBADC28D15B7900549A2F /* Preview Content */,
+			);
+			path = MacSearchBoyAdvance;
+			sourceTree = "<group>";
+		};
+		DA2CBADC28D15B7900549A2F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA2CBADD28D15B7900549A2F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		DAAC1B5628C0279F00C95F38 /* DetailEditView */ = {
@@ -317,6 +385,23 @@
 			productReference = DA13B5F528B7521F00E468F8 /* SearchBoyAdvanceUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		DA2CBAD328D15B7800549A2F /* MacSearchBoyAdvance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA2CBAE228D15B7900549A2F /* Build configuration list for PBXNativeTarget "MacSearchBoyAdvance" */;
+			buildPhases = (
+				DA2CBAD028D15B7800549A2F /* Sources */,
+				DA2CBAD128D15B7800549A2F /* Frameworks */,
+				DA2CBAD228D15B7800549A2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacSearchBoyAdvance;
+			productName = MacSearchBoyAdvance;
+			productReference = DA2CBAD428D15B7800549A2F /* MacSearchBoyAdvance.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -324,8 +409,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					DA13B5DA28B7521E00E468F8 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -337,6 +422,9 @@
 					DA13B5F428B7521F00E468F8 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = DA13B5DA28B7521E00E468F8;
+					};
+					DA2CBAD328D15B7800549A2F = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -359,6 +447,7 @@
 				DA13B5DA28B7521E00E468F8 /* SearchBoyAdvance */,
 				DA13B5EA28B7521F00E468F8 /* SearchBoyAdvanceTests */,
 				DA13B5F428B7521F00E468F8 /* SearchBoyAdvanceUITests */,
+				DA2CBAD328D15B7800549A2F /* MacSearchBoyAdvance */,
 			);
 		};
 /* End PBXProject section */
@@ -386,6 +475,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA2CBAD228D15B7800549A2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2CBADE28D15B7900549A2F /* Preview Assets.xcassets in Resources */,
+				DA2CBAFE28D15B9400549A2F /* InfoPlist.strings in Resources */,
+				DA2CBAFD28D15B9400549A2F /* Localizable.strings in Resources */,
+				DA2CBADB28D15B7900549A2F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +563,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA2CBAD028D15B7800549A2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA2CBAF728D15B9000549A2F /* DateEditCellView.swift in Sources */,
+				DA2CBAEC28D15B8A00549A2F /* ErrorWrapper.swift in Sources */,
+				DA2CBAD928D15B7800549A2F /* ContentView.swift in Sources */,
+				DA2CBAE728D15B8700549A2F /* String+Extension.swift in Sources */,
+				DA2CBAF328D15B8A00549A2F /* TwitterOption+enum.swift in Sources */,
+				DA2CBAF628D15B9000549A2F /* EngagementsEditCellView.swift in Sources */,
+				DA2CBAEE28D15B8A00549A2F /* TwitterOption+sampleData.swift in Sources */,
+				DA2CBAD728D15B7800549A2F /* MacSearchBoyAdvanceApp.swift in Sources */,
+				DA2CBAF228D15B8A00549A2F /* TwitterOption.swift in Sources */,
+				DA2CBAF428D15B9000549A2F /* SearchCellView.swift in Sources */,
+				DA2CBAF828D15B9000549A2F /* DetailEditView.swift in Sources */,
+				DA2CBAE928D15B8700549A2F /* URL+queryItem.swift in Sources */,
+				DA2CBAE828D15B8700549A2F /* TrailingIconLabelStyle.swift in Sources */,
+				DA2CBAF928D15B9000549A2F /* DetailCellView.swift in Sources */,
+				DA2CBAF528D15B9000549A2F /* HashtagsEditSection.swift in Sources */,
+				DA2CBAEB28D15B8A00549A2F /* Word.swift in Sources */,
+				DA2CBAFC28D15B9000549A2F /* DetailView.swift in Sources */,
+				DA2CBAE328D15B8700549A2F /* Color+twitterBlue.swift in Sources */,
+				DA2CBAEF28D15B8A00549A2F /* Query.swift in Sources */,
+				DA2CBAFA28D15B9000549A2F /* SearchesView.swift in Sources */,
+				DA2CBAE428D15B8700549A2F /* String+Localization.swift in Sources */,
+				DA2CBAED28D15B8A00549A2F /* TwitterOptionStore.swift in Sources */,
+				DA2CBB0028D15D5100549A2F /* Home.swift in Sources */,
+				DA2CBAE628D15B8700549A2F /* Date+Extension.swift in Sources */,
+				DA2CBAFB28D15B9000549A2F /* WordsEditSection.swift in Sources */,
+				DA2CBAF128D15B8A00549A2F /* TwitterOption+Data.swift in Sources */,
+				DA2CBAF028D15B8A00549A2F /* ErrorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -504,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -564,6 +699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -748,6 +884,70 @@
 			};
 			name = Release;
 		};
+		DA2CBAE028D15B7900549A2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = MacSearchBoyAdvance/MacSearchBoyAdvance.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MacSearchBoyAdvance/Preview Content\"";
+				DEVELOPMENT_TEAM = BWMJMJK727;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ikeh1024.MacSearchBoyAdvance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DA2CBAE128D15B7900549A2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = MacSearchBoyAdvance/MacSearchBoyAdvance.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MacSearchBoyAdvance/Preview Content\"";
+				DEVELOPMENT_TEAM = BWMJMJK727;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ikeh1024.MacSearchBoyAdvance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -783,6 +983,15 @@
 			buildConfigurations = (
 				DA13B60628B7521F00E468F8 /* Debug */,
 				DA13B60728B7521F00E468F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA2CBAE228D15B7900549A2F /* Build configuration list for PBXNativeTarget "MacSearchBoyAdvance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA2CBAE028D15B7900549A2F /* Debug */,
+				DA2CBAE128D15B7900549A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

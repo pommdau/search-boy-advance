@@ -28,6 +28,7 @@ struct ErrorView: View {
             .padding()
             .background(.ultraThinMaterial)
             .cornerRadius(16)
+            #if !os(macOS)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -36,6 +37,7 @@ struct ErrorView: View {
                     }
                 }
             }
+            #endif
         }
     }
 }

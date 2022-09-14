@@ -23,7 +23,11 @@ struct SearchCellView: View {
                     guard let url = option.url else {
                         return
                     }
+                    #if os(macOS)
+                    NSWorkspace.shared.open(url)
+                    #else
                     UIApplication.shared.open(url)
+                    #endif
                 } label: {
                     Label("Open", systemImage: "square.and.arrow.up")
                         .labelStyle(.trailingIcon)

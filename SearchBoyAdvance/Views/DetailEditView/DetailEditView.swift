@@ -24,7 +24,9 @@ struct DetailEditView: View {
             dateSection()
         }
         .buttonStyle(.plain)
+        #if !os(macOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 
