@@ -1,0 +1,17 @@
+name: ShowSimulatorList  # ワークフローの名前
+
+on:  # トリガの設定
+# トリガはジョブで共有されるので、トリガを分ける場合はymlファイルを分ける
+  workflow_dispatch:
+
+env:  # 環境変数の指定
+  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
+
+jobs:
+  test:  # 今回はbuild+test
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3  # uses: 定義されているアクションを使える
+      - name: show simulator list
+        run: xcrun instruments -s
